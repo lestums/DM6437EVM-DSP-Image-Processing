@@ -15,7 +15,6 @@ static CSL_SysctlRegsOvly sysModuleRegs = (CSL_SysctlRegsOvly )CSL_SYS_0_REGS;
 // Video Usage Instructions:
 // 1. Requires I2C driver for TVP configuration
 // 2. Requires VPBE & VPFE drivers for Video record & playback
-
 //  This function is used to Initialize the I2C Bus Driver
 void I2C_INIT() {
   return;

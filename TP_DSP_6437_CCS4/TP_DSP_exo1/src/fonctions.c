@@ -5,7 +5,7 @@ Version initiale qui ne fait que acquisition YUV puis affichage
 #include <std.h>
 #include <gio.h>
 #include <log.h>
-
+#include <stdlib.h>
 #include "psp_vpfe.h"
 #include "psp_vpbe.h"
 #include "fvid.h"
@@ -14,6 +14,8 @@ Version initiale qui ne fait que acquisition YUV puis affichage
 #include <soc.h>
 #include <cslr_ccdc.h>
 
+#define WIDTH 720
+#define HEIGHT 480
 
 //pour logger ce qui se passe avec log.h (voir DSPBIOS)
 extern LOG_Obj trace;  // BIOS LOG object
@@ -68,8 +70,8 @@ static PSP_VPBEOsdConfigParams  vid0Params = {
   (720 *  (16/8u)),                   // pitch        
   0,                                  // leftMargin   
   0,                                  // topMargin    
-  720,                                // width        
-  480,                                // height       
+  WIDTH,                                // width        
+  HEIGHT,                                // height       
   0,                                  // segId        
   PSP_VPBE_ZOOM_IDENTITY,             // hScaling     
   PSP_VPBE_ZOOM_IDENTITY,             // vScaling     
@@ -88,8 +90,11 @@ void start_boucle() {
   PSP_VPFEChannelParams feinitParams;
   GIO_Attrs gioAttrs = GIO_ATTRS;
   PSP_VPSSSurfaceParams *FBAddr = NULL;
-  Uint32 i = 0;
+  PSP_VPSSSurfaceParams *FBAddrGray = NULL;
+  Uint32 i = 0, j = 0;
   Uint32 numOfIterations = 10000;
+  Uint16* ptrSource = NULL;
+  Uint16* ptrGrayLvl = NULL;
 
   // Create ccdc channel
   feinitParams.id = PSP_VPFE_CCDC;
@@ -143,22 +148,27 @@ void start_boucle() {
 
   //Allocation memoire et la structure qui contiendra l'image
   FVID_alloc( ccdcHandle, &FBAddr );
-
+  FVID_alloc( ccdcHandle, &FBAddrGray );
   //================BOUCLE ACQUISITION & COPIE & AFFICHAGE DES IMAGES========================
-  // 1)Acquisition
-  for( i = 0; i < numOfIterations; i++ ) {
-    if ( IOM_COMPLETED != FVID_exchange( ccdcHandle, &FBAddr ) ) {
-	 return;
-    }
-  // fin Acquisition
-         
-
-    LOG_printf( &trace, "    Affichage iteration = %u", i );
-	// 2)Affichage :
-    if ( IOM_COMPLETED != FVID_exchange( vid0Handle, &FBAddr ) ) {
-      return;
-    }
-  }
+  //1)Acquisition
+  	for( i = 0; i < numOfIterations; i++ ) {
+  		if ( IOM_COMPLETED != FVID_exchange( ccdcHandle, &FBAddr ) ) {
+			return;
+    	}
+    	ptrSource = FBAddr->frameBufferPtr;
+    	ptrGrayLvl = FBAddrGray->frameBufferPtr;
+  		for(j = 0; j < WIDTH*HEIGHT; j++){
+  			*ptrGrayLvl = (Uint16) ((*ptrSource) & 0xFF00 | 128);
+  			ptrSource++;
+  			ptrGrayLvl++;
+  		}
+  		
+  	    LOG_printf( &trace, "Affichage iteration = %u", i );
+  // 2)Affichage :
+    	if ( IOM_COMPLETED != FVID_exchange( vid0Handle, &FBAddrGray ) ) {
+      		return;
+    	}
+  } //fin Acquisition
   //================FIN BOUCLE ACQUISITION & COPIE & AFFICHAGE DES IMAGES======================
   FVID_free(vid0Handle,  FBAddr);
  
@@ -167,7 +177,7 @@ void start_boucle() {
     FVID_free( ccdcHandle, ccdcAllocFB[i] );
     FVID_free( vid0Handle, vidAllocFB[i] );
   }
-
+	
   // Delete Channels
   FVID_delete( ccdcHandle );
   FVID_delete( vid0Handle );
