@@ -1,0 +1,4 @@
+!WARNING: File 'TP_DSP.cmd' explicitly references a TConf-generated linker-command file (line 1). Please remove this reference when migration completes - CCS now automatically handles generated files during project-build.
+
+!WARNING: Unresolved tool: com.ti.ccstudio.buildDefinitions.C6000.Debug.1732389291::XDC
+

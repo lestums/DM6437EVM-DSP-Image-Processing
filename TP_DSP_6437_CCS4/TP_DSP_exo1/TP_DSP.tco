@@ -1,0 +1,6 @@
+# GENERATED FILE -- DO NOT EDIT!
+# This file contains tconf options for file "TP_DSP.tcf",
+# for use by the Gconf graphical configuration tool.
+# The options are exported from the following CCS project: 
+# C:\Documents and Settings\grandpit\Bureau\TP_DSP_6437\TP_DSP_6437\TP_DSP_exo1\TP_DSP.pjt, "Debug" configuration.
+-Dconfig.importPath=".;%BIOS_INSTALL_DIR%/packages/ti/bios/examples/common"

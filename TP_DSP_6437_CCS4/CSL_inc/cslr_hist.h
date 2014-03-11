@@ -1,0 +1,321 @@
+/*  ============================================================================
+ *   Copyright (c) Texas Instruments Inc 2002, 2003, 2004, 2005, 2006
+ *
+ *   Use of this software is controlled by the terms and conditions found in the
+ *   license agreement under which this software has been supplied.
+ *   ===========================================================================
+ */
+/** ============================================================================
+ *   @file  cslr_hist.h
+ *
+ *   @path  $(CSLPATH)\inc
+ *
+ *   @desc  This file contains the Register Descriptions for HIST
+ *  ============================================================================
+ */
+#ifndef _CSLR_HIST_H_
+#define _CSLR_HIST_H_
+
+#include <cslr.h>
+#include <tistdtypes.h>
+
+/* Minimum unit = 1 byte */
+
+/**************************************************************************\
+* Register Overlay Structure
+\**************************************************************************/
+typedef struct  {
+    volatile Uint32 PID;
+    volatile Uint32 PCR;
+    volatile Uint32 HIST_CNT;
+    volatile Uint32 WB_GAIN;
+    volatile Uint32 R0_HORZ;
+    volatile Uint32 R0_VERT;
+    volatile Uint32 R1_HORZ;
+    volatile Uint32 R1_VERT;
+    volatile Uint32 R2_HORZ;
+    volatile Uint32 R2_VERT;
+    volatile Uint32 R3_HORZ;
+    volatile Uint32 R3_VERT;
+    volatile Uint32 HIST_ADDR;
+    volatile Uint32 HIST_DATA;
+    volatile Uint32 RADD;
+    volatile Uint32 RADD_OFF;
+    volatile Uint32 H_V_INFO;
+} CSL_HistRegs;
+
+/**************************************************************************\
+* Overlay structure typedef definition
+\**************************************************************************/
+typedef volatile CSL_HistRegs         *CSL_HistRegsOvly;
+
+/**************************************************************************\
+* Field Definition Macros
+\**************************************************************************/
+
+/* PID */
+
+
+#define CSL_HIST_PID_TID_MASK (0x00FF0000u)
+#define CSL_HIST_PID_TID_SHIFT (0x00000010u)
+#define CSL_HIST_PID_TID_RESETVAL (0x00000008u)
+
+#define CSL_HIST_PID_CID_MASK (0x0000FF00u)
+#define CSL_HIST_PID_CID_SHIFT (0x00000008u)
+#define CSL_HIST_PID_CID_RESETVAL (0x000000FEu)
+
+#define CSL_HIST_PID_PREV_MASK (0x000000FFu)
+#define CSL_HIST_PID_PREV_SHIFT (0x00000000u)
+#define CSL_HIST_PID_PREV_RESETVAL (0x00000000u)
+
+#define CSL_HIST_PID_RESETVAL (0x0008FE00u)
+
+/* PCR */
+
+
+#define CSL_HIST_PCR_BUSY_MASK (0x00000002u)
+#define CSL_HIST_PCR_BUSY_SHIFT (0x00000001u)
+#define CSL_HIST_PCR_BUSY_RESETVAL (0x00000000u)
+/*----BUSY Tokens----*/
+#define CSL_HIST_PCR_BUSY_NOTBUSY (0x00000000u)
+#define CSL_HIST_PCR_BUSY_BUSY (0x00000001u)
+
+#define CSL_HIST_PCR_ENABLE_MASK (0x00000001u)
+#define CSL_HIST_PCR_ENABLE_SHIFT (0x00000000u)
+#define CSL_HIST_PCR_ENABLE_RESETVAL (0x00000000u)
+/*----ENABLE Tokens----*/
+#define CSL_HIST_PCR_ENABLE_DISABLE (0x00000000u)
+#define CSL_HIST_PCR_ENABLE_ENABLE (0x00000001u)
+
+#define CSL_HIST_PCR_RESETVAL (0x00000000u)
+
+/* HIST_CNT */
+
+
+#define CSL_HIST_HIST_CNT_DATSIZ_MASK (0x00000100u)
+#define CSL_HIST_HIST_CNT_DATSIZ_SHIFT (0x00000008u)
+#define CSL_HIST_HIST_CNT_DATSIZ_RESETVAL (0x00000000u)
+/*----DATSIZ Tokens----*/
+#define CSL_HIST_HIST_CNT_DATSIZ_9TO14_BITS (0x00000000u)
+#define CSL_HIST_HIST_CNT_DATSIZ_8BITS (0x00000001u)
+
+#define CSL_HIST_HIST_CNT_CLR_MASK (0x00000080u)
+#define CSL_HIST_HIST_CNT_CLR_SHIFT (0x00000007u)
+#define CSL_HIST_HIST_CNT_CLR_RESETVAL (0x00000000u)
+/*----CLR Tokens----*/
+#define CSL_HIST_HIST_CNT_CLR_NOCLEAR_AFTER_READ (0x00000000u)
+#define CSL_HIST_HIST_CNT_CLR_CLEAR_AFTER_READ (0x00000001u)
+
+#define CSL_HIST_HIST_CNT_CFA_MASK (0x00000040u)
+#define CSL_HIST_HIST_CNT_CFA_SHIFT (0x00000006u)
+#define CSL_HIST_HIST_CNT_CFA_RESETVAL (0x00000000u)
+/*----CFA Tokens----*/
+#define CSL_HIST_HIST_CNT_CFA_2D_2X2_CONVENTIONAL (0x00000000u)
+#define CSL_HIST_HIST_CNT_CFA_RSV (0x00000001u)
+
+#define CSL_HIST_HIST_CNT_BINS_MASK (0x00000030u)
+#define CSL_HIST_HIST_CNT_BINS_SHIFT (0x00000004u)
+#define CSL_HIST_HIST_CNT_BINS_RESETVAL (0x00000000u)
+/*----BINS Tokens----*/
+#define CSL_HIST_HIST_CNT_BINS_32BINS (0x00000000u)
+#define CSL_HIST_HIST_CNT_BINS_64BINS (0x00000001u)
+#define CSL_HIST_HIST_CNT_BINS_128BINS (0x00000002u)
+#define CSL_HIST_HIST_CNT_BINS_256BINS (0x00000003u)
+
+#define CSL_HIST_HIST_CNT_SOURCE_MASK (0x00000008u)
+#define CSL_HIST_HIST_CNT_SOURCE_SHIFT (0x00000003u)
+#define CSL_HIST_HIST_CNT_SOURCE_RESETVAL (0x00000000u)
+/*----SOURCE Tokens----*/
+#define CSL_HIST_HIST_CNT_SOURCE_CCDC (0x00000000u)
+#define CSL_HIST_HIST_CNT_SOURCE_SDRAM (0x00000001u)
+
+#define CSL_HIST_HIST_CNT_SHIFT_MASK (0x00000007u)
+#define CSL_HIST_HIST_CNT_SHIFT_SHIFT (0x00000000u)
+#define CSL_HIST_HIST_CNT_SHIFT_RESETVAL (0x00000000u)
+
+#define CSL_HIST_HIST_CNT_RESETVAL (0x00000000u)
+
+/* WB_GAIN */
+
+#define CSL_HIST_WB_GAIN_WG00_MASK (0xFF000000u)
+#define CSL_HIST_WB_GAIN_WG00_SHIFT (0x00000018u)
+#define CSL_HIST_WB_GAIN_WG00_RESETVAL (0x00000020u)
+
+#define CSL_HIST_WB_GAIN_WG01_MASK (0x00FF0000u)
+#define CSL_HIST_WB_GAIN_WG01_SHIFT (0x00000010u)
+#define CSL_HIST_WB_GAIN_WG01_RESETVAL (0x00000020u)
+
+#define CSL_HIST_WB_GAIN_WG02_MASK (0x0000FF00u)
+#define CSL_HIST_WB_GAIN_WG02_SHIFT (0x00000008u)
+#define CSL_HIST_WB_GAIN_WG02_RESETVAL (0x00000020u)
+
+#define CSL_HIST_WB_GAIN_WG03_MASK (0x000000FFu)
+#define CSL_HIST_WB_GAIN_WG03_SHIFT (0x00000000u)
+#define CSL_HIST_WB_GAIN_WG03_RESETVAL (0x00000020u)
+
+#define CSL_HIST_WB_GAIN_RESETVAL (0x20202020u)
+
+/* R0_HORZ */
+
+
+#define CSL_HIST_R0_HORZ_HSTART_MASK (0x3FFF0000u)
+#define CSL_HIST_R0_HORZ_HSTART_SHIFT (0x00000010u)
+#define CSL_HIST_R0_HORZ_HSTART_RESETVAL (0x00000000u)
+
+
+#define CSL_HIST_R0_HORZ_HEND_MASK (0x00003FFFu)
+#define CSL_HIST_R0_HORZ_HEND_SHIFT (0x00000000u)
+#define CSL_HIST_R0_HORZ_HEND_RESETVAL (0x00000000u)
+
+#define CSL_HIST_R0_HORZ_RESETVAL (0x00000000u)
+
+/* R0_VERT */
+
+
+#define CSL_HIST_R0_VERT_VSTART_MASK (0x3FFF0000u)
+#define CSL_HIST_R0_VERT_VSTART_SHIFT (0x00000010u)
+#define CSL_HIST_R0_VERT_VSTART_RESETVAL (0x00000000u)
+
+
+#define CSL_HIST_R0_VERT_VEND_MASK (0x00003FFFu)
+#define CSL_HIST_R0_VERT_VEND_SHIFT (0x00000000u)
+#define CSL_HIST_R0_VERT_VEND_RESETVAL (0x00000000u)
+
+#define CSL_HIST_R0_VERT_RESETVAL (0x00000000u)
+
+/* R1_HORZ */
+
+
+#define CSL_HIST_R1_HORZ_HSTART_MASK (0x3FFF0000u)
+#define CSL_HIST_R1_HORZ_HSTART_SHIFT (0x00000010u)
+#define CSL_HIST_R1_HORZ_HSTART_RESETVAL (0x00000000u)
+
+
+#define CSL_HIST_R1_HORZ_HEND_MASK (0x00003FFFu)
+#define CSL_HIST_R1_HORZ_HEND_SHIFT (0x00000000u)
+#define CSL_HIST_R1_HORZ_HEND_RESETVAL (0x00000000u)
+
+#define CSL_HIST_R1_HORZ_RESETVAL (0x00000000u)
+
+/* R1_VERT */
+
+
+#define CSL_HIST_R1_VERT_VSTART_MASK (0x3FFF0000u)
+#define CSL_HIST_R1_VERT_VSTART_SHIFT (0x00000010u)
+#define CSL_HIST_R1_VERT_VSTART_RESETVAL (0x00000000u)
+
+
+#define CSL_HIST_R1_VERT_VEND_MASK (0x00003FFFu)
+#define CSL_HIST_R1_VERT_VEND_SHIFT (0x00000000u)
+#define CSL_HIST_R1_VERT_VEND_RESETVAL (0x00000000u)
+
+#define CSL_HIST_R1_VERT_RESETVAL (0x00000000u)
+
+/* R2_HORZ */
+
+
+#define CSL_HIST_R2_HORZ_HSTART_MASK (0x3FFF0000u)
+#define CSL_HIST_R2_HORZ_HSTART_SHIFT (0x00000010u)
+#define CSL_HIST_R2_HORZ_HSTART_RESETVAL (0x00000000u)
+
+
+#define CSL_HIST_R2_HORZ_HEND_MASK (0x00003FFFu)
+#define CSL_HIST_R2_HORZ_HEND_SHIFT (0x00000000u)
+#define CSL_HIST_R2_HORZ_HEND_RESETVAL (0x00000000u)
+
+#define CSL_HIST_R2_HORZ_RESETVAL (0x00000000u)
+
+/* R2_VERT */
+
+
+#define CSL_HIST_R2_VERT_VSTART_MASK (0x3FFF0000u)
+#define CSL_HIST_R2_VERT_VSTART_SHIFT (0x00000010u)
+#define CSL_HIST_R2_VERT_VSTART_RESETVAL (0x00000000u)
+
+
+#define CSL_HIST_R2_VERT_VEND_MASK (0x00003FFFu)
+#define CSL_HIST_R2_VERT_VEND_SHIFT (0x00000000u)
+#define CSL_HIST_R2_VERT_VEND_RESETVAL (0x00000000u)
+
+#define CSL_HIST_R2_VERT_RESETVAL (0x00000000u)
+
+/* R3_HORZ */
+
+
+#define CSL_HIST_R3_HORZ_HSTART_MASK (0x3FFF0000u)
+#define CSL_HIST_R3_HORZ_HSTART_SHIFT (0x00000010u)
+#define CSL_HIST_R3_HORZ_HSTART_RESETVAL (0x00000000u)
+
+
+#define CSL_HIST_R3_HORZ_HEND_MASK (0x00003FFFu)
+#define CSL_HIST_R3_HORZ_HEND_SHIFT (0x00000000u)
+#define CSL_HIST_R3_HORZ_HEND_RESETVAL (0x00000000u)
+
+#define CSL_HIST_R3_HORZ_RESETVAL (0x00000000u)
+
+/* R3_VERT */
+
+
+#define CSL_HIST_R3_VERT_VSTART_MASK (0x3FFF0000u)
+#define CSL_HIST_R3_VERT_VSTART_SHIFT (0x00000010u)
+#define CSL_HIST_R3_VERT_VSTART_RESETVAL (0x00000000u)
+
+
+#define CSL_HIST_R3_VERT_VEND_MASK (0x00003FFFu)
+#define CSL_HIST_R3_VERT_VEND_SHIFT (0x00000000u)
+#define CSL_HIST_R3_VERT_VEND_RESETVAL (0x00000000u)
+
+#define CSL_HIST_R3_VERT_RESETVAL (0x00000000u)
+
+/* HIST_ADDR */
+
+
+#define CSL_HIST_HIST_ADDR_ADDR_MASK (0x000003FFu)
+#define CSL_HIST_HIST_ADDR_ADDR_SHIFT (0x00000000u)
+#define CSL_HIST_HIST_ADDR_ADDR_RESETVAL (0x00000000u)
+
+#define CSL_HIST_HIST_ADDR_RESETVAL (0x00000000u)
+
+/* HIST_DATA */
+
+
+#define CSL_HIST_HIST_DATA_RDATA_MASK (0x000FFFFFu)
+#define CSL_HIST_HIST_DATA_RDATA_SHIFT (0x00000000u)
+#define CSL_HIST_HIST_DATA_RDATA_RESETVAL (0x00000000u)
+
+#define CSL_HIST_HIST_DATA_RESETVAL (0x00000000u)
+
+/* RADD */
+
+#define CSL_HIST_RADD_RADD_MASK (0xFFFFFFFFu)
+#define CSL_HIST_RADD_RADD_SHIFT (0x00000000u)
+#define CSL_HIST_RADD_RADD_RESETVAL (0x00000000u)
+
+#define CSL_HIST_RADD_RESETVAL (0x00000000u)
+
+/* RADD_OFF */
+
+
+
+#define CSL_HIST_RADD_OFF_OFFSET_MASK (0x0000FFFFu)
+#define CSL_HIST_RADD_OFF_OFFSET_SHIFT (0x00000000u)
+#define CSL_HIST_RADD_OFF_OFFSET_RESETVAL (0x00000000u)
+
+#define CSL_HIST_RADD_OFF_RESETVAL (0x00000000u)
+
+/* H_V_INFO */
+
+
+#define CSL_HIST_H_V_INFO_HSIZE_MASK (0x3FFF0000u)
+#define CSL_HIST_H_V_INFO_HSIZE_SHIFT (0x00000010u)
+#define CSL_HIST_H_V_INFO_HSIZE_RESETVAL (0x00000000u)
+
+
+#define CSL_HIST_H_V_INFO_VSIZE_MASK (0x00003FFFu)
+#define CSL_HIST_H_V_INFO_VSIZE_SHIFT (0x00000000u)
+#define CSL_HIST_H_V_INFO_VSIZE_RESETVAL (0x00000000u)
+
+#define CSL_HIST_H_V_INFO_RESETVAL (0x00000000u)
+
+#endif
+

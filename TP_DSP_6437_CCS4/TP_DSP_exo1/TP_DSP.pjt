@@ -1,0 +1,63 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+
+[Project Settings]
+ProjectDir="C:\Documents and Settings\grandpit\Bureau\dsp6437DocExamples\VPBE_VPFE_Examples\TP_DSP_boucle1\"
+ProjectType=Executable
+CPUFamily=TMS320C64XX
+Tool="Compiler"
+Tool="CustomBuilder"
+Tool="DspBiosBuilder"
+Tool="Linker"
+Tool="XDC"
+Config="Debug"
+Config="Release"
+
+[Source Files]
+Source="..\drivers\VPBE\lib\vpbe_bios_drv_dbg.lib"
+Source="..\drivers\VPBE\lib\vpbe_bios_drv_rel.lib"
+Source="..\drivers\VPFE\lib\vpfe_bios_drv_dbg.lib"
+Source="..\drivers\VPFE\lib\vpfe_bios_drv_rel.lib"
+Source="driver\bios_edma3_sample_cfg.c"
+Source="driver\bios_edma3_sample_cs.c"
+Source="driver\bios_edma3_sample_init.c"
+Source="driver\edma3_drv_bios_dbg.lib"
+Source="driver\edma3_drv_bios_rel.lib"
+Source="driver\edma3_rm_bios_dbg.lib"
+Source="driver\edma3_rm_bios_rel.lib"
+Source="driver\timer.lib"
+Source="src\fonctions.c"
+Source="src\i2cParams_evmdm6437.c"
+Source="src\main.c"
+Source="src\psp_i2c_interface.c"
+Source="src\tvp5146_extDecoder.c"
+Source="TP_DSP.tcf"
+Source="TP_DSP.cmd"
+
+[Generated Files]
+Source="TP_DSPcfg.s62"
+Source="TP_DSPcfg_c.c"
+
+["Compiler" Settings: "Debug"]
+Options=-g -fr"$(Proj_dir)\Debug" -i".\" -i"$(Proj_dir)\..\pal_os\inc" -i"$(Proj_dir)\..\drivers\i2c\inc" -i"$(Proj_dir)\..\drivers\previewer\inc" -i"$(Proj_dir)\..\drivers\inc" -i"$(Proj_dir)\..\CSL_inc" -i"$(Proj_dir)\driver" -d"_DEBUG" -d"CHIP_DM6437" -d"DM643X_SOC_BUILD" -d"BIOS_BUILD" -mv6400+
+
+["Compiler" Settings: "Release"]
+Options=-o3 -fr"$(Proj_dir)\Release" -mv6400
+
+["DspBiosBuilder" Settings: "Debug"]
+Options=-Dconfig.importPath=".;%BIOS_INSTALL_DIR%/packages/ti/bios/examples/common"
+
+["Linker" Settings: "Debug"]
+Options=-c -m".\Debug\TP-DSP.map" -o".\Debug\TP-DSP.out" -w -x -i"C:\CCStudio_v3.3\c6400\imglib\lib" -i"$(Proj_dir)\driver" -l"$(Proj_dir)\..\pal_os\lib\palos_bios_dbg.lib" -l"$(Proj_dir)\..\drivers\vpbe\lib\vpbe_bios_drv_dbg.lib" -l"$(Proj_dir)\..\drivers\vpfe\lib\vpfe_bios_drv_dbg.lib" -l"$(Proj_dir)\..\drivers\i2c\lib\i2c_bios_drv_dbg.lib" -l"$(Proj_dir)\..\drivers\previewer\lib\prev_bios_drv_dbg.lib" -l"img64x.lib" -l"edma3_drv_bios_dbg.lib" -l"edma3_rm_bios_dbg.lib"
+
+["Linker" Settings: "Release"]
+Options=-c -m".\Release\TP-DSP.map" -o".\Release\TP-DSP.out" -w -x
+
+["XDC" Settings: "Debug"]
+Options=-tti.targets.C64P
+
+["TP_DSP.cmd" Settings: "Debug"]
+LinkOrder=1
+
+["TP_DSP.cmd" Settings: "Release"]
+LinkOrder=1
+

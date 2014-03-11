@@ -1,0 +1,96 @@
+----------------------------  TP_DSP.pjt - Release  ----------------------------
+[TP_DSP.tcf] "C:\CCStudio_v3.3\bios_5_31_02\xdctools\tconf" -b -Dconfig.importPath="C:/CCStudio_v3.3/bios_5_31_02/packages"  TP_DSP.tcf
+
+[bios_edma3_sample_cfg.c] "C:\CCStudio_v3.3\C6000\cgtools\bin\cl6x" -o3 -fr"C:/Documents and Settings/grandpit/Bureau/TP_DSP_6437/TP_DSP_6437/TP_DSP_DMA/Release" -mv6400 -@"../Release.lkf" "bios_edma3_sample_cfg.c"
+"bios_edma3_sample_cfg.c", line 27: error: identifier "EDMA3_NUM_TC" is undefined
+"bios_edma3_sample_cfg.c", line 33: error: identifier "EDMA3_CC_XFER_COMPLETION_INT" is undefined
+"bios_edma3_sample_cfg.c", line 39: error: identifier "EDMA3_CC_ERROR_INT" is undefined
+"bios_edma3_sample_cfg.c", line 46: error: identifier "EDMA3_TC0_ERROR_INT" is undefined
+"bios_edma3_sample_cfg.c", line 46: error: identifier "EDMA3_TC1_ERROR_INT" is undefined
+"bios_edma3_sample_cfg.c", line 47: error: identifier "EDMA3_TC2_ERROR_INT" is undefined
+"bios_edma3_sample_cfg.c", line 47: error: identifier "EDMA3_TC3_ERROR_INT" is undefined
+"bios_edma3_sample_cfg.c", line 48: error: identifier "EDMA3_TC4_ERROR_INT" is undefined
+"bios_edma3_sample_cfg.c", line 48: error: identifier "EDMA3_TC5_ERROR_INT" is undefined
+"bios_edma3_sample_cfg.c", line 49: error: identifier "EDMA3_TC6_ERROR_INT" is undefined
+"bios_edma3_sample_cfg.c", line 49: error: identifier "EDMA3_TC7_ERROR_INT" is undefined
+11 errors detected in the compilation of "bios_edma3_sample_cfg.c".
+
+>> Compilation failure
+
+[bios_edma3_sample_cs.c] "C:\CCStudio_v3.3\C6000\cgtools\bin\cl6x" -o3 -fr"C:/Documents and Settings/grandpit/Bureau/TP_DSP_6437/TP_DSP_6437/TP_DSP_DMA/Release" -mv6400 -@"../Release.lkf" "bios_edma3_sample_cs.c"
+"bios_edma3_sample_cs.c", line 7: fatal error: could not open source file "bios_edma3_sample.h"
+1 fatal error detected in the compilation of "bios_edma3_sample_cs.c".
+Compilation terminated.
+
+>> Compilation failure
+
+[bios_edma3_sample_init.c] "C:\CCStudio_v3.3\C6000\cgtools\bin\cl6x" -o3 -fr"C:/Documents and Settings/grandpit/Bureau/TP_DSP_6437/TP_DSP_6437/TP_DSP_DMA/Release" -mv6400 -@"../Release.lkf" "bios_edma3_sample_init.c"
+"bios_edma3_sample_init.c", line 3: fatal error: could not open source file "bios_edma3_sample.h"
+1 fatal error detected in the compilation of "bios_edma3_sample_init.c".
+Compilation terminated.
+
+>> Compilation failure
+
+[fonctions.c] "C:\CCStudio_v3.3\C6000\cgtools\bin\cl6x" -o3 -fr"C:/Documents and Settings/grandpit/Bureau/TP_DSP_6437/TP_DSP_6437/TP_DSP_DMA/Release" -mv6400 -@"../Release.lkf" "fonctions.c"
+"fonctions.c", line 5: fatal error: could not open source file "psp_vpfe.h"
+1 fatal error detected in the compilation of "fonctions.c".
+Compilation terminated.
+
+>> Compilation failure
+
+[i2cParams_evmdm6437.c] "C:\CCStudio_v3.3\C6000\cgtools\bin\cl6x" -o3 -fr"C:/Documents and Settings/grandpit/Bureau/TP_DSP_6437/TP_DSP_6437/TP_DSP_DMA/Release" -mv6400 -@"../Release.lkf" "i2cParams_evmdm6437.c"
+"i2cParams_evmdm6437.c", line 1: fatal error: could not open source file "psp_i2c.h"
+1 fatal error detected in the compilation of "i2cParams_evmdm6437.c".
+Compilation terminated.
+
+>> Compilation failure
+
+[main.c] "C:\CCStudio_v3.3\C6000\cgtools\bin\cl6x" -o3 -fr"C:/Documents and Settings/grandpit/Bureau/TP_DSP_6437/TP_DSP_6437/TP_DSP_DMA/Release" -mv6400 -@"../Release.lkf" "main.c"
+"main.c", line 4: fatal error: could not open source file "soc.h"
+1 fatal error detected in the compilation of "main.c".
+Compilation terminated.
+
+>> Compilation failure
+
+[psp_i2c_interface.c] "C:\CCStudio_v3.3\C6000\cgtools\bin\cl6x" -o3 -fr"C:/Documents and Settings/grandpit/Bureau/TP_DSP_6437/TP_DSP_6437/TP_DSP_DMA/Release" -mv6400 -@"../Release.lkf" "psp_i2c_interface.c"
+"psp_i2c_interface.c", line 4: fatal error: could not open source file "psp_common.h"
+1 fatal error detected in the compilation of "psp_i2c_interface.c".
+Compilation terminated.
+
+>> Compilation failure
+
+[tvp5146_extDecoder.c] "C:\CCStudio_v3.3\C6000\cgtools\bin\cl6x" -o3 -fr"C:/Documents and Settings/grandpit/Bureau/TP_DSP_6437/TP_DSP_6437/TP_DSP_DMA/Release" -mv6400 -@"../Release.lkf" "tvp5146_extDecoder.c"
+"psp_i2c_interface.h", line 44: fatal error: could not open source file "psp_common.h"
+1 fatal error detected in the compilation of "tvp5146_extDecoder.c".
+Compilation terminated.
+
+>> Compilation failure
+
+[TP_DSPcfg.s62] "C:\CCStudio_v3.3\C6000\cgtools\bin\cl6x" -o3 -fr"C:/Documents and Settings/grandpit/Bureau/TP_DSP_6437/TP_DSP_6437/TP_DSP_DMA/Release" -mv6400 -@"Release.lkf" "TP_DSPcfg.s62"
+"TP_DSPcfg.s62", ERROR!   at line 365: [ ***** USER ERROR ***** - ]
+         Project build options do not match Global configuration settings. 
+           Compiler options do not specify -mv64+, but configuration is for
+           C64x+
+	            .emsg "Project build options do not match Global configuration settings.  Compiler options do not specify -mv64+, but configuration is for C64x+"
+
+"TP_DSPcfg.s62", ERROR!   at EOF: [E0300] The following symbols are undefined:
+2 Assembly Errors, No Assembly Warnings
+  HWI_INTRMULTLOW
+  HWI_INTRMULTHIGH
+  GBL_L2MARMASK1
+  GBL_L2MARMASK2
+  GBL_L2MARMASK3
+  GBL_L2MARMASK4
+  GBL_L2MARMASK5
+  GBL_L2CONFIGALLOC
+  GBL_L2ALLOC
+  GBL_C641XL2PRIORITY
+
+Errors in Source - Assembler Aborted
+
+>> Compilation failure
+
+[TP_DSPcfg_c.c] "C:\CCStudio_v3.3\C6000\cgtools\bin\cl6x" -o3 -fr"C:/Documents and Settings/grandpit/Bureau/TP_DSP_6437/TP_DSP_6437/TP_DSP_DMA/Release" -mv6400 -@"Release.lkf" "TP_DSPcfg_c.c"
+
+Build Complete,
+  20 Errors, 0 Warnings, 0 Remarks.

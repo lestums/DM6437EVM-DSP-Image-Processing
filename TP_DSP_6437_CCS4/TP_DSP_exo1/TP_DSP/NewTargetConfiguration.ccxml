@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configurations XML_version="1.2" id="configurations_0">
+
+
+
+
+
+
+<configuration XML_version="1.2" id="Spectrum Digital DSK-EVM-eZdsp onboard USB Emulator_0">
+        <instance XML_version="1.2" desc="Spectrum Digital DSK-EVM-eZdsp onboard USB Emulator_0" href="connections\SDDSKUSB_Connection.xml" id="Spectrum Digital DSK-EVM-eZdsp onboard USB Emulator_0" xml="SDDSKUSB_Connection.xml" xmlpath="connections"/>
+        <connection XML_version="1.2" id="Spectrum Digital DSK-EVM-eZdsp onboard USB Emulator_0">
+            <instance XML_version="1.2" href="drivers\sdgoicepickusb_dsk_bypass.xml" id="drivers" xml="sdgoicepickusb_dsk_bypass.xml" xmlpath="drivers"/>
+            <instance XML_version="1.2" href="drivers\sdgo645xdsk.xml" id="drivers" xml="sdgo645xdsk.xml" xmlpath="drivers"/>
+            <platform XML_version="1.2" id="platform_0">
+                <instance XML_version="1.2" desc="EVMDM6437_0" href="boards\evmdm6437.xml" id="EVMDM6437_0" xml="evmdm6437.xml" xmlpath="boards"/>
+            </platform>
+        </connection>
+    </configuration>
+</configurations>

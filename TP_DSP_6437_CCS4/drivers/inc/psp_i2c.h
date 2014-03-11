@@ -1,0 +1,190 @@
+/******************************************************************************
+**+-------------------------------------------------------------------------+**
+**|                            ****                                         |**
+**|                            ****                                         |**
+**|                            ******o***                                   |**
+**|                      ********_///_****                                  |**
+**|                      ***** /_//_/ ****                                  |**
+**|                       ** ** (__/ ****                                   |**
+**|                           *********                                     |**
+**|                            ****                                         |**
+**|                            ***                                          |**
+**|                                                                         |**
+**|         Copyright (c) 1998-2006 Texas Instruments Incorporated          |**
+**|                        ALL RIGHTS RESERVED                              |**
+**|                                                                         |**
+**| Permission is hereby granted to licensees of Texas Instruments          |**
+**| Incorporated (TI) products to use this computer program for the sole    |**
+**| purpose of implementing a licensee product based on TI products.        |**
+**| No other rights to reproduce, use, or disseminate this computer         |**
+**| program, whether in part or in whole, are granted.                      |**
+**|                                                                         |**
+**| TI makes no representation or warranties with respect to the            |**
+**| performance of this computer program, and specifically disclaims        |**
+**| any responsibility for any damages, special or consequential,           |**
+**| connected with the use of this program.                                 |**
+**|                                                                         |**
+**+-------------------------------------------------------------------------+**
+******************************************************************************/
+/*!
+    @{
+
+*/
+
+/*!
+ *  \file   psp_i2c.h
+ *
+ *  \brief  I2C interface definition
+ *
+ *  This file contains the interfaces, data types and symbolic definitions
+ *  that are needed by the application to utilize the serivces of the I2C
+ *  device driver.
+ *
+ *  (C) Copyright 2006, Texas Instruments, Inc
+ *
+ *  \author     PSP Team
+ *
+ *  \version    1.x - previous versions of interfaces
+ *              2.0 - cleanup effort
+ */
+
+#ifndef _PSP_I2C_H_
+#define _PSP_I2C_H_
+/* Header file included */
+#include <psp_common.h>
+#include <tistdtypes.h>
+
+/*!
+ * \brief  I2C Driver Error codes
+ */
+/** Error Code base                                             */
+#define PSP_I2C_ERROR_BASE              (-8)
+/** Returned when the I2C bus find that the bus is buzy         */
+#define PSP_I2C_BUS_BUSY_ERR            (PSP_I2C_ERROR_BASE - 1)
+/** Returned when the I2C driver lost the bus arbitration       */
+#define PSP_I2C_ARBITRATION_LOSS_ERR    (PSP_I2C_ERROR_BASE - 2)
+/** Returned when the I2C slave did not generate an acknowledge */
+#define PSP_I2C_NACK_ERR                (PSP_I2C_ERROR_BASE - 3)
+/** Returned in case of an transmit underflow error             */
+#define PSP_I2C_TRANSMIT_UNDERFLOW_ERR  (PSP_I2C_ERROR_BASE - 4)
+/** Returned in case of an rcv overflow error                   */
+#define PSP_I2C_RECEIVE_OVERFLOW_ERR    (PSP_I2C_ERROR_BASE - 5)
+/** Returned in case of an Cancel io condition                  */
+#define PSP_I2C_CANCEL_IO_ERROR         (PSP_I2C_ERROR_BASE - 6)
+
+/** Max I2C driver instances                                    */
+#define PSP_I2C_NUM_INSTANCES               (1u)
+
+/** Max I2C driver opens allowed                                */
+#define PSP_I2C_NUM_OPENS                   (10u)
+
+/* Note: The following flags offer the user maximum flexibility in terms
+ * of making the right I2C transaction. In case the user does not want
+ * to set the flags on his own, the default read/write flag can be specified
+ *
+ * NOTE: If no flag is specified by default in the flags, read is assumed
+ */
+/** Read from I2C bus (device)                          */
+#define PSP_I2C_READ                (0x1u)
+/** Write to I2C bus (device)                           */
+#define PSP_I2C_WRITE               (0x2u)
+/** If this flag is not set, default is 7 bit address   */
+#define PSP_I2C_ADDR_FORMAT_10_BIT  (0x10u)
+/** If this flag is not set, default is slave mode      */
+#define PSP_I2C_MASTER              (0x20u)
+/** Generate Start - valid in master mode only          */
+#define PSP_I2C_START               (0x100u)
+/** Generate Stop - valid in master mode only           */
+#define PSP_I2C_STOP                (0x200u)
+/** Re-Start is generated by Master                     */
+#define PSP_I2C_RESTART             (0x400u)
+/** Start Byte as per Phillips I2C specs                */
+#define PSP_I2C_START_BYTE          (0x800u)
+/** Free Data Format                                    */
+#define PSP_I2C_FREE_DATA_FORMAT    (0x1000u)
+/** Repeat mode as per TI I2C specs                     */
+#define PSP_I2C_REPEAT              (0x2000u)
+/** Ignore NAK from device                              */
+#define PSP_I2C_IGNORE_NAK          (0x10000u)
+/** Ignore Bus Busy condition                           */
+#define PSP_I2C_IGNORE_BUS_BUSY     (0x20000u)
+
+/** Default read flag                                   */
+#define PSP_I2C_DEFAULT_READ \
+                (PSP_I2C_READ | PSP_I2C_MASTER | PSP_I2C_START | PSP_I2C_STOP)
+/** Default write flag                                  */
+#define PSP_I2C_DEFAULT_WRITE \
+                (PSP_I2C_WRITE | PSP_I2C_MASTER | PSP_I2C_START | PSP_I2C_STOP)
+
+/*!
+ *  \brief  PSP I2C Ioctl commands
+ *
+ *  I2C Ioctl commands
+ */
+typedef enum
+{
+
+    PSP_I2C_IOCTL_SET_BIT_RATE,           /**< Set the I2C clock                     */
+    PSP_I2C_IOCTL_GET_BIT_RATE,           /**< Get the I2C clock                     */
+    PSP_I2C_IOCTLE_SET_RX_SLAVE_CB,       /**< Set callback to be called when i2c is
+                                               working in Slave mode                 */
+    PSP_I2C_IOCTL_CANCEL_PENDING_IO,      /**< To cancel pending IO                  */
+    PSP_I2C_IOCTL_TESTS,                  /**< For testing static configurations     */
+    PSP_I2C_IOCTL_BIT_COUNT,              /**< To set bit Count value                */
+    PSP_I2C_IOCTL_NACK,                   /**< To enable or disable NACK dynamically */
+    PSP_I2C_IOCTL_SET_LOOPBACK_MODE       /**< To Set Digital Loopback Mode          */
+} PSP_I2cIoctlCmd;
+
+/*!
+ *  \brief I2C PSP Configuration Object
+ *
+ *  This structure basically holds the mode of operation and passes it on to the driver.
+ *
+ */
+typedef struct _PSP_I2cConfig
+{
+    PSP_OpMode  mode;               /**< Driver operating mode - polled, interrupt, dma */
+    Uint32      i2cOwnAddr;         /**< Own address (7 or 10 bit)                      */
+    Uint32      numBits;            /**< Number of bits/byte to be sent/received        */
+    Uint32      i2cBusFreq;         /**< I2C Bus Frequency                              */
+    Uint32      moduleInputClkFreq; /**< Module input clock freq                        */
+    Bool        addressing;         /**< 7bit/10bit Addressing mode                     */
+    Bool        dlb;                /**< Digital Loob Back (DLB) mode                   */
+} PSP_I2cConfig;
+
+/*!
+ *  \brief  I2C Transaction structure
+ *
+ *  This structure holds the information needed to carry out the transaction on an I2C bus.
+ *
+ */
+typedef struct _PSP_I2cTransaction
+{
+    Uint32              slaveAddr;
+    /**< Address of the slave to talk to, not valid in Slave mode           */
+    Uint8               *buffer;
+    /**< Data Buffer                                                        */
+    Uint32              bufLen;
+    /**< Length of buffer                                                   */
+    Uint32              flags;
+    /**< Flags to indicate the various modes of operation                   */
+    Ptr                 param;
+    /**< Extra parameter for future use                                     */
+} PSP_I2cTransaction;
+
+/*!
+ *  \brief  IOM_PACKET element structure
+ *
+ *  Structure for the i2c specific buffer address to be passed to the GIO.
+ */
+typedef struct
+{
+    PSP_I2cTransaction  i2cTrans;   /**< i2c transaction structure       */
+    Int                 timeout;    /**< Timeout value                   */
+} PSP_I2cRequest;
+
+
+#endif  /* _PSP_I2C_H_ */
+
+//! @}
+

@@ -1,0 +1,22 @@
+/*
+ *  Copyright 2005 by Texas Instruments Incorporated.
+ *  All rights reserved. Property of Texas Instruments Incorporated.
+ *  Restricted rights to use, duplicate or disclose this code are
+ *  granted through contract.
+ *
+ * @(#) ti.bios.drivers.examples.i2c.evmDM6437 
+ */
+ 
+/*
+ *  ======== dm6437_i2c0.tci ========
+ *
+ */
+
+/*
+ * ======== I2C Configuration ========
+ */
+bios.UDEV.create("I2C0");
+bios.UDEV.instance("I2C0").fxnTableType = "IOM_Fxns";
+bios.UDEV.instance("I2C0").initFxn = prog.extern("I2C_INIT");
+bios.UDEV.instance("I2C0").params = prog.extern("I2C_devParams");
+bios.UDEV.instance("I2C0").fxnTable = prog.extern("I2CMD_FXNS");

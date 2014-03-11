@@ -1,0 +1,20 @@
+/*
+ *  Copyright 2005 by Texas Instruments Incorporated.
+ *  All rights reserved. Property of Texas Instruments Incorporated.
+ *  Restricted rights to use, duplicate or disclose this code are
+ *  granted through contract.
+ *
+ * @(#) ti.bios.drivers.examples.vpbe.evmDM6437 
+ */
+ 
+/*
+ *  ======== dm6437_vpbe0.tci ========
+ *
+ */
+
+/*
+ * ======== VPBE0 Configuration ========
+ */
+bios.UDEV.create("VPBE0");
+bios.UDEV.instance("VPBE0").fxnTable = prog.extern("VPBEMD_FXNS");
+bios.UDEV.instance("VPBE0").fxnTableType = "IOM_Fxns";

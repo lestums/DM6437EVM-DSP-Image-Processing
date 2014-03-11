@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?ccsproject version="1.0"?>
+
+<projectOptions>
+<deviceVariant value="TMS320C64XX"/>
+<deviceEndianness value="none"/>
+<codegenToolVersion value="7.0.3"/>
+<isElfFormat value="false"/>
+<rts value=""/>
+</projectOptions>

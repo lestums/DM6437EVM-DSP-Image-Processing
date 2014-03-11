@@ -1,0 +1,10 @@
+# FIXED
+C:/tmp/TP_DSP_6437/TP_DSP_6437/TP_DSP_exo1/Debug/bios_edma3_sample_init.obj: C:/tmp/TP_DSP_6437/TP_DSP_6437/TP_DSP_exo1/driver/bios_edma3_sample_init.c
+C:/tmp/TP_DSP_6437/TP_DSP_6437/TP_DSP_exo1/Debug/bios_edma3_sample_init.obj: C:/CCSv4/bios_5_41_07_24/packages/ti/bios/include/ecm.h
+C:/tmp/TP_DSP_6437/TP_DSP_6437/TP_DSP_exo1/Debug/bios_edma3_sample_init.obj: C:/CCSv4/bios_5_41_07_24/packages/ti/bios/include/std.h
+C:/tmp/TP_DSP_6437/TP_DSP_6437/TP_DSP_exo1/Debug/bios_edma3_sample_init.obj: C:/CCSv4/bios_5_41_07_24/packages/ti/bios/include/tistdtypes.h
+C:/tmp/TP_DSP_6437/TP_DSP_6437/TP_DSP_exo1/Debug/bios_edma3_sample_init.obj: C:/CCSv4/bios_5_41_07_24/packages/ti/bios/include/hwi.h
+C:/tmp/TP_DSP_6437/TP_DSP_6437/TP_DSP_exo1/Debug/bios_edma3_sample_init.obj: C:/tmp/TP_DSP_6437/TP_DSP_6437/TP_DSP_exo1/driver/bios_edma3_sample.h
+C:/tmp/TP_DSP_6437/TP_DSP_6437/TP_DSP_exo1/Debug/bios_edma3_sample_init.obj: C:/tmp/TP_DSP_6437/TP_DSP_6437/TP_DSP_exo1/driver/edma3_drv.h
+C:/tmp/TP_DSP_6437/TP_DSP_6437/TP_DSP_exo1/Debug/bios_edma3_sample_init.obj: C:/tmp/TP_DSP_6437/TP_DSP_6437/TP_DSP_exo1/driver/edma3_rm.h
+C:/tmp/TP_DSP_6437/TP_DSP_6437/TP_DSP_exo1/Debug/bios_edma3_sample_init.obj: C:/tmp/TP_DSP_6437/TP_DSP_6437/TP_DSP_exo1/driver/edma3_common.h
