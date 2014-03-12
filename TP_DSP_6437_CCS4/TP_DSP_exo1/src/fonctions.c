@@ -1,35 +1,12 @@
-/* T. Grandpierre :
-Version initiale qui ne fait que acquisition YUV puis affichage
-*/
-
-#include <std.h>
-#include <gio.h>
-#include <log.h>
-#include <stdlib.h>
-#include "psp_vpfe.h"
-#include "psp_vpbe.h"
-#include "fvid.h"
-#include "psp_tvp5146_extVidDecoder.h"
-
-#include <soc.h>
-#include <cslr_ccdc.h>
+#include "../TP_DSP/src/projet_dsp.h"
 
 #define WIDTH 720
 #define HEIGHT 480
 
-//pour logger ce qui se passe avec log.h (voir DSPBIOS)
-extern LOG_Obj trace;  // BIOS LOG object
-
-
-/* extrait de l'exemple EDMA3 :
-// 48K L1 SRAM [0x10f04000, 0x10f10000), 0xc000 length
-// 32K L1 Dcache [0x10f10000, 0x10f18000), 0x8000 length
-// 128K L2 SRAM [0x10800000, 0x10820000), 0x20000 length
-// 128M DDR2 [0x80000000, 0x88000000), 0x8000000 length are cacheable
-*/
-
-
 #define NO_OF_BUFFERS       (2u)
+
+extern LOG_Obj trace;  // BIOS LOG object
+extern void deriche_nonopt(Uint16* in, Uint16* out, Uint32 largeur, Uint32 hauteur, float gamma);
 
 // Global Variable Defined 
 static PSP_VPSSSurfaceParams *ccdcAllocFB[NO_OF_BUFFERS]={NULL};
@@ -84,17 +61,20 @@ static PSP_VPBEVencConfigParams vencParams = {
   PSP_VPBE_DISPLAY_NTSC_INTERLACED_COMPOSITE // Display Standard 
 };
 
-
 void start_boucle() {
   PSP_VPBEChannelParams beinitParams;
   PSP_VPFEChannelParams feinitParams;
   GIO_Attrs gioAttrs = GIO_ATTRS;
   PSP_VPSSSurfaceParams *FBAddr = NULL;
   PSP_VPSSSurfaceParams *FBAddrGray = NULL;
+  PSP_VPSSSurfaceParams *FBAddrDeriche = NULL;
   Uint32 i = 0, j = 0;
+  Uint32 largeur = WIDTH;
+  Uint32 hauteur = HEIGHT;
   Uint32 numOfIterations = 10000;
   Uint16* ptrSource = NULL;
-  Uint16* ptrGrayLvl = NULL;
+  Uint16* ptrGrayLvl = NULL;	
+  Uint16* ptrDeriche = NULL;
 
   // Create ccdc channel
   feinitParams.id = PSP_VPFE_CCDC;
@@ -149,6 +129,7 @@ void start_boucle() {
   //Allocation memoire et la structure qui contiendra l'image
   FVID_alloc( ccdcHandle, &FBAddr );
   FVID_alloc( ccdcHandle, &FBAddrGray );
+  FVID_alloc( ccdcHandle, &FBAddrDeriche);
   //================BOUCLE ACQUISITION & COPIE & AFFICHAGE DES IMAGES========================
   //1)Acquisition
   	for( i = 0; i < numOfIterations; i++ ) {
@@ -157,16 +138,19 @@ void start_boucle() {
     	}
     	ptrSource = FBAddr->frameBufferPtr;
     	ptrGrayLvl = FBAddrGray->frameBufferPtr;
+    	ptrDeriche = FBAddrDeriche->frameBufferPtr;
   		for(j = 0; j < WIDTH*HEIGHT; j++){
   			*ptrGrayLvl = (Uint16) ((*ptrSource) & 0xFF00 | 128);
   			ptrSource++;
   			ptrGrayLvl++;
   		}
   		
+  		deriche_nonopt(FBAddrGray->frameBufferPtr, FBAddrDeriche->frameBufferPtr, largeur, hauteur, 0.25);
+  		
   	    LOG_printf( &trace, "Affichage iteration = %u", i );
   // 2)Affichage :
-    	if ( IOM_COMPLETED != FVID_exchange( vid0Handle, &FBAddrGray ) ) {
-      		return;
+  		if ( IOM_COMPLETED != FVID_exchange( vid0Handle, &FBAddrDeriche ) ) {
+    		return;
     	}
   } //fin Acquisition
   //================FIN BOUCLE ACQUISITION & COPIE & AFFICHAGE DES IMAGES======================

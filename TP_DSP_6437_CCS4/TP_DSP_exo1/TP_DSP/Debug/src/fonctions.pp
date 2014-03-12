@@ -1,6 +1,7 @@
 # FIXED
 
 C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug/fonctions.obj: C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/src/fonctions.c
+C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug/fonctions.obj: C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/src/../TP_DSP/src/projet_dsp.h
 C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug/fonctions.obj: C:/CCS/bios_5_41_10_36/packages/ti/bios/include/std.h
 C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug/fonctions.obj: C:/CCS/bios_5_41_10_36/packages/ti/bios/include/tistdtypes.h
 C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug/fonctions.obj: C:/CCS/bios_5_41_10_36/packages/ti/bios/include/gio.h
@@ -40,6 +41,7 @@ C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug/fonctions.obj: C:/Temp/TP_DSP_6437_CC
 C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug/fonctions.obj: C:/Temp/TP_DSP_6437_CCS4/CSL_inc/cslr_ccdc.h
 
 C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/src/fonctions.c: 
+C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/src/../TP_DSP/src/projet_dsp.h: 
 C:/CCS/bios_5_41_10_36/packages/ti/bios/include/std.h: 
 C:/CCS/bios_5_41_10_36/packages/ti/bios/include/tistdtypes.h: 
 C:/CCS/bios_5_41_10_36/packages/ti/bios/include/gio.h: 

@@ -138,7 +138,7 @@ endif
 all: C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Release/TP-DSP.out
 
 # Tool invocations
-C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Release/TP-DSP.out: $(OBJS) $(LIB_SRCS) $(GEN_CMDS)
+C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Release/TP-DSP.out: $(OBJS) $(CMD_SRCS) $(LIB_SRCS) $(GEN_CMDS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: Linker'
 	@echo 'Flags: -mv6400+ -g -O3 --define="_DEBUG" --define="CHIP_DM6437" --define="DM643X_SOC_BUILD" --define="BIOS_BUILD" --diag_warning=225 --obj_directory="C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Release" -z -m"C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Release/TP-DSP.map" --warn_sections -i"C:/CCS/ccsv4/tools/compiler/c6000/lib" -i"C:/CCS/ccsv4/tools/compiler/c6000/include" -i"C:/CCS/bios_5_41_10_36/packages/ti/rtdx/lib/c6000" -i"C:/CCS/bios_5_41_10_36/packages/ti/bios/lib" -i"C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/TP_DSP" -i"C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1" -i"/lib" -i"C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/driver" --reread_libs --rom_model'
