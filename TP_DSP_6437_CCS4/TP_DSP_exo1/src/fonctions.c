@@ -1,33 +1,12 @@
-/* T. Grandpierre :
-Version initiale qui ne fait que acquisition YUV puis affichage
-*/
+#include "../TP_DSP/src/projet_dsp.h"
 
-#include <std.h>
-#include <gio.h>
-#include <log.h>
-
-#include "psp_vpfe.h"
-#include "psp_vpbe.h"
-#include "fvid.h"
-#include "psp_tvp5146_extVidDecoder.h"
-
-#include <soc.h>
-#include <cslr_ccdc.h>
-
-
-//pour logger ce qui se passe avec log.h (voir DSPBIOS)
-extern LOG_Obj trace;  // BIOS LOG object
-
-
-/* extrait de l'exemple EDMA3 :
-// 48K L1 SRAM [0x10f04000, 0x10f10000), 0xc000 length
-// 32K L1 Dcache [0x10f10000, 0x10f18000), 0x8000 length
-// 128K L2 SRAM [0x10800000, 0x10820000), 0x20000 length
-// 128M DDR2 [0x80000000, 0x88000000), 0x8000000 length are cacheable
-*/
-
+#define WIDTH 720
+#define HEIGHT 480
 
 #define NO_OF_BUFFERS       (2u)
+
+extern LOG_Obj trace;  // BIOS LOG object
+extern void deriche_nonopt(Uint8* in, Uint8* out, Uint32 largeur, Uint32 hauteur, float gamma);
 
 // Global Variable Defined 
 static PSP_VPSSSurfaceParams *ccdcAllocFB[NO_OF_BUFFERS]={NULL};
@@ -68,8 +47,8 @@ static PSP_VPBEOsdConfigParams  vid0Params = {
   (720 *  (16/8u)),                   // pitch        
   0,                                  // leftMargin   
   0,                                  // topMargin    
-  720,                                // width        
-  480,                                // height       
+  WIDTH,                                // width        
+  HEIGHT,                                // height       
   0,                                  // segId        
   PSP_VPBE_ZOOM_IDENTITY,             // hScaling     
   PSP_VPBE_ZOOM_IDENTITY,             // vScaling     
@@ -82,14 +61,21 @@ static PSP_VPBEVencConfigParams vencParams = {
   PSP_VPBE_DISPLAY_NTSC_INTERLACED_COMPOSITE // Display Standard 
 };
 
-
 void start_boucle() {
   PSP_VPBEChannelParams beinitParams;
   PSP_VPFEChannelParams feinitParams;
   GIO_Attrs gioAttrs = GIO_ATTRS;
   PSP_VPSSSurfaceParams *FBAddr = NULL;
-  Uint32 i = 0;
+  PSP_VPSSSurfaceParams *FBAddrOut = NULL;
+  
+  Uint32 i = 0, j = 0, k = 0, ts = 0, te = 0;
+  Uint32 largeur = WIDTH;
+  Uint32 hauteur = HEIGHT;
   Uint32 numOfIterations = 10000;
+
+  Uint8* imageIn = NULL;
+  Uint8* imageOut = NULL;
+  Uint8* imageSaved = NULL;
 
   // Create ccdc channel
   feinitParams.id = PSP_VPFE_CCDC;
@@ -143,22 +129,46 @@ void start_boucle() {
 
   //Allocation memoire et la structure qui contiendra l'image
   FVID_alloc( ccdcHandle, &FBAddr );
-
+  FVID_alloc( ccdcHandle, &FBAddrOut);
+  //Allocation mémoire des conteneurs pour le traitement des images
+  imageIn = (Uint8*) malloc(WIDTH*HEIGHT*sizeof(Uint8));
+  imageOut = (Uint8*) malloc(WIDTH*HEIGHT*sizeof(Uint8));
+  imageSaved = (Uint8*) malloc(WIDTH*HEIGHT*sizeof(Uint8));
   //================BOUCLE ACQUISITION & COPIE & AFFICHAGE DES IMAGES========================
-  // 1)Acquisition
-  for( i = 0; i < numOfIterations; i++ ) {
-    if ( IOM_COMPLETED != FVID_exchange( ccdcHandle, &FBAddr ) ) {
-	 return;
-    }
-  // fin Acquisition
-         
-
-    LOG_printf( &trace, "    Affichage iteration = %u", i );
-	// 2)Affichage :
-    if ( IOM_COMPLETED != FVID_exchange( vid0Handle, &FBAddr ) ) {
-      return;
-    }
-  }
+  //1)Acquisition
+  	for( i = 0; i < numOfIterations; i++ ) {
+  		if ( IOM_COMPLETED != FVID_exchange( ccdcHandle, &FBAddr ) ) {
+			return;
+    	}
+    	
+    	//Conversion en Uint8, l'octet de poids fort étant la composante de luminance (Y)
+    	for( j = 0; j < HEIGHT; j++ ) { 
+    		for( k = 0; k < WIDTH ; k++ ) { 
+    			imageIn[j*WIDTH + k] = (Uint8) ((((Uint16*)FBAddr->frameBufferPtr)[j*WIDTH + k]) >> 8); 
+    		} 
+    	}
+    	
+    	//Sauvegarde de l'image en niveau de gris
+    	memcpy(imageSaved, imageIn, WIDTH*HEIGHT);
+    	
+  		ts = C64P_getltime(); 
+  		deriche_nonopt(imageIn, imageOut, largeur, hauteur, 0.25);
+  		te = C64P_getltime();
+  		LOG_printf( &trace, " Nombre de cycles : Fonction deriche_nonopt = %u", te - ts );
+  		
+  	    LOG_printf( &trace, "Affichage iteration = %u", i );
+  	    
+  	    //Conversion en Uint16 pour affichage et mise à 0x80 (mise à zéro) de la chrominance 
+  	    for( j = 0; j < HEIGHT; j++ ) { 
+  	    	for( k = 0; k < WIDTH ; k++ ) { 
+  	    		((Uint16*)FBAddrOut->frameBufferPtr)[j*WIDTH + k] = ((((Uint16)imageIn[j*WIDTH + k])<<8) | 0x0080); 
+  	    	}
+  	    }
+  // 2)Affichage :
+  		if ( IOM_COMPLETED != FVID_exchange( vid0Handle, &FBAddrOut ) ) {
+    		return;
+    	}
+  } //fin Acquisition
   //================FIN BOUCLE ACQUISITION & COPIE & AFFICHAGE DES IMAGES======================
   FVID_free(vid0Handle,  FBAddr);
  
@@ -167,7 +177,7 @@ void start_boucle() {
     FVID_free( ccdcHandle, ccdcAllocFB[i] );
     FVID_free( vid0Handle, vidAllocFB[i] );
   }
-
+	
   // Delete Channels
   FVID_delete( ccdcHandle );
   FVID_delete( vid0Handle );

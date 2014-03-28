@@ -1,6 +1,7 @@
 # FIXED
 
 C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug/fonctions.obj: C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/src/fonctions.c
+C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug/fonctions.obj: C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/src/../TP_DSP/src/projet_dsp.h
 C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug/fonctions.obj: C:/CCS/bios_5_41_10_36/packages/ti/bios/include/std.h
 C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug/fonctions.obj: C:/CCS/bios_5_41_10_36/packages/ti/bios/include/tistdtypes.h
 C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug/fonctions.obj: C:/CCS/bios_5_41_10_36/packages/ti/bios/include/gio.h
@@ -25,6 +26,8 @@ C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug/fonctions.obj: C:/CCS/ccsv4/tools/com
 C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug/fonctions.obj: C:/CCS/bios_5_41_10_36/packages/ti/bios/include/log.h
 C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug/fonctions.obj: C:/CCS/bios_5_41_10_36/packages/ti/bios/include/_log.h
 C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug/fonctions.obj: C:/CCS/bios_5_41_10_36/packages/ti/bios/include/trc.h
+C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug/fonctions.obj: C:/CCS/ccsv4/tools/compiler/c6000/include/stdlib.h
+C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug/fonctions.obj: C:/CCS/ccsv4/tools/compiler/c6000/include/linkage.h
 C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug/fonctions.obj: C:/Temp/TP_DSP_6437_CCS4/drivers/inc/psp_vpfe.h
 C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug/fonctions.obj: C:/Temp/TP_DSP_6437_CCS4/drivers/inc/psp_vpss.h
 C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug/fonctions.obj: C:/Temp/TP_DSP_6437_CCS4/drivers/inc/psp_common.h
@@ -38,6 +41,7 @@ C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug/fonctions.obj: C:/Temp/TP_DSP_6437_CC
 C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug/fonctions.obj: C:/Temp/TP_DSP_6437_CCS4/CSL_inc/cslr_ccdc.h
 
 C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/src/fonctions.c: 
+C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/src/../TP_DSP/src/projet_dsp.h: 
 C:/CCS/bios_5_41_10_36/packages/ti/bios/include/std.h: 
 C:/CCS/bios_5_41_10_36/packages/ti/bios/include/tistdtypes.h: 
 C:/CCS/bios_5_41_10_36/packages/ti/bios/include/gio.h: 
@@ -62,6 +66,8 @@ C:/CCS/ccsv4/tools/compiler/c6000/include/stdarg.h:
 C:/CCS/bios_5_41_10_36/packages/ti/bios/include/log.h: 
 C:/CCS/bios_5_41_10_36/packages/ti/bios/include/_log.h: 
 C:/CCS/bios_5_41_10_36/packages/ti/bios/include/trc.h: 
+C:/CCS/ccsv4/tools/compiler/c6000/include/stdlib.h: 
+C:/CCS/ccsv4/tools/compiler/c6000/include/linkage.h: 
 C:/Temp/TP_DSP_6437_CCS4/drivers/inc/psp_vpfe.h: 
 C:/Temp/TP_DSP_6437_CCS4/drivers/inc/psp_vpss.h: 
 C:/Temp/TP_DSP_6437_CCS4/drivers/inc/psp_common.h: 
