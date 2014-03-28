@@ -5,6 +5,7 @@
 #include <gio.h>
 #include <log.h>
 #include <stdlib.h>
+#include <math.h>
 #include "psp_vpfe.h"
 #include "psp_vpbe.h"
 #include "fvid.h"
@@ -17,7 +18,8 @@
 
 //FONCTIONNE
 void deriche_nonopt(Uint8* in, Uint8* out, Uint32 largeur, Uint32 hauteur, float gamma);
-
+void roberts_nonopt(Uint8 *in, Uint8 *out, Uint32 largeur, Uint32 hauteur);
+void binarisation(Uint8 *in, Uint8 *out, Uint32 largeur, Uint32 hauteur, Uint32 threshold);
 /*Non implémentées
 void deriche_optimise(Uint16* in, Uint16* out, Uint32 largeur, Uint32 hauteur, float gamma);
 void 
