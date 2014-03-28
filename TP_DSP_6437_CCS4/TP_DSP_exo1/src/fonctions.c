@@ -6,7 +6,7 @@
 #define NO_OF_BUFFERS       (2u)
 
 extern LOG_Obj trace;  // BIOS LOG object
-extern void deriche_nonopt(Uint16* in, Uint16* out, Uint32 largeur, Uint32 hauteur, float gamma);
+extern void deriche_nonopt(Uint8* in, Uint8* out, Uint32 largeur, Uint32 hauteur, float gamma);
 
 // Global Variable Defined 
 static PSP_VPSSSurfaceParams *ccdcAllocFB[NO_OF_BUFFERS]={NULL};
@@ -66,15 +66,16 @@ void start_boucle() {
   PSP_VPFEChannelParams feinitParams;
   GIO_Attrs gioAttrs = GIO_ATTRS;
   PSP_VPSSSurfaceParams *FBAddr = NULL;
-  PSP_VPSSSurfaceParams *FBAddrGray = NULL;
-  PSP_VPSSSurfaceParams *FBAddrDeriche = NULL;
-  Uint32 i = 0, j = 0;
+  PSP_VPSSSurfaceParams *FBAddrOut = NULL;
+  
+  Uint32 i = 0, j = 0, k = 0, ts = 0, te = 0;
   Uint32 largeur = WIDTH;
   Uint32 hauteur = HEIGHT;
   Uint32 numOfIterations = 10000;
-  Uint16* ptrSource = NULL;
-  Uint16* ptrGrayLvl = NULL;	
-  Uint16* ptrDeriche = NULL;
+
+  Uint8* imageIn = NULL;
+  Uint8* imageOut = NULL;
+  Uint8* imageSaved = NULL;
 
   // Create ccdc channel
   feinitParams.id = PSP_VPFE_CCDC;
@@ -128,28 +129,43 @@ void start_boucle() {
 
   //Allocation memoire et la structure qui contiendra l'image
   FVID_alloc( ccdcHandle, &FBAddr );
-  FVID_alloc( ccdcHandle, &FBAddrGray );
-  FVID_alloc( ccdcHandle, &FBAddrDeriche);
+  FVID_alloc( ccdcHandle, &FBAddrOut);
+  //Allocation mémoire des conteneurs pour le traitement des images
+  imageIn = (Uint8*) malloc(WIDTH*HEIGHT*sizeof(Uint8));
+  imageOut = (Uint8*) malloc(WIDTH*HEIGHT*sizeof(Uint8));
+  imageSaved = (Uint8*) malloc(WIDTH*HEIGHT*sizeof(Uint8));
   //================BOUCLE ACQUISITION & COPIE & AFFICHAGE DES IMAGES========================
   //1)Acquisition
   	for( i = 0; i < numOfIterations; i++ ) {
   		if ( IOM_COMPLETED != FVID_exchange( ccdcHandle, &FBAddr ) ) {
 			return;
     	}
-    	ptrSource = FBAddr->frameBufferPtr;
-    	ptrGrayLvl = FBAddrGray->frameBufferPtr;
-    	ptrDeriche = FBAddrDeriche->frameBufferPtr;
-  		for(j = 0; j < WIDTH*HEIGHT; j++){
-  			*ptrGrayLvl = (Uint16) ((*ptrSource) & 0xFF00 | 128);
-  			ptrSource++;
-  			ptrGrayLvl++;
-  		}
-  		
-  		deriche_nonopt(FBAddrGray->frameBufferPtr, FBAddrDeriche->frameBufferPtr, largeur, hauteur, 0.25);
+    	
+    	//Conversion en Uint8, l'octet de poids fort étant la composante de luminance (Y)
+    	for( j = 0; j < HEIGHT; j++ ) { 
+    		for( k = 0; k < WIDTH ; k++ ) { 
+    			imageIn[j*WIDTH + k] = (Uint8) ((((Uint16*)FBAddr->frameBufferPtr)[j*WIDTH + k]) >> 8); 
+    		} 
+    	}
+    	
+    	//Sauvegarde de l'image en niveau de gris
+    	memcpy(imageSaved, imageIn, WIDTH*HEIGHT);
+    	
+  		ts = C64P_getltime(); 
+  		deriche_nonopt(imageIn, imageOut, largeur, hauteur, 0.25);
+  		te = C64P_getltime();
+  		LOG_printf( &trace, " Nombre de cycles : Fonction deriche_nonopt = %u", te - ts );
   		
   	    LOG_printf( &trace, "Affichage iteration = %u", i );
+  	    
+  	    //Conversion en Uint16 pour affichage et mise à 0x80 (mise à zéro) de la chrominance 
+  	    for( j = 0; j < HEIGHT; j++ ) { 
+  	    	for( k = 0; k < WIDTH ; k++ ) { 
+  	    		((Uint16*)FBAddrOut->frameBufferPtr)[j*WIDTH + k] = ((((Uint16)imageIn[j*WIDTH + k])<<8) | 0x0080); 
+  	    	}
+  	    }
   // 2)Affichage :
-  		if ( IOM_COMPLETED != FVID_exchange( vid0Handle, &FBAddrDeriche ) ) {
+  		if ( IOM_COMPLETED != FVID_exchange( vid0Handle, &FBAddrOut ) ) {
     		return;
     	}
   } //fin Acquisition

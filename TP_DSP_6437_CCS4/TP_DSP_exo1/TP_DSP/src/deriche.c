@@ -15,7 +15,7 @@
 */
 #include "projet_dsp.h"
 
-void deriche_nonopt(Uint16* in, Uint16* out, Uint32 largeur, Uint32 hauteur, float gamma){
+void deriche_nonopt(Uint8* in, Uint8* out, Uint32 largeur, Uint32 hauteur, float gamma){
 	int i,j;
 	double g1 = (1 - gamma)*(1 - gamma);
 	double g2 = 2 * gamma;
@@ -45,10 +45,10 @@ void deriche_nonopt(Uint16* in, Uint16* out, Uint32 largeur, Uint32 hauteur, flo
 		}
 	}
 	for(j = 0; j< largeur*hauteur; j++){
-		out[j] = (Uint16)Y[j];
+		out[j] = (Uint8)Y[j];
 	}
 	
-	// Transposition de la matrice Y dans la matrice X
+	// Transvasement de la matrice Y dans la matrice X
 	for(i = 0; i<largeur; i++){
 		for(j = 0; j< hauteur; j++){
 			X[j*largeur+i] = Y[i*hauteur+j];

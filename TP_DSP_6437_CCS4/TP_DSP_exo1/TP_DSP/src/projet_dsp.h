@@ -16,7 +16,7 @@
 //Implémentées
 
 //FONCTIONNE
-void deriche_nonopt(Uint16* in, Uint16* out, Uint32 largeur, Uint32 hauteur, float gamma);
+void deriche_nonopt(Uint8* in, Uint8* out, Uint32 largeur, Uint32 hauteur, float gamma);
 
 /*Non implémentées
 void deriche_optimise(Uint16* in, Uint16* out, Uint32 largeur, Uint32 hauteur, float gamma);
