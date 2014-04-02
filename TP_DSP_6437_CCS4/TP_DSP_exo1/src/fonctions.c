@@ -2,11 +2,18 @@
 
 #define WIDTH 720
 #define HEIGHT 480
+#define GAMMA 0.25
+#define SEUIL 160
 
 #define NO_OF_BUFFERS       (2u)
 
+// External functions 
+
 extern LOG_Obj trace;  // BIOS LOG object
+extern Uint32 C64P_getltime();
 extern void deriche_nonopt(Uint8* in, Uint8* out, Uint32 largeur, Uint32 hauteur, float gamma);
+extern void roberts_nonopt(Uint8 *in, Uint8 *out, Uint32 largeur, Uint32 hauteur);
+extern void binarisation(Uint8 *in, Uint8 *out, Uint32 largeur, Uint32 hauteur, Uint32 threshold);
 
 // Global Variable Defined 
 static PSP_VPSSSurfaceParams *ccdcAllocFB[NO_OF_BUFFERS]={NULL};
@@ -152,8 +159,15 @@ void start_boucle() {
     	memcpy(imageSaved, imageIn, WIDTH*HEIGHT);
     	
   		ts = C64P_getltime(); 
-  		deriche_nonopt(imageIn, imageOut, largeur, hauteur, 0.25);
+  		deriche_nonopt(imageIn, imageOut, largeur, hauteur, GAMMA);
   		te = C64P_getltime();
+  		ts = C64P_getltime(); 
+  		roberts_nonopt(imageOut, imageIn, largeur, hauteur);
+  		te = C64P_getltime();
+  		ts = C64P_getltime(); 
+  		binarisation(imageIn, imageOut, largeur, hauteur, SEUIL);
+  		te = C64P_getltime();
+  		
   		LOG_printf( &trace, " Nombre de cycles : Fonction deriche_nonopt = %u", te - ts );
   		
   	    LOG_printf( &trace, "Affichage iteration = %u", i );

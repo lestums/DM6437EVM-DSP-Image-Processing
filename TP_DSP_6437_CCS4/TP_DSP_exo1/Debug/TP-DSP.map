@@ -1,10 +1,10 @@
 ******************************************************************************
                TMS320C6x Linker PC v7.2.3                      
 ******************************************************************************
->> Linked Fri Mar 28 13:09:25 2014
+>> Linked Fri Mar 28 14:07:36 2014
 
 OUTPUT FILE NAME:   <C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug/TP-DSP.out>
-ENTRY POINT SYMBOL: "_c_int00"  address: 8103a460
+ENTRY POINT SYMBOL: "_c_int00"  address: 8103c300
 
 
 MEMORY CONFIGURATION
@@ -16,7 +16,7 @@ MEMORY CONFIGURATION
   L1DSRAM               10f04000   0000c000  00000000  0000c000  RWIX
   CACHE_L1D             10f10000   00008000  00000000  00008000  RWIX
   SRAM                  42000000   00200000  00000000  00200000  RWIX
-  DDR2                  80000000   08000000  0103c1e9  06fc3e17  RWIX
+  DDR2                  80000000   08000000  0103e081  06fc1f7f  RWIX
 
 
 SECTION ALLOCATION MAP
@@ -47,7 +47,7 @@ section   page    origin      length       input sections
 *          0    80000000    01000000     UNINITIALIZED
                   80000000    01000000     --HOLE--
 
-.text      0    81000000    00020100     
+.text      0    81000000    00021d20     
                   81000000    00005080     edma3_drv_bios_dbg.lib : edma3.obj (.text)
                   81005080    000036a0     edma3_rm_bios_dbg.lib : edma3resmgr.obj (.text)
                   81008720    00003060     prev_bios_drv_dbg.lib : llc_previewer.obj (.text)
@@ -60,499 +60,517 @@ section   page    origin      length       input sections
                   81016420    00000f40     prev_bios_drv_dbg.lib : dda_previewer.obj (.text)
                   81017360    00000ca0     vpbe_bios_drv_dbg.lib : llc_vpbeVenc.obj (.text)
                   81018000    00000a60     vpfe_bios_drv_dbg.lib : ddc_vpfeCcdc.obj (.text)
-                  81018a60    000008e0     deriche.obj (.text)
-                  81019340    000008e0     vpbe_bios_drv_dbg.lib : ddc_vpbeOsd.obj (.text)
-                  81019c20    00000840     tvp5146_extDecoder.obj (.text)
-                  8101a460    000007c0     i2c_bios_drv_dbg.lib : dda_i2ciom.obj (.text)
-                  8101ac20    000006c0     vpbe_bios_drv_dbg.lib : dda_vpbeIom.obj (.text)
-                  8101b2e0    000006c0                           : ddc_vpbeVenc.obj (.text)
-                  8101b9a0    000006a0     vpfe_bios_drv_dbg.lib : dda_vpfeIom.obj (.text)
-                  8101c040    00000500     fonctions.obj (.text)
-                  8101c540    00000480     vpbe_bios_drv_dbg.lib : dda_vpbe.obj (.text)
-                  8101c9c0    00000480     vpfe_bios_drv_dbg.lib : dda_vpfe.obj (.text)
-                  8101ce40    000003e0     rts64plus.lib : divf.obj (.text:__divf)
-                  8101d220    00000300                   : addf.obj (.text:__addf)
-                  8101d520    000002e0     bios_edma3_sample_cs.obj (.text)
-                  8101d800    000002e0     vpbe_bios_drv_dbg.lib : llc_vpbeCursor.obj (.text)
-                  8101dae0    000002a0     palos_bios_dbg.lib : pal_osmem.obj (.text)
-                  8101dd80    00000260     rts64plus.lib : mpyd.obj (.text:__mpyd)
-                  8101dfe0    00000240     psp_i2c_interface.obj (.text)
-                  8101e220    00000200     rts64plus.lib : addd.obj (.text:__addd)
-                  8101e420    00000200                   : frcaddd.obj (.text:__frcaddd)
-                  8101e620    00000200                   : mpyf.obj (.text:__mpyf)
-                  8101e820    00000200     vpbe_bios_drv_dbg.lib : ddc_vpbeCursor.obj (.text)
-                  8101ea20    00000180     i2c_bios_drv_dbg.lib : dda_i2cbios.obj (.text)
-                  8101eba0    00000100     rts64plus.lib : frcmpyd.obj (.text:__frcmpyd)
-                  8101eca0    00000100                   : sinit.obj (.text:_call_dtors)
-                  8101eda0    00000100     palos_bios_dbg.lib : pal_ossem.obj (.text)
-                  8101eea0    000000e0     rts64plus.lib : cmpd.obj (.text:__cmpd)
-                  8101ef80    000000e0                   : memset.obj (.text:_memset)
-                  8101f060    000000c0                   : divu.obj (.text:__divu)
-                  8101f120    000000c0                   : atexit.obj (.text:_atexit)
-                  8101f1e0    000000c0                   : modf.obj (.text:_modf)
-                  8101f2a0    000000c0     bios.a64P : tsk_stup.o64P (.text)
-                  8101f360    000000c0     palos_bios_dbg.lib : pal_osWait.obj (.text)
-                  8101f420    000000c0     vpbe_bios_drv_dbg.lib : dda_vpbeBios.obj (.text)
-                  8101f4e0    000000a0     rts64plus.lib : frcmpyf_div.obj (.text:__frcmpyf_div)
-                  8101f580    000000a0                   : remu.obj (.text:__remu)
-                  8101f620    000000a0                   : memcpy64.obj (.text:_memcpy)
-                  8101f6c0    000000a0     vpfe_bios_drv_dbg.lib : dda_vpfeBios.obj (.text)
-                  8101f760    00000080     rts64plus.lib : cmpf.obj (.text:__cmpf)
-                  8101f7e0    00000080                   : fixdu.obj (.text:__fixdu)
-                  8101f860    00000080                   : renormd.obj (.text:__renormd)
-                  8101f8e0    00000080     main.obj (.text)
-                  8101f960    00000080     palos_bios_dbg.lib : pal_osprotect.obj (.text)
-                  8101f9e0    00000060     rts64plus.lib : cvtfd.obj (.text:__cvtfd)
-                  8101fa40    00000060                   : frcmpyf.obj (.text:__frcmpyf)
-                  8101faa0    00000060                   : ceil.obj (.text:_ceil)
-                  8101fb00    00000040                   : sinit.obj (.text:___add_dtor)
-                  8101fb40    00000040                   : fltud.obj (.text:__fltud)
-                  8101fb80    00000040                   : fltuf.obj (.text:__fltuf)
-                  8101fbc0    00000040                   : subd.obj (.text:__subd)
-                  8101fc00    00000040                   : subf.obj (.text:__subf)
-                  8101fc40    00000040     timer.lib : timer.obj (.text)
-                  8101fc80    00000020     rts64plus.lib : divf.obj (.text:___isnanf)
-                  8101fca0    00000020                   : _lock.obj (.text:__nop)
-                  8101fcc0    00000020                   : _lock.obj (.text:__register_lock)
-                  8101fce0    00000020                   : _lock.obj (.text:__register_unlock)
-                  8101fd00    00000020     bios.a64P : log_printf.o64P ($Tramp$S$$_LOG_printf)
-                  8101fd20    00000020               : clk_getltime.o64P ($Tramp$S$$_CLK_getltime)
-                  8101fd40    00000020               : mem_allo.o64P ($Tramp$S$$_MEM_alloc)
-                  8101fd60    00000020               : mem_free.o64P ($Tramp$S$$_MEM_free)
-                  8101fd80    00000020               : ecm_enableEvent.o64P ($Tramp$S$$_ECM_enableEvent)
-                  8101fda0    00000020               : ecm_disableEvent.o64P ($Tramp$S$$_ECM_disableEvent)
-                  8101fdc0    00000020               : ecm_dispatchPlug.o64P ($Tramp$S$$_ECM_dispatchPlug)
-                  8101fde0    00000020               : c62_c.o64P ($Tramp$S$$_C64_enableIER)
-                  8101fe00    00000020               : malloc.o64P ($Tramp$S$$_malloc)
-                  8101fe20    00000020               : malloc.o64P ($Tramp$S$$_free)
-                  8101fe40    00000020               : gio_crea.o64P ($Tramp$S$$_GIO_create)
-                  8101fe60    00000020               : gio_cntl.o64P ($Tramp$S$$_GIO_control)
-                  8101fe80    00000020               : gio_sbmt.o64P ($Tramp$S$$_GIO_submit)
-                  8101fea0    00000020               : gio_dele.o64P ($Tramp$S$$_GIO_delete)
-                  8101fec0    00000020               : hwi_c.o64P ($Tramp$S$$_HWI_disable)
-                  8101fee0    00000020               : tsk_disa.o64P ($Tramp$S$$_TSK_disable)
-                  8101ff00    00000020               : hwi_c.o64P ($Tramp$S$$_HWI_restore)
-                  8101ff20    00000020               : tsk_disa.o64P ($Tramp$S$$_TSK_enable)
-                  8101ff40    00000020               : clk_countspms.o64P ($Tramp$S$$_CLK_countspms)
-                  8101ff60    00000020               : clk_getprd.o64P ($Tramp$S$$_CLK_getprd)
-                  8101ff80    00000020               : sem_pend_counting.o64P ($Tramp$S$$_SEM_pend)
-                  8101ffa0    00000020     biosDM420.a64P : bcache_block.o64P ($Tramp$S$$_BCACHE_inv)
-                  8101ffc0    00000020                    : bcache_block.o64P ($Tramp$S$$_BCACHE_wb)
-                  8101ffe0    00000020     bios.a64P : sem_crea.o64P ($Tramp$S$$_SEM_create)
-                  81020000    00000020               : sem_dele.o64P ($Tramp$S$$_SEM_delete)
-                  81020020    00000020               : sem_post_asm.o64P ($Tramp$S$$_SEM_post)
-                  81020040    00000020               : mem_defi.o64P ($Tramp$S$$_MEM_define)
-                  81020060    00000020               : mem_unde.o64P ($Tramp$S$$_MEM_undefine)
-                  81020080    00000020               : mem_vall.o64P ($Tramp$S$$_MEM_valloc)
-                  810200a0    00000020               : lck.o64P ($Tramp$S$$_LCK_post)
-                  810200c0    00000020               : lck.o64P ($Tramp$S$$_LCK_pend)
-                  810200e0    00000020               : sys_abor.o64P ($Tramp$S$$_SYS_abort)
+                  81018a60    00000980     rts64plus.lib : pow.obj (.text:_pow)
+                  810193e0    000008e0     deriche.obj (.text)
+                  81019cc0    000008e0     vpbe_bios_drv_dbg.lib : ddc_vpbeOsd.obj (.text)
+                  8101a5a0    00000840     tvp5146_extDecoder.obj (.text)
+                  8101ade0    000007c0     i2c_bios_drv_dbg.lib : dda_i2ciom.obj (.text)
+                  8101b5a0    000006c0     vpbe_bios_drv_dbg.lib : dda_vpbeIom.obj (.text)
+                  8101bc60    000006c0                           : ddc_vpbeVenc.obj (.text)
+                  8101c320    000006a0     rts64plus.lib : divd.obj (.text:__divd)
+                  8101c9c0    000006a0     vpfe_bios_drv_dbg.lib : dda_vpfeIom.obj (.text)
+                  8101d060    00000540     fonctions.obj (.text)
+                  8101d5a0    00000480     vpbe_bios_drv_dbg.lib : dda_vpbe.obj (.text)
+                  8101da20    00000480     vpfe_bios_drv_dbg.lib : dda_vpfe.obj (.text)
+                  8101dea0    000003e0     rts64plus.lib : divf.obj (.text:__divf)
+                  8101e280    00000300                   : addf.obj (.text:__addf)
+                  8101e580    000002e0     bios_edma3_sample_cs.obj (.text)
+                  8101e860    000002e0     vpbe_bios_drv_dbg.lib : llc_vpbeCursor.obj (.text)
+                  8101eb40    000002a0     palos_bios_dbg.lib : pal_osmem.obj (.text)
+                  8101ede0    00000260     rts64plus.lib : mpyd.obj (.text:__mpyd)
+                  8101f040    00000240     psp_i2c_interface.obj (.text)
+                  8101f280    00000240     roberts.obj (.text)
+                  8101f4c0    00000220     rts64plus.lib : sqrt.obj (.text:_sqrt)
+                  8101f6e0    00000200                   : addd.obj (.text:__addd)
+                  8101f8e0    00000200                   : frcaddd.obj (.text:__frcaddd)
+                  8101fae0    00000200                   : mpyf.obj (.text:__mpyf)
+                  8101fce0    00000200     vpbe_bios_drv_dbg.lib : ddc_vpbeCursor.obj (.text)
+                  8101fee0    000001c0     rts64plus.lib : ldexp.obj (.text:_ldexp)
+                  810200a0    000001a0                   : frexp.obj (.text:_frexp)
+                  81020240    00000180                   : frcmpyd_div.obj (.text:__frcmpyd_div)
+                  810203c0    00000180     i2c_bios_drv_dbg.lib : dda_i2cbios.obj (.text)
+                  81020540    00000100     rts64plus.lib : frcmpyd.obj (.text:__frcmpyd)
+                  81020640    00000100                   : round.obj (.text:__nround)
+                  81020740    00000100                   : sinit.obj (.text:_call_dtors)
+                  81020840    00000100     palos_bios_dbg.lib : pal_ossem.obj (.text)
+                  81020940    000000e0     rts64plus.lib : cmpd.obj (.text:__cmpd)
+                  81020a20    000000e0                   : memset.obj (.text:_memset)
+                  81020b00    000000c0                   : divu.obj (.text:__divu)
+                  81020bc0    000000c0                   : atexit.obj (.text:_atexit)
+                  81020c80    000000c0                   : modf.obj (.text:_modf)
+                  81020d40    000000c0     bios.a64P : tsk_stup.o64P (.text)
+                  81020e00    000000c0     palos_bios_dbg.lib : pal_osWait.obj (.text)
+                  81020ec0    000000c0     vpbe_bios_drv_dbg.lib : dda_vpbeBios.obj (.text)
+                  81020f80    000000a0     rts64plus.lib : frcmpyf_div.obj (.text:__frcmpyf_div)
+                  81021020    000000a0                   : remu.obj (.text:__remu)
+                  810210c0    000000a0                   : memcpy64.obj (.text:_memcpy)
+                  81021160    000000a0     vpfe_bios_drv_dbg.lib : dda_vpfeBios.obj (.text)
+                  81021200    00000080     rts64plus.lib : cmpf.obj (.text:__cmpf)
+                  81021280    00000080                   : fixdi.obj (.text:__fixdi)
+                  81021300    00000080                   : fixdu.obj (.text:__fixdu)
+                  81021380    00000080                   : renormd.obj (.text:__renormd)
+                  81021400    00000080     main.obj (.text)
+                  81021480    00000080     palos_bios_dbg.lib : pal_osprotect.obj (.text)
+                  81021500    00000060     rts64plus.lib : cvtfd.obj (.text:__cvtfd)
+                  81021560    00000060                   : fltid.obj (.text:__fltid)
+                  810215c0    00000060                   : frcmpyf.obj (.text:__frcmpyf)
+                  81021620    00000060                   : ceil.obj (.text:_ceil)
+                  81021680    00000040                   : sinit.obj (.text:___add_dtor)
+                  810216c0    00000040                   : divd.obj (.text:___isnan)
+                  81021700    00000040                   : fltud.obj (.text:__fltud)
+                  81021740    00000040                   : fltuf.obj (.text:__fltuf)
+                  81021780    00000040                   : negd.obj (.text:__negd)
+                  810217c0    00000040                   : subd.obj (.text:__subd)
+                  81021800    00000040                   : subf.obj (.text:__subf)
+                  81021840    00000040     timer.lib : timer.obj (.text)
+                  81021880    00000020     rts64plus.lib : divf.obj (.text:___isnanf)
+                  810218a0    00000020                   : _lock.obj (.text:__nop)
+                  810218c0    00000020                   : _lock.obj (.text:__register_lock)
+                  810218e0    00000020                   : _lock.obj (.text:__register_unlock)
+                  81021900    00000020                   : trunc.obj (.text:__trunc)
+                  81021920    00000020     bios.a64P : log_printf.o64P ($Tramp$S$$_LOG_printf)
+                  81021940    00000020               : clk_getltime.o64P ($Tramp$S$$_CLK_getltime)
+                  81021960    00000020               : mem_allo.o64P ($Tramp$S$$_MEM_alloc)
+                  81021980    00000020               : mem_free.o64P ($Tramp$S$$_MEM_free)
+                  810219a0    00000020               : ecm_enableEvent.o64P ($Tramp$S$$_ECM_enableEvent)
+                  810219c0    00000020               : ecm_disableEvent.o64P ($Tramp$S$$_ECM_disableEvent)
+                  810219e0    00000020               : ecm_dispatchPlug.o64P ($Tramp$S$$_ECM_dispatchPlug)
+                  81021a00    00000020               : c62_c.o64P ($Tramp$S$$_C64_enableIER)
+                  81021a20    00000020               : malloc.o64P ($Tramp$S$$_malloc)
+                  81021a40    00000020               : malloc.o64P ($Tramp$S$$_free)
+                  81021a60    00000020               : gio_crea.o64P ($Tramp$S$$_GIO_create)
+                  81021a80    00000020               : gio_cntl.o64P ($Tramp$S$$_GIO_control)
+                  81021aa0    00000020               : gio_sbmt.o64P ($Tramp$S$$_GIO_submit)
+                  81021ac0    00000020               : gio_dele.o64P ($Tramp$S$$_GIO_delete)
+                  81021ae0    00000020               : hwi_c.o64P ($Tramp$S$$_HWI_disable)
+                  81021b00    00000020               : tsk_disa.o64P ($Tramp$S$$_TSK_disable)
+                  81021b20    00000020               : hwi_c.o64P ($Tramp$S$$_HWI_restore)
+                  81021b40    00000020               : tsk_disa.o64P ($Tramp$S$$_TSK_enable)
+                  81021b60    00000020               : clk_countspms.o64P ($Tramp$S$$_CLK_countspms)
+                  81021b80    00000020               : clk_getprd.o64P ($Tramp$S$$_CLK_getprd)
+                  81021ba0    00000020               : sem_pend_counting.o64P ($Tramp$S$$_SEM_pend)
+                  81021bc0    00000020     biosDM420.a64P : bcache_block.o64P ($Tramp$S$$_BCACHE_inv)
+                  81021be0    00000020                    : bcache_block.o64P ($Tramp$S$$_BCACHE_wb)
+                  81021c00    00000020     bios.a64P : sem_crea.o64P ($Tramp$S$$_SEM_create)
+                  81021c20    00000020               : sem_dele.o64P ($Tramp$S$$_SEM_delete)
+                  81021c40    00000020               : sem_post_asm.o64P ($Tramp$S$$_SEM_post)
+                  81021c60    00000020               : mem_defi.o64P ($Tramp$S$$_MEM_define)
+                  81021c80    00000020               : mem_unde.o64P ($Tramp$S$$_MEM_undefine)
+                  81021ca0    00000020               : mem_vall.o64P ($Tramp$S$$_MEM_valloc)
+                  81021cc0    00000020               : lck.o64P ($Tramp$S$$_LCK_post)
+                  81021ce0    00000020               : lck.o64P ($Tramp$S$$_LCK_pend)
+                  81021d00    00000020               : sys_abor.o64P ($Tramp$S$$_SYS_abort)
 
-.stack     0    81020100    00008000     UNINITIALIZED
-                  81020100    00008000     --HOLE--
+.stack     0    81021d20    00008000     UNINITIALIZED
+                  81021d20    00008000     --HOLE--
 
-.bios      0    81028100    00005ce0     
-                  81028100    000005c0     bios.a64P : sys_prin.o64P (.bios)
-                  810286c0    000005c0     lnkrtdx.a64P : rtdx.o64P (.bios)
-                  81028c80    00000520     bios.a64P : exc.o64P (.bios)
-                  810291a0    000004e0               : hwi_disp_asm.o64P (.bios)
-                  81029680    000004c0               : swi.o64P (.bios)
-                  81029b40    00000380               : prd.o64P (.bios)
-                  81029ec0    000002a0               : gio_crea.o64P (.bios)
-                  8102a160    000002a0               : malloc.o64P (.bios)
-                  8102a400    00000280               : rta.o64P (.bios)
-                  8102a680    00000240               : knl_run.o64P (.bios)
-                  8102a8c0    00000240               : mem_defi.o64P (.bios)
-                  8102ab00    00000220               : mem_rede.o64P (.bios)
-                  8102ad20    00000200               : mem_free.o64P (.bios:.near)
-                  8102af20    00000200               : sem_pend.o64P (.bios)
-                  8102b120    000001e0               : mem_allo.o64P (.bios:.near)
-                  8102b300    000001e0               : exc_asm.o64P (.bios)
-                  8102b4e0    000001e0               : knl_tick.o64P (.bios)
-                  8102b6c0    000001e0               : pip.o64P (.bios)
-                  8102b8a0    000001c0               : gio_sbmt.o64P (.bios)
-                  8102ba60    000001c0               : sem_dopo.o64P (.bios)
-                  8102bc20    000001c0     biosDM420.a64P : bcache_block.o64P (.bios)
-                  8102bde0    000001a0     bios.a64P : tsk_setu.o64P (.bios)
-                  8102bf80    000001a0     biosDM420.a64P : clk.o64P (.bios)
-                  8102c120    00000180     bios.a64P : knl_swit.o64P (.bios)
-                  8102c2a0    00000140               : autoinit.o64P (.bios)
-                  8102c3e0    00000140               : tsk_exit.o64P (.bios)
-                  8102c520    00000140     biosDM420.a64P : bcache_init.o64P (.bios)
-                  8102c660    00000120     bios.a64P : gbl_cacheinit64P.o64P (.bios)
-                  8102c780    00000120               : knl_chec.o64P (.bios)
-                  8102c8a0    00000120               : mem_unde.o64P (.bios)
-                  8102c9c0    00000120               : tsk_stup.o64P (.bios)
-                  8102cae0    00000100               : ecm_dispatch.o64P (.bios)
-                  8102cbe0    00000100               : gio_dele.o64P (.bios)
-                  8102cce0    000000e0               : sem_post_asm.o64P (.bios)
-                  8102cdc0    000000c0               : dev_matc.o64P (.bios)
-                  8102ce80    000000c0               : knl_exit.o64P (.bios)
-                  8102cf40    000000a0               : sem_post.o64P (.bios)
-                  8102cfe0    000000a0               : sys_exit.o64P (.bios)
-                  8102d080    00000080               : atm.o64P (.bios)
-                  8102d100    00000080               : gio_cbck.o64P (.bios)
-                  8102d180    00000080               : knl_ipos.o64P (.bios)
-                  8102d200    00000080               : knl_post.o64P (.bios)
-                  8102d280    00000080               : lck.o64P (.bios)
-                  8102d300    00000080               : log.o64P (.bios)
-                  8102d380    00000080               : obj_crea.o64P (.bios)
-                  8102d400    00000080               : sem_crea.o64P (.bios)
-                  8102d480    00000080               : tsk_disa.o64P (.bios)
-                  8102d500    00000080     biosDM420.a64P : bcache_wait.o64P (.bios)
-                  8102d580    00000080                    : idl_cal.o64P (.bios)
-                  8102d600    00000060     bios.a64P : mem_vall.o64P (.bios:.near)
-                  8102d660    00000060               : sys_erro.o64P (.bios:.near)
-                  8102d6c0    00000060               : ecm_dispatchPlug.o64P (.bios)
-                  8102d720    00000060               : fxn.o64P (.bios)
-                  8102d780    00000060               : hwi_c.o64P (.bios)
-                  8102d7e0    00000060               : idl_busy.o64P (.bios)
-                  8102d840    00000060               : obj_dele.o64P (.bios)
-                  8102d8a0    00000060               : sem_pend_counting.o64P (.bios)
-                  8102d900    00000060               : sts.o64P (.bios)
-                  8102d960    00000060               : sys_abor.o64P (.bios)
-                  8102d9c0    00000060               : utl_putc.o64P (.bios)
-                  8102da20    00000060     biosDM420.a64P : clk_meas.o64P (.bios)
-                  8102da80    00000040     bios.a64P : c62_c.o64P (.bios)
-                  8102dac0    00000040               : ecm_disableEvent.o64P (.bios)
-                  8102db00    00000040               : ecm_enableEvent.o64P (.bios)
-                  8102db40    00000040               : idl_stub.o64P (.bios)
-                  8102db80    00000040               : que_get.o64P (.bios)
-                  8102dbc0    00000040               : rta_andn.o64P (.bios)
-                  8102dc00    00000040               : utl_doab.o64P (.bios)
-                  8102dc40    00000020               : clk_countspms.o64P (.bios)
-                  8102dc60    00000020               : clk_getltime.o64P (.bios)
-                  8102dc80    00000020               : clk_getprd.o64P (.bios)
-                  8102dca0    00000020               : fxn_c.o64P (.bios)
-                  8102dcc0    00000020               : gbl_vers.o64P (.bios)
-                  8102dce0    00000020               : gio_cntl.o64P (.bios)
-                  8102dd00    00000020               : idl.o64P (.bios)
-                  8102dd20    00000020               : log_printf.o64P (.bios)
-                  8102dd40    00000020               : sem_dele.o64P (.bios)
-                  8102dd60    00000020               : sts_set.o64P (.bios)
-                  8102dd80    00000020               : utl_doer.o64P (.bios)
-                  8102dda0    00000020               : utl_halt.o64P (.bios)
-                  8102ddc0    00000020     biosDM420.a64P : clk_gethtime.o64P (.bios)
+.bios      0    81029d20    00005ce0     
+                  81029d20    000005c0     bios.a64P : sys_prin.o64P (.bios)
+                  8102a2e0    000005c0     lnkrtdx.a64P : rtdx.o64P (.bios)
+                  8102a8a0    00000520     bios.a64P : exc.o64P (.bios)
+                  8102adc0    000004e0               : hwi_disp_asm.o64P (.bios)
+                  8102b2a0    000004c0               : swi.o64P (.bios)
+                  8102b760    00000380               : prd.o64P (.bios)
+                  8102bae0    000002a0               : gio_crea.o64P (.bios)
+                  8102bd80    000002a0               : malloc.o64P (.bios)
+                  8102c020    00000280               : rta.o64P (.bios)
+                  8102c2a0    00000240               : knl_run.o64P (.bios)
+                  8102c4e0    00000240               : mem_defi.o64P (.bios)
+                  8102c720    00000220               : mem_rede.o64P (.bios)
+                  8102c940    00000200               : mem_free.o64P (.bios:.near)
+                  8102cb40    00000200               : sem_pend.o64P (.bios)
+                  8102cd40    000001e0               : mem_allo.o64P (.bios:.near)
+                  8102cf20    000001e0               : exc_asm.o64P (.bios)
+                  8102d100    000001e0               : knl_tick.o64P (.bios)
+                  8102d2e0    000001e0               : pip.o64P (.bios)
+                  8102d4c0    000001c0               : gio_sbmt.o64P (.bios)
+                  8102d680    000001c0               : sem_dopo.o64P (.bios)
+                  8102d840    000001c0     biosDM420.a64P : bcache_block.o64P (.bios)
+                  8102da00    000001a0     bios.a64P : tsk_setu.o64P (.bios)
+                  8102dba0    000001a0     biosDM420.a64P : clk.o64P (.bios)
+                  8102dd40    00000180     bios.a64P : knl_swit.o64P (.bios)
+                  8102dec0    00000140               : autoinit.o64P (.bios)
+                  8102e000    00000140               : tsk_exit.o64P (.bios)
+                  8102e140    00000140     biosDM420.a64P : bcache_init.o64P (.bios)
+                  8102e280    00000120     bios.a64P : gbl_cacheinit64P.o64P (.bios)
+                  8102e3a0    00000120               : knl_chec.o64P (.bios)
+                  8102e4c0    00000120               : mem_unde.o64P (.bios)
+                  8102e5e0    00000120               : tsk_stup.o64P (.bios)
+                  8102e700    00000100               : ecm_dispatch.o64P (.bios)
+                  8102e800    00000100               : gio_dele.o64P (.bios)
+                  8102e900    000000e0               : sem_post_asm.o64P (.bios)
+                  8102e9e0    000000c0               : dev_matc.o64P (.bios)
+                  8102eaa0    000000c0               : knl_exit.o64P (.bios)
+                  8102eb60    000000a0               : sem_post.o64P (.bios)
+                  8102ec00    000000a0               : sys_exit.o64P (.bios)
+                  8102eca0    00000080               : atm.o64P (.bios)
+                  8102ed20    00000080               : gio_cbck.o64P (.bios)
+                  8102eda0    00000080               : knl_ipos.o64P (.bios)
+                  8102ee20    00000080               : knl_post.o64P (.bios)
+                  8102eea0    00000080               : lck.o64P (.bios)
+                  8102ef20    00000080               : log.o64P (.bios)
+                  8102efa0    00000080               : obj_crea.o64P (.bios)
+                  8102f020    00000080               : sem_crea.o64P (.bios)
+                  8102f0a0    00000080               : tsk_disa.o64P (.bios)
+                  8102f120    00000080     biosDM420.a64P : bcache_wait.o64P (.bios)
+                  8102f1a0    00000080                    : idl_cal.o64P (.bios)
+                  8102f220    00000060     bios.a64P : mem_vall.o64P (.bios:.near)
+                  8102f280    00000060               : sys_erro.o64P (.bios:.near)
+                  8102f2e0    00000060               : ecm_dispatchPlug.o64P (.bios)
+                  8102f340    00000060               : fxn.o64P (.bios)
+                  8102f3a0    00000060               : hwi_c.o64P (.bios)
+                  8102f400    00000060               : idl_busy.o64P (.bios)
+                  8102f460    00000060               : obj_dele.o64P (.bios)
+                  8102f4c0    00000060               : sem_pend_counting.o64P (.bios)
+                  8102f520    00000060               : sts.o64P (.bios)
+                  8102f580    00000060               : sys_abor.o64P (.bios)
+                  8102f5e0    00000060               : utl_putc.o64P (.bios)
+                  8102f640    00000060     biosDM420.a64P : clk_meas.o64P (.bios)
+                  8102f6a0    00000040     bios.a64P : c62_c.o64P (.bios)
+                  8102f6e0    00000040               : ecm_disableEvent.o64P (.bios)
+                  8102f720    00000040               : ecm_enableEvent.o64P (.bios)
+                  8102f760    00000040               : idl_stub.o64P (.bios)
+                  8102f7a0    00000040               : que_get.o64P (.bios)
+                  8102f7e0    00000040               : rta_andn.o64P (.bios)
+                  8102f820    00000040               : utl_doab.o64P (.bios)
+                  8102f860    00000020               : clk_countspms.o64P (.bios)
+                  8102f880    00000020               : clk_getltime.o64P (.bios)
+                  8102f8a0    00000020               : clk_getprd.o64P (.bios)
+                  8102f8c0    00000020               : fxn_c.o64P (.bios)
+                  8102f8e0    00000020               : gbl_vers.o64P (.bios)
+                  8102f900    00000020               : gio_cntl.o64P (.bios)
+                  8102f920    00000020               : idl.o64P (.bios)
+                  8102f940    00000020               : log_printf.o64P (.bios)
+                  8102f960    00000020               : sem_dele.o64P (.bios)
+                  8102f980    00000020               : sts_set.o64P (.bios)
+                  8102f9a0    00000020               : utl_doer.o64P (.bios)
+                  8102f9c0    00000020               : utl_halt.o64P (.bios)
+                  8102f9e0    00000020     biosDM420.a64P : clk_gethtime.o64P (.bios)
 
-.far       0    8102dde0    000045e4     UNINITIALIZED
-                  8102dde0    00002180     edma3_drv_bios_dbg.lib : edma3.obj (.far)
-                  8102ff60    00000dc8     edma3_rm_bios_dbg.lib : edma3resmgr.obj (.far)
-                  81030d28    00000578     edma3_drv_bios_dbg.lib : edma3cfg.obj (.far)
-                  810312a0    000004b4     vpbe_bios_drv_dbg.lib : ddc_vpbe.obj (.far)
-                  81031754    00000004     bios.a64P : mem_defi.o64P (.far)
-                  81031758    0000024c     prev_bios_drv_dbg.lib : ddc_previewer.obj (.far)
-                  810319a4    00000004     biosDM420.a64P : bcache_wait.o64P (.far)
-                  810319a8    00000188     rts64plus.lib : atexit.obj (.far)
-                  81031b30    0000014c     vpfe_bios_drv_dbg.lib : ddc_vpfe.obj (.far)
-                  81031c7c    00000004     biosDM420.a64P : clk_data.o64P (.far)
-                  81031c80    0000013c     i2c_bios_drv_dbg.lib : dda_i2ciom.obj (.far)
-                  81031dbc    00000004     rts64plus.lib : sinit.obj (.far)
-                  81031dc0    00000100     vpbe_bios_drv_dbg.lib : dda_vpbeIom.obj (.far)
-                  81031ec0    000000d8     bios.a64P : knl.o64P (.far)
-                  81031f98    000000c8     fonctions.obj (.far)
-                  81032060    000000c8     i2c_bios_drv_dbg.lib : ddc_i2c.obj (.far)
-                  81032128    00000074     vpfe_bios_drv_dbg.lib : dda_vpfeIom.obj (.far)
-                  8103219c    0000005c     bios.a64P : tsk.o64P (.far)
-                  810321f8    00000054               : obj_init.o64P (.far)
-                  8103224c    00000050               : tsk_stup.o64P (.far)
-                  8103229c    00000004     --HOLE--
-                  810322a0    00000020               : sys.o64P (.far)
-                  810322c0    00000020     bios_edma3_sample_cfg.obj (.far)
-                  810322e0    00000020     bios_edma3_sample_init.obj (.far)
-                  81032300    0000001c     tvp5146_extDecoder.obj (.far)
-                  8103231c    00000018     i2cParams_evmdm6437.obj (.far)
-                  81032334    00000018     rtdx64xplus.lib : rtdx_mon.o64P (.far)
-                  8103234c    00000010     bios.a64P : exc.o64P (.far)
-                  8103235c    00000010               : gio_cfg.o64P (.far)
-                  8103236c    00000010               : knl_tick.o64P (.far)
-                  8103237c    0000000c               : utl_putc.o64P (.far)
-                  81032388    0000000c     prev_bios_drv_dbg.lib : dda_previewer.obj (.far)
-                  81032394    0000000c     rts64plus.lib : exit.obj (.far)
-                  810323a0    00000008     bios.a64P : ecm_dispatch.o64P (.far)
-                  810323a8    00000008               : gio.o64P (.far)
-                  810323b0    00000008               : sem_crea.o64P (.far)
-                  810323b8    00000008     rts64plus.lib : _lock.obj (.far)
-                  810323c0    00000004     bios.a64P : dev_init.o64P (.far)
+.far       0    8102fa00    00004704     UNINITIALIZED
+                  8102fa00    00002180     edma3_drv_bios_dbg.lib : edma3.obj (.far)
+                  81031b80    00000dc8     edma3_rm_bios_dbg.lib : edma3resmgr.obj (.far)
+                  81032948    00000578     edma3_drv_bios_dbg.lib : edma3cfg.obj (.far)
+                  81032ec0    000004b4     vpbe_bios_drv_dbg.lib : ddc_vpbe.obj (.far)
+                  81033374    00000004     bios.a64P : mem_defi.o64P (.far)
+                  81033378    0000024c     prev_bios_drv_dbg.lib : ddc_previewer.obj (.far)
+                  810335c4    00000004     biosDM420.a64P : bcache_wait.o64P (.far)
+                  810335c8    00000188     rts64plus.lib : atexit.obj (.far)
+                  81033750    0000014c     vpfe_bios_drv_dbg.lib : ddc_vpfe.obj (.far)
+                  8103389c    00000004     biosDM420.a64P : clk_data.o64P (.far)
+                  810338a0    0000013c     i2c_bios_drv_dbg.lib : dda_i2ciom.obj (.far)
+                  810339dc    00000004     rts64plus.lib : errno.obj (.far)
+                  810339e0    00000120                   : pow.obj (.far)
+                  81033b00    00000100     vpbe_bios_drv_dbg.lib : dda_vpbeIom.obj (.far)
+                  81033c00    000000d8     bios.a64P : knl.o64P (.far)
+                  81033cd8    000000c8     fonctions.obj (.far)
+                  81033da0    000000c8     i2c_bios_drv_dbg.lib : ddc_i2c.obj (.far)
+                  81033e68    00000074     vpfe_bios_drv_dbg.lib : dda_vpfeIom.obj (.far)
+                  81033edc    0000005c     bios.a64P : tsk.o64P (.far)
+                  81033f38    00000054               : obj_init.o64P (.far)
+                  81033f8c    00000050               : tsk_stup.o64P (.far)
+                  81033fdc    00000004     rts64plus.lib : sinit.obj (.far)
+                  81033fe0    00000020     bios.a64P : sys.o64P (.far)
+                  81034000    00000020     bios_edma3_sample_cfg.obj (.far)
+                  81034020    00000020     bios_edma3_sample_init.obj (.far)
+                  81034040    0000001c     tvp5146_extDecoder.obj (.far)
+                  8103405c    00000018     i2cParams_evmdm6437.obj (.far)
+                  81034074    00000018     rtdx64xplus.lib : rtdx_mon.o64P (.far)
+                  8103408c    00000010     bios.a64P : exc.o64P (.far)
+                  8103409c    00000010               : gio_cfg.o64P (.far)
+                  810340ac    00000010               : knl_tick.o64P (.far)
+                  810340bc    0000000c               : utl_putc.o64P (.far)
+                  810340c8    0000000c     prev_bios_drv_dbg.lib : dda_previewer.obj (.far)
+                  810340d4    0000000c     rts64plus.lib : exit.obj (.far)
+                  810340e0    00000008     bios.a64P : ecm_dispatch.o64P (.far)
+                  810340e8    00000008               : gio.o64P (.far)
+                  810340f0    00000008               : sem_crea.o64P (.far)
+                  810340f8    00000008     rts64plus.lib : _lock.obj (.far)
+                  81034100    00000004     bios.a64P : dev_init.o64P (.far)
 
-.args      0    810323c4    00000004     
-                  810323c4    00000004     --HOLE-- [fill = 0]
+.args      0    81034104    00000004     
+                  81034104    00000004     --HOLE-- [fill = 0]
 
 .TACHEVIDEO$stk 
-*          0    810323c8    00004000     UNINITIALIZED
-                  810323c8    00004000     TP_DSPcfg.obj (.TACHEVIDEO$stk)
+*          0    81034108    00004000     UNINITIALIZED
+                  81034108    00004000     TP_DSPcfg.obj (.TACHEVIDEO$stk)
 
-.cinit     0    810363c8    000022cc     
-                  810363c8    00000fec     TP_DSPcfg.obj (.cinit)
-                  810373b4    00000004     --HOLE-- [fill = 0]
-                  810373b8    00000588     edma3_drv_bios_dbg.lib : edma3cfg.obj (.cinit)
-                  81037940    0000026c     bios.a64P : biosdata.o64P (.cinit)
-                  81037bac    00000004     --HOLE-- [fill = 0]
-                  81037bb0    000001a4               : knl.o64P (.cinit)
-                  81037d54    00000004     --HOLE-- [fill = 0]
-                  81037d58    000000bc     fonctions.obj (.cinit)
-                  81037e14    00000004     --HOLE-- [fill = 0]
-                  81037e18    000000b0     bios.a64P : swi.o64P (.cinit)
-                  81037ec8    00000080               : tsk.o64P (.cinit)
-                  81037f48    0000006a     edma3_drv_bios_dbg.lib : edma3.obj (.cinit)
-                  81037fb2    00000006     --HOLE-- [fill = 0]
-                  81037fb8    00000068     rtdx64xplus.lib : rtdx_mon.o64P (.cinit)
-                  81038020    00000060     bios.a64P : tsk_stup.o64P (.cinit)
-                  81038080    0000005c     lnkrtdx.a64P : rtdx.o64P (.cinit)
-                  810380dc    00000004     --HOLE-- [fill = 0]
-                  810380e0    00000058     bios_edma3_sample_cfg.obj (.cinit)
-                  81038138    00000058     vpbe_bios_drv_dbg.lib : dda_vpbeIom.obj (.cinit)
-                  81038190    00000058     vpfe_bios_drv_dbg.lib : dda_vpfeIom.obj (.cinit)
-                  810381e8    0000004c     bios.a64P : rta.o64P (.cinit)
-                  81038234    00000004     --HOLE-- [fill = 0]
-                  81038238    0000004c     rtdx64xplus.lib : buffer1.o64P (.cinit)
-                  81038284    00000004     --HOLE-- [fill = 0]
-                  81038288    0000004a     edma3_rm_bios_dbg.lib : edma3resmgr.obj (.cinit)
-                  810382d2    00000006     --HOLE-- [fill = 0]
-                  810382d8    00000048     bios_edma3_sample_init.obj (.cinit)
-                  81038320    00000044     prev_bios_drv_dbg.lib : dda_previewer.obj (.cinit)
-                  81038364    00000004     --HOLE-- [fill = 0]
-                  81038368    0000003c     bios.a64P : exc.o64P (.cinit)
-                  810383a4    00000004     --HOLE-- [fill = 0]
-                  810383a8    00000034               : hwi.o64P (.cinit)
-                  810383dc    00000004     --HOLE-- [fill = 0]
-                  810383e0    00000034     prev_bios_drv_dbg.lib : ddc_previewer.obj (.cinit)
-                  81038414    00000004     --HOLE-- [fill = 0]
-                  81038418    0000002c     bios.a64P : utl_putc.o64P (.cinit)
-                  81038444    00000004     --HOLE-- [fill = 0]
-                  81038448    0000002c     rts64plus.lib : exit.obj (.cinit)
-                  81038474    00000004     --HOLE-- [fill = 0]
-                  81038478    00000024     bios.a64P : gio_cfg.o64P (.cinit)
-                  8103849c    00000004     --HOLE-- [fill = 0]
-                  810384a0    00000024               : obj_init.o64P (.cinit)
-                  810384c4    00000004     --HOLE-- [fill = 0]
-                  810384c8    00000020     i2cParams_evmdm6437.obj (.cinit)
-                  810384e8    00000020     i2c_bios_drv_dbg.lib : dda_i2ciom.obj (.cinit)
-                  81038508    0000001c     bios.a64P : exc_asm.o64P (.cinit)
-                  81038524    00000004     --HOLE-- [fill = 0]
-                  81038528    0000001c               : mem_defi.o64P (.cinit)
-                  81038544    00000004     --HOLE-- [fill = 0]
-                  81038548    0000001c               : sys.o64P (.cinit)
-                  81038564    00000004     --HOLE-- [fill = 0]
-                  81038568    0000001c     psp_i2c_interface.obj (.cinit)
-                  81038584    00000004     --HOLE-- [fill = 0]
-                  81038588    0000001c     rts64plus.lib : _lock.obj (.cinit)
-                  810385a4    00000004     --HOLE-- [fill = 0]
-                  810385a8    0000001c                   : atexit.obj (.cinit)
-                  810385c4    00000004     --HOLE-- [fill = 0]
-                  810385c8    00000018     bios.a64P : knl_tick.o64P (.cinit)
-                  810385e0    00000010               : gio.o64P (.cinit)
-                  810385f0    00000010               : sem_crea.o64P (.cinit)
-                  81038600    0000000e               : ecm_dispatch.o64P (.cinit)
-                  8103860e    00000002     --HOLE-- [fill = 0]
-                  81038610    0000000c               : idl_busy.o64P (.cinit)
-                  8103861c    00000004     --HOLE-- [fill = 0]
-                  81038620    0000000c               : knl_swit.o64P (.cinit)
-                  8103862c    00000004     --HOLE-- [fill = 0]
-                  81038630    0000000c               : tsk_disa.o64P (.cinit)
-                  8103863c    00000004     --HOLE-- [fill = 0]
-                  81038640    0000000c     biosDM420.a64P : bcache_wait.o64P (.cinit)
-                  8103864c    00000004     --HOLE-- [fill = 0]
-                  81038650    0000000c     main.obj (.cinit)
-                  8103865c    00000004     --HOLE-- [fill = 0]
-                  81038660    0000000c     prev_bios_drv_dbg.lib : llc_previewer.obj (.cinit)
-                  8103866c    00000004     --HOLE-- [fill = 0]
-                  81038670    0000000c     rts64plus.lib : sinit.obj (.cinit)
-                  8103867c    00000004     --HOLE-- [fill = 0]
-                  81038680    0000000c     vpfe_bios_drv_dbg.lib : ddc_vpfe.obj (.cinit)
-                  8103868c    00000004     --HOLE-- [fill = 0]
-                  81038690    00000004     (.pad.cinit) [fill = 0]
+.cinit     0    81038108    0000241c     
+                  81038108    00000fec     TP_DSPcfg.obj (.cinit)
+                  810390f4    00000004     --HOLE-- [fill = 0]
+                  810390f8    00000588     edma3_drv_bios_dbg.lib : edma3cfg.obj (.cinit)
+                  81039680    0000026c     bios.a64P : biosdata.o64P (.cinit)
+                  810398ec    00000004     --HOLE-- [fill = 0]
+                  810398f0    000001a4               : knl.o64P (.cinit)
+                  81039a94    00000004     --HOLE-- [fill = 0]
+                  81039a98    00000140     rts64plus.lib : pow.obj (.cinit)
+                  81039bd8    000000bc     fonctions.obj (.cinit)
+                  81039c94    00000004     --HOLE-- [fill = 0]
+                  81039c98    000000b0     bios.a64P : swi.o64P (.cinit)
+                  81039d48    00000080               : tsk.o64P (.cinit)
+                  81039dc8    0000006a     edma3_drv_bios_dbg.lib : edma3.obj (.cinit)
+                  81039e32    00000006     --HOLE-- [fill = 0]
+                  81039e38    00000068     rtdx64xplus.lib : rtdx_mon.o64P (.cinit)
+                  81039ea0    00000060     bios.a64P : tsk_stup.o64P (.cinit)
+                  81039f00    0000005c     lnkrtdx.a64P : rtdx.o64P (.cinit)
+                  81039f5c    00000004     --HOLE-- [fill = 0]
+                  81039f60    00000058     bios_edma3_sample_cfg.obj (.cinit)
+                  81039fb8    00000058     vpbe_bios_drv_dbg.lib : dda_vpbeIom.obj (.cinit)
+                  8103a010    00000058     vpfe_bios_drv_dbg.lib : dda_vpfeIom.obj (.cinit)
+                  8103a068    0000004c     bios.a64P : rta.o64P (.cinit)
+                  8103a0b4    00000004     --HOLE-- [fill = 0]
+                  8103a0b8    0000004c     rtdx64xplus.lib : buffer1.o64P (.cinit)
+                  8103a104    00000004     --HOLE-- [fill = 0]
+                  8103a108    0000004a     edma3_rm_bios_dbg.lib : edma3resmgr.obj (.cinit)
+                  8103a152    00000006     --HOLE-- [fill = 0]
+                  8103a158    00000048     bios_edma3_sample_init.obj (.cinit)
+                  8103a1a0    00000044     prev_bios_drv_dbg.lib : dda_previewer.obj (.cinit)
+                  8103a1e4    00000004     --HOLE-- [fill = 0]
+                  8103a1e8    0000003c     bios.a64P : exc.o64P (.cinit)
+                  8103a224    00000004     --HOLE-- [fill = 0]
+                  8103a228    00000034               : hwi.o64P (.cinit)
+                  8103a25c    00000004     --HOLE-- [fill = 0]
+                  8103a260    00000034     prev_bios_drv_dbg.lib : ddc_previewer.obj (.cinit)
+                  8103a294    00000004     --HOLE-- [fill = 0]
+                  8103a298    0000002c     bios.a64P : utl_putc.o64P (.cinit)
+                  8103a2c4    00000004     --HOLE-- [fill = 0]
+                  8103a2c8    0000002c     rts64plus.lib : exit.obj (.cinit)
+                  8103a2f4    00000004     --HOLE-- [fill = 0]
+                  8103a2f8    00000024     bios.a64P : gio_cfg.o64P (.cinit)
+                  8103a31c    00000004     --HOLE-- [fill = 0]
+                  8103a320    00000024               : obj_init.o64P (.cinit)
+                  8103a344    00000004     --HOLE-- [fill = 0]
+                  8103a348    00000020     i2cParams_evmdm6437.obj (.cinit)
+                  8103a368    00000020     i2c_bios_drv_dbg.lib : dda_i2ciom.obj (.cinit)
+                  8103a388    0000001c     bios.a64P : exc_asm.o64P (.cinit)
+                  8103a3a4    00000004     --HOLE-- [fill = 0]
+                  8103a3a8    0000001c               : mem_defi.o64P (.cinit)
+                  8103a3c4    00000004     --HOLE-- [fill = 0]
+                  8103a3c8    0000001c               : sys.o64P (.cinit)
+                  8103a3e4    00000004     --HOLE-- [fill = 0]
+                  8103a3e8    0000001c     psp_i2c_interface.obj (.cinit)
+                  8103a404    00000004     --HOLE-- [fill = 0]
+                  8103a408    0000001c     rts64plus.lib : _lock.obj (.cinit)
+                  8103a424    00000004     --HOLE-- [fill = 0]
+                  8103a428    0000001c                   : atexit.obj (.cinit)
+                  8103a444    00000004     --HOLE-- [fill = 0]
+                  8103a448    00000018     bios.a64P : knl_tick.o64P (.cinit)
+                  8103a460    00000010               : gio.o64P (.cinit)
+                  8103a470    00000010               : sem_crea.o64P (.cinit)
+                  8103a480    0000000e               : ecm_dispatch.o64P (.cinit)
+                  8103a48e    00000002     --HOLE-- [fill = 0]
+                  8103a490    0000000c               : idl_busy.o64P (.cinit)
+                  8103a49c    00000004     --HOLE-- [fill = 0]
+                  8103a4a0    0000000c               : knl_swit.o64P (.cinit)
+                  8103a4ac    00000004     --HOLE-- [fill = 0]
+                  8103a4b0    0000000c               : tsk_disa.o64P (.cinit)
+                  8103a4bc    00000004     --HOLE-- [fill = 0]
+                  8103a4c0    0000000c     biosDM420.a64P : bcache_wait.o64P (.cinit)
+                  8103a4cc    00000004     --HOLE-- [fill = 0]
+                  8103a4d0    0000000c     main.obj (.cinit)
+                  8103a4dc    00000004     --HOLE-- [fill = 0]
+                  8103a4e0    0000000c     prev_bios_drv_dbg.lib : llc_previewer.obj (.cinit)
+                  8103a4ec    00000004     --HOLE-- [fill = 0]
+                  8103a4f0    0000000c     rts64plus.lib : errno.obj (.cinit)
+                  8103a4fc    00000004     --HOLE-- [fill = 0]
+                  8103a500    0000000c                   : sinit.obj (.cinit)
+                  8103a50c    00000004     --HOLE-- [fill = 0]
+                  8103a510    0000000c     vpfe_bios_drv_dbg.lib : ddc_vpfe.obj (.cinit)
+                  8103a51c    00000004     --HOLE-- [fill = 0]
+                  8103a520    00000004     (.pad.cinit) [fill = 0]
 
-.pinit     0    81038694    0000000c     
-                  81038694    00000004     rtdx64xplus.lib : buffer1.o64P (.pinit)
-                  81038698    00000004                     : rtdx_mon.o64P (.pinit)
-                  8103869c    00000004     --HOLE-- [fill = 0]
+.hst1      0    8103a524    00000010     UNINITIALIZED
+                  8103a524    00000010     TP_DSPcfg.obj (.hst1)
+
+.pinit     0    8103a534    0000000c     
+                  8103a534    00000004     rtdx64xplus.lib : buffer1.o64P (.pinit)
+                  8103a538    00000004                     : rtdx_mon.o64P (.pinit)
+                  8103a53c    00000004     --HOLE-- [fill = 0]
 
 .rtdx_text 
-*          0    810386a0    00000fc0     
-                  810386a0    000002a0     rtdx64xplus.lib : rtdx_mon.o64P (.rtdx_text:_HSRTDX_rec)
-                  81038940    00000260                     : buffer1.o64P (.rtdx_text:_RTDX_Buffer_WriteCB)
-                  81038ba0    00000260                     : buffer1.o64P (.rtdx_text:_RTDX_write_next)
-                  81038e00    000001a0                     : rtdx_mon.o64P (.rtdx_text:_HSRTDX_xmt)
-                  81038fa0    00000160                     : rtdx_mon.o64P (.rtdx_text:_RTDX_Send_To_Host)
-                  81039100    000000e0                     : rtdx_mon.o64P (.rtdx_text:_RTDX_Mon_Queue)
-                  810391e0    000000e0                     : buffer1.o64P (.rtdx_text:_claim)
-                  810392c0    000000a0                     : rtdx_mon.o64P (.rtdx_text:_RTDX_GetH2THeader)
-                  81039360    000000a0                     : rtdx_mon.o64P (.rtdx_text:_RTDX_Poll)
-                  81039400    00000080                     : rtdx_mon.o64P (.rtdx_text:_RTDX_Final_RT_Monitor)
-                  81039480    00000060                     : buffer1.o64P (.rtdx_text:_RTDX_Buffer_Initialize)
-                  810394e0    00000060                     : rtdx_mon.o64P (.rtdx_text:_RTDX_Init_RT_Monitor)
-                  81039540    00000040                     : buffer2.o64P (.rtdx_text:_RTDX_Buffer_ReadCB)
-                  81039580    00000040                     : buffer1.o64P (.rtdx_text:_RTDX_Buffer_Size)
-                  810395c0    00000040                     : memfill.o64P (.rtdx_text:_RTDX_memfill)
-                  81039600    00000020                     : buffer2.o64P (.rtdx_text:_RTDX_Buffer_Read)
-                  81039620    00000020                     : buffer1.o64P (.rtdx_text:_RTDX_Buffer_Write)
-                  81039640    00000020                     : intr_tgt.o64P (.rtdx_text)
+*          0    8103a540    00000fc0     
+                  8103a540    000002a0     rtdx64xplus.lib : rtdx_mon.o64P (.rtdx_text:_HSRTDX_rec)
+                  8103a7e0    00000260                     : buffer1.o64P (.rtdx_text:_RTDX_Buffer_WriteCB)
+                  8103aa40    00000260                     : buffer1.o64P (.rtdx_text:_RTDX_write_next)
+                  8103aca0    000001a0                     : rtdx_mon.o64P (.rtdx_text:_HSRTDX_xmt)
+                  8103ae40    00000160                     : rtdx_mon.o64P (.rtdx_text:_RTDX_Send_To_Host)
+                  8103afa0    000000e0                     : rtdx_mon.o64P (.rtdx_text:_RTDX_Mon_Queue)
+                  8103b080    000000e0                     : buffer1.o64P (.rtdx_text:_claim)
+                  8103b160    000000a0                     : rtdx_mon.o64P (.rtdx_text:_RTDX_GetH2THeader)
+                  8103b200    000000a0                     : rtdx_mon.o64P (.rtdx_text:_RTDX_Poll)
+                  8103b2a0    00000080                     : rtdx_mon.o64P (.rtdx_text:_RTDX_Final_RT_Monitor)
+                  8103b320    00000060                     : buffer1.o64P (.rtdx_text:_RTDX_Buffer_Initialize)
+                  8103b380    00000060                     : rtdx_mon.o64P (.rtdx_text:_RTDX_Init_RT_Monitor)
+                  8103b3e0    00000040                     : buffer2.o64P (.rtdx_text:_RTDX_Buffer_ReadCB)
+                  8103b420    00000040                     : buffer1.o64P (.rtdx_text:_RTDX_Buffer_Size)
+                  8103b460    00000040                     : memfill.o64P (.rtdx_text:_RTDX_memfill)
+                  8103b4a0    00000020                     : buffer2.o64P (.rtdx_text:_RTDX_Buffer_Read)
+                  8103b4c0    00000020                     : buffer1.o64P (.rtdx_text:_RTDX_Buffer_Write)
+                  8103b4e0    00000020                     : intr_tgt.o64P (.rtdx_text)
 
-.bss       0    81039660    00000824     UNINITIALIZED
-                  81039660    00000430     TP_DSPcfg.obj (.bss)
-                  81039a90    00000100     bios.a64P : hwi_disp_asm.o64P (.bss)
-                  81039b90    000000cc               : biosdata.o64P (.bss)
-                  81039c5c    0000009c               : swi.o64P (.bss)
-                  81039cf8    00000048               : knl.o64P (.bss)
-                  81039d40    00000020               : exc_asm.o64P (.bss)
-                  81039d60    0000001a     edma3_drv_bios_dbg.lib : edma3.obj (.bss)
-                  81039d7a    00000002     --HOLE--
-                  81039d7c    00000018     bios.a64P : hwi.o64P (.bss)
-                  81039d94    00000018     lnkrtdx.a64P : rtdx.o64P (.bss)
-                  81039dac    00000010     bios.a64P : exc.o64P (.bss)
-                  81039dbc    00000010     rtdx64xplus.lib : buffer1.o64P (.bss)
-                  81039dcc    00000010                     : rtdx_mon.o64P (.bss)
-                  81039ddc    0000000e     edma3_rm_bios_dbg.lib : edma3resmgr.obj (.bss)
-                  81039dea    00000002     --HOLE--
-                  81039dec    0000000c     bios.a64P : tsk.o64P (.bss)
-                  81039df8    0000000c     bios_edma3_sample_cfg.obj (.bss)
-                  81039e04    0000000c     fonctions.obj (.bss)
-                  81039e10    0000000c     prev_bios_drv_dbg.lib : dda_previewer.obj (.bss)
-                  81039e1c    0000000c                           : llc_previewer.obj (.bss)
-                  81039e28    00000008     bios.a64P : clk_data.o64P (.bss)
-                  81039e30    00000008               : sys.o64P (.bss)
-                  81039e38    00000008     bios_edma3_sample_init.obj (.bss)
-                  81039e40    00000008     prev_bios_drv_dbg.lib : ddc_previewer.obj (.bss)
-                  81039e48    00000008     psp_i2c_interface.obj (.bss)
-                  81039e50    00000004     bios.a64P : clk_data2.o64P (.bss)
-                  81039e54    00000004               : dev_init.o64P (.bss)
-                  81039e58    00000004               : gio_cfg.o64P (.bss)
-                  81039e5c    00000004               : idl_busy.o64P (.bss)
-                  81039e60    00000004               : mem_asm.o64P (.bss)
-                  81039e64    00000004               : mem_defi.o64P (.bss)
-                  81039e68    00000004               : tsk_disa.o64P (.bss)
-                  81039e6c    00000004     main.obj (.bss)
-                  81039e70    00000004     vpbe_bios_drv_dbg.lib : llc_vpbeCursor.obj (.bss)
-                  81039e74    00000004                           : llc_vpbeOsd.obj (.bss)
-                  81039e78    00000004                           : llc_vpbeVenc.obj (.bss)
-                  81039e7c    00000004     vpfe_bios_drv_dbg.lib : ddc_vpfe.obj (.bss)
-                  81039e80    00000004                           : llc_vpfeCcdc.obj (.bss)
+.bss       0    8103b500    00000824     UNINITIALIZED
+                  8103b500    00000430     TP_DSPcfg.obj (.bss)
+                  8103b930    00000100     bios.a64P : hwi_disp_asm.o64P (.bss)
+                  8103ba30    000000cc               : biosdata.o64P (.bss)
+                  8103bafc    0000009c               : swi.o64P (.bss)
+                  8103bb98    00000048               : knl.o64P (.bss)
+                  8103bbe0    00000020               : exc_asm.o64P (.bss)
+                  8103bc00    0000001a     edma3_drv_bios_dbg.lib : edma3.obj (.bss)
+                  8103bc1a    00000002     --HOLE--
+                  8103bc1c    00000018     bios.a64P : hwi.o64P (.bss)
+                  8103bc34    00000018     lnkrtdx.a64P : rtdx.o64P (.bss)
+                  8103bc4c    00000010     bios.a64P : exc.o64P (.bss)
+                  8103bc5c    00000010     rtdx64xplus.lib : buffer1.o64P (.bss)
+                  8103bc6c    00000010                     : rtdx_mon.o64P (.bss)
+                  8103bc7c    0000000e     edma3_rm_bios_dbg.lib : edma3resmgr.obj (.bss)
+                  8103bc8a    00000002     --HOLE--
+                  8103bc8c    0000000c     bios.a64P : tsk.o64P (.bss)
+                  8103bc98    0000000c     bios_edma3_sample_cfg.obj (.bss)
+                  8103bca4    0000000c     fonctions.obj (.bss)
+                  8103bcb0    0000000c     prev_bios_drv_dbg.lib : dda_previewer.obj (.bss)
+                  8103bcbc    0000000c                           : llc_previewer.obj (.bss)
+                  8103bcc8    00000008     bios.a64P : clk_data.o64P (.bss)
+                  8103bcd0    00000008               : sys.o64P (.bss)
+                  8103bcd8    00000008     bios_edma3_sample_init.obj (.bss)
+                  8103bce0    00000008     prev_bios_drv_dbg.lib : ddc_previewer.obj (.bss)
+                  8103bce8    00000008     psp_i2c_interface.obj (.bss)
+                  8103bcf0    00000004     bios.a64P : clk_data2.o64P (.bss)
+                  8103bcf4    00000004               : dev_init.o64P (.bss)
+                  8103bcf8    00000004               : gio_cfg.o64P (.bss)
+                  8103bcfc    00000004               : idl_busy.o64P (.bss)
+                  8103bd00    00000004               : mem_asm.o64P (.bss)
+                  8103bd04    00000004               : mem_defi.o64P (.bss)
+                  8103bd08    00000004               : tsk_disa.o64P (.bss)
+                  8103bd0c    00000004     main.obj (.bss)
+                  8103bd10    00000004     vpbe_bios_drv_dbg.lib : llc_vpbeCursor.obj (.bss)
+                  8103bd14    00000004                           : llc_vpbeOsd.obj (.bss)
+                  8103bd18    00000004                           : llc_vpbeVenc.obj (.bss)
+                  8103bd1c    00000004     vpfe_bios_drv_dbg.lib : ddc_vpfe.obj (.bss)
+                  8103bd20    00000004                           : llc_vpfeCcdc.obj (.bss)
 
-.hst1      0    81039e84    00000010     UNINITIALIZED
-                  81039e84    00000010     TP_DSPcfg.obj (.hst1)
+.idl       0    8103bd24    00000010     UNINITIALIZED
+                  8103bd24    00000010     TP_DSPcfg.obj (.idl)
 
-.trcdata   0    81039e94    0000000c     
-                  81039e94    0000000c     bios.a64P : trc.o64P (.trcdata)
+.trcdata   0    8103bd34    0000000c     
+                  8103bd34    0000000c     bios.a64P : trc.o64P (.trcdata)
 
-.sysinit   0    81039ea0    000007c0     
-                  81039ea0    000003c0     TP_DSPcfg.obj (.sysinit)
-                  8103a260    00000120     bios.a64P : dev_init.o64P (.sysinit)
-                  8103a380    000000e0     biosDM420.a64P : clk_enable64LcTimer.o64P (.sysinit)
-                  8103a460    000000c0     bios.a64P : boot.o64P (.sysinit)
-                  8103a520    000000a0               : mem_init.o64P (.sysinit)
-                  8103a5c0    00000060               : tsk_init.o64P (.sysinit)
-                  8103a620    00000020               : gio.o64P (.sysinit)
-                  8103a640    00000020               : obj_init.o64P (.sysinit)
+.sysinit   0    8103bd40    000007c0     
+                  8103bd40    000003c0     TP_DSPcfg.obj (.sysinit)
+                  8103c100    00000120     bios.a64P : dev_init.o64P (.sysinit)
+                  8103c220    000000e0     biosDM420.a64P : clk_enable64LcTimer.o64P (.sysinit)
+                  8103c300    000000c0     bios.a64P : boot.o64P (.sysinit)
+                  8103c3c0    000000a0               : mem_init.o64P (.sysinit)
+                  8103c460    00000060               : tsk_init.o64P (.sysinit)
+                  8103c4c0    00000020               : gio.o64P (.sysinit)
+                  8103c4e0    00000020               : obj_init.o64P (.sysinit)
 
-.const     0    8103a660    000006b5     
-                  8103a660    00000289     prev_bios_drv_dbg.lib : ddc_previewer.obj (.const)
-                  8103a8e9    00000193     bios.a64P : exc.o64P (.const)
-                  8103aa7c    000000a2     prev_bios_drv_dbg.lib : dda_previewer.obj (.const)
-                  8103ab1e    00000002     --HOLE-- [fill = 0]
-                  8103ab20    00000060     fonctions.obj (.const:.string)
-                  8103ab80    0000004e     bios.a64P : tsk_stup.o64P (.const)
-                  8103abce    00000032               : mem_rede.o64P (.const)
-                  8103ac00    0000002c     i2c_bios_drv_dbg.lib : ddc_i2c.obj (.const)
-                  8103ac2c    00000023     bios.a64P : utl_doab.o64P (.const)
-                  8103ac4f    00000022               : utl_doer.o64P (.const)
-                  8103ac71    00000020               : dev_init.o64P (.const)
-                  8103ac91    00000003     --HOLE-- [fill = 0]
-                  8103ac94    00000017     vpbe_bios_drv_dbg.lib : ddc_vpbe.obj (.const)
-                  8103acab    00000001     --HOLE-- [fill = 0]
-                  8103acac    00000017     vpfe_bios_drv_dbg.lib : ddc_vpfe.obj (.const)
-                  8103acc3    00000014     TP_DSPcfg.obj (.const)
-                  8103acd7    00000001     --HOLE-- [fill = 0]
-                  8103acd8    00000011     bios.a64P : sys_prin.o64P (.const:_digtohex)
-                  8103ace9    00000007               : sys_prin.o64P (.const)
-                  8103acf0    00000008     rts64plus.lib : divf.obj (.const:_initial_approx$1)
-                  8103acf8    00000008     bios_edma3_sample_init.obj (.const)
-                  8103ad00    00000004     bios.a64P : gio_crea.o64P (.const)
-                  8103ad04    00000004               : mem_allo.o64P (.const)
-                  8103ad08    00000004               : mem_free.o64P (.const)
-                  8103ad0c    00000004               : mem_unde.o64P (.const)
-                  8103ad10    00000001               : sem_crea.o64P (.const)
-                  8103ad11    00000003     --HOLE-- [fill = 0]
-                  8103ad14    00000001               : tsk.o64P (.const)
+.const     0    8103c500    000006bd     
+                  8103c500    00000289     prev_bios_drv_dbg.lib : ddc_previewer.obj (.const)
+                  8103c789    00000193     bios.a64P : exc.o64P (.const)
+                  8103c91c    000000a2     prev_bios_drv_dbg.lib : dda_previewer.obj (.const)
+                  8103c9be    00000002     --HOLE-- [fill = 0]
+                  8103c9c0    00000060     fonctions.obj (.const:.string)
+                  8103ca20    0000004e     bios.a64P : tsk_stup.o64P (.const)
+                  8103ca6e    00000032               : mem_rede.o64P (.const)
+                  8103caa0    0000002c     i2c_bios_drv_dbg.lib : ddc_i2c.obj (.const)
+                  8103cacc    00000023     bios.a64P : utl_doab.o64P (.const)
+                  8103caef    00000022               : utl_doer.o64P (.const)
+                  8103cb11    00000020               : dev_init.o64P (.const)
+                  8103cb31    00000003     --HOLE-- [fill = 0]
+                  8103cb34    00000017     vpbe_bios_drv_dbg.lib : ddc_vpbe.obj (.const)
+                  8103cb4b    00000001     --HOLE-- [fill = 0]
+                  8103cb4c    00000017     vpfe_bios_drv_dbg.lib : ddc_vpfe.obj (.const)
+                  8103cb63    00000014     TP_DSPcfg.obj (.const)
+                  8103cb77    00000001     --HOLE-- [fill = 0]
+                  8103cb78    00000011     bios.a64P : sys_prin.o64P (.const:_digtohex)
+                  8103cb89    00000007               : sys_prin.o64P (.const)
+                  8103cb90    00000008     rts64plus.lib : divd.obj (.const:_initial_approx$1)
+                  8103cb98    00000008                   : divf.obj (.const:_initial_approx$1)
+                  8103cba0    00000008     bios_edma3_sample_init.obj (.const)
+                  8103cba8    00000004     bios.a64P : gio_crea.o64P (.const)
+                  8103cbac    00000004               : mem_allo.o64P (.const)
+                  8103cbb0    00000004               : mem_free.o64P (.const)
+                  8103cbb4    00000004               : mem_unde.o64P (.const)
+                  8103cbb8    00000001               : sem_crea.o64P (.const)
+                  8103cbb9    00000003     --HOLE-- [fill = 0]
+                  8103cbbc    00000001               : tsk.o64P (.const)
 
-.printf    0    8103ad15    00000059     COPY SECTION
-                  8103ad15    00000059     TP_DSPcfg.obj (.printf)
-
-.idl       0    8103ad18    00000010     UNINITIALIZED
-                  8103ad18    00000010     TP_DSPcfg.obj (.idl)
-
-.idlcal    0    8103ad28    00000010     UNINITIALIZED
-                  8103ad28    00000010     TP_DSPcfg.obj (.idlcal)
-
-.clk       0    8103ad38    00000008     UNINITIALIZED
-                  8103ad38    00000008     TP_DSPcfg.obj (.clk)
+.printf    0    8103cbbd    00000059     COPY SECTION
+                  8103cbbd    00000059     TP_DSPcfg.obj (.printf)
 
 .rtdx_data 
-*          0    8103ad40    000004f4     UNINITIALIZED
-                  8103ad40    00000080     --HOLE--
-                  8103adc0    00000410     TP_DSPcfg.obj (.rtdx_data)
-                  8103b1d0    00000044     rtdx64xplus.lib : rtdx_mon.o64P (.rtdx_data)
-                  8103b214    00000020                     : buffer1.o64P (.rtdx_data)
+*          0    8103cbc0    000004f4     UNINITIALIZED
+                  8103cbc0    00000080     --HOLE--
+                  8103cc40    00000410     TP_DSPcfg.obj (.rtdx_data)
+                  8103d050    00000044     rtdx64xplus.lib : rtdx_mon.o64P (.rtdx_data)
+                  8103d094    00000020                     : buffer1.o64P (.rtdx_data)
 
-.mem       0    8103b234    00000004     UNINITIALIZED
-                  8103b234    00000004     TP_DSPcfg.obj (.mem)
+.mem       0    8103d0b4    00000004     UNINITIALIZED
+                  8103d0b4    00000004     TP_DSPcfg.obj (.mem)
 
 .TSK_idle$stk 
-*          0    8103b238    00000400     UNINITIALIZED
-                  8103b238    00000400     TP_DSPcfg.obj (.TSK_idle$stk)
+*          0    8103d0b8    00000400     UNINITIALIZED
+                  8103d0b8    00000400     TP_DSPcfg.obj (.TSK_idle$stk)
 
-.switch    0    8103b638    0000035c     
-                  8103b638    000000d0     vpbe_bios_drv_dbg.lib : llc_vpbeOsd.obj (.switch)
-                  8103b708    000000b8     edma3_drv_bios_dbg.lib : edma3.obj (.switch)
-                  8103b7c0    00000040     edma3_rm_bios_dbg.lib : edma3resmgr.obj (.switch)
-                  8103b800    00000040     i2c_bios_drv_dbg.lib : ddc_i2c.obj (.switch)
-                  8103b840    00000040     vpfe_bios_drv_dbg.lib : ddc_vpfeCcdc.obj (.switch)
-                  8103b880    00000030     prev_bios_drv_dbg.lib : llc_previewer.obj (.switch)
-                  8103b8b0    0000002c     vpbe_bios_drv_dbg.lib : dda_vpbe.obj (.switch)
-                  8103b8dc    00000028     prev_bios_drv_dbg.lib : ddc_previewer.obj (.switch)
-                  8103b904    00000020     vpbe_bios_drv_dbg.lib : ddc_vpbeVenc.obj (.switch)
-                  8103b924    00000018     prev_bios_drv_dbg.lib : dda_previewer.obj (.switch)
-                  8103b93c    00000014     bios_edma3_sample_cs.obj (.switch:_edma3OsProtectEntry)
-                  8103b950    00000014     bios_edma3_sample_cs.obj (.switch:_edma3OsProtectExit)
-                  8103b964    00000010     i2c_bios_drv_dbg.lib : dda_i2ciom.obj (.switch)
-                  8103b974    00000010     vpbe_bios_drv_dbg.lib : ddc_vpbeOsd.obj (.switch)
-                  8103b984    00000010     vpfe_bios_drv_dbg.lib : dda_vpfe.obj (.switch)
+.switch    0    8103d4b8    0000035c     
+                  8103d4b8    000000d0     vpbe_bios_drv_dbg.lib : llc_vpbeOsd.obj (.switch)
+                  8103d588    000000b8     edma3_drv_bios_dbg.lib : edma3.obj (.switch)
+                  8103d640    00000040     edma3_rm_bios_dbg.lib : edma3resmgr.obj (.switch)
+                  8103d680    00000040     i2c_bios_drv_dbg.lib : ddc_i2c.obj (.switch)
+                  8103d6c0    00000040     vpfe_bios_drv_dbg.lib : ddc_vpfeCcdc.obj (.switch)
+                  8103d700    00000030     prev_bios_drv_dbg.lib : llc_previewer.obj (.switch)
+                  8103d730    0000002c     vpbe_bios_drv_dbg.lib : dda_vpbe.obj (.switch)
+                  8103d75c    00000028     prev_bios_drv_dbg.lib : ddc_previewer.obj (.switch)
+                  8103d784    00000020     vpbe_bios_drv_dbg.lib : ddc_vpbeVenc.obj (.switch)
+                  8103d7a4    00000018     prev_bios_drv_dbg.lib : dda_previewer.obj (.switch)
+                  8103d7bc    00000014     bios_edma3_sample_cs.obj (.switch:_edma3OsProtectEntry)
+                  8103d7d0    00000014     bios_edma3_sample_cs.obj (.switch:_edma3OsProtectExit)
+                  8103d7e4    00000010     i2c_bios_drv_dbg.lib : dda_i2ciom.obj (.switch)
+                  8103d7f4    00000010     vpbe_bios_drv_dbg.lib : ddc_vpbeOsd.obj (.switch)
+                  8103d804    00000010     vpfe_bios_drv_dbg.lib : dda_vpfe.obj (.switch)
 
-.trace     0    8103b994    00000200     
-                  8103b994    00000200     --HOLE-- [fill = 00000000]
+.trace     0    8103d814    00000200     
+                  8103d814    00000200     --HOLE-- [fill = 00000000]
+
+.hst0      0    8103da14    00000100     UNINITIALIZED
+                  8103da14    00000100     TP_DSPcfg.obj (.hst0)
+
+.pip       0    8103db14    000000c8     UNINITIALIZED
+                  8103db14    000000c8     TP_DSPcfg.obj (.pip)
+
+.idlcal    0    8103dbdc    00000010     UNINITIALIZED
+                  8103dbdc    00000010     TP_DSPcfg.obj (.idlcal)
+
+.sys       0    8103dbec    00000010     UNINITIALIZED
+                  8103dbec    00000010     TP_DSPcfg.obj (.sys)
+
+.hwi_vec   0    8103dc00    00000200     
+                  8103dc00    00000200     TP_DSPcfg.obj (.hwi_vec)
+
+.tsk       0    8103de00    000000c0     UNINITIALIZED
+                  8103de00    000000c0     TP_DSPcfg.obj (.tsk)
 
 .devtable 
-*          0    8103bb94    0000006c     UNINITIALIZED
-                  8103bb94    0000006c     TP_DSPcfg.obj (.devtable)
+*          0    8103dec0    0000006c     UNINITIALIZED
+                  8103dec0    0000006c     TP_DSPcfg.obj (.devtable)
 
-.hwi_vec   0    8103bc00    00000200     
-                  8103bc00    00000200     TP_DSPcfg.obj (.hwi_vec)
+.gblinit   0    8103df2c    00000064     
+                  8103df2c    00000064     TP_DSPcfg.obj (.gblinit)
 
-.hst0      0    8103be00    00000100     UNINITIALIZED
-                  8103be00    00000100     TP_DSPcfg.obj (.hst0)
+.log       0    8103df90    00000048     
+                  8103df90    00000048     TP_DSPcfg.obj (.log)
 
-.pip       0    8103bf00    000000c8     UNINITIALIZED
-                  8103bf00    000000c8     TP_DSPcfg.obj (.pip)
+.sts       0    8103dfd8    00000040     
+                  8103dfd8    00000040     TP_DSPcfg.obj (.sts)
 
-.tsk       0    8103bfc8    000000c0     UNINITIALIZED
-                  8103bfc8    000000c0     TP_DSPcfg.obj (.tsk)
+.hst       0    8103e018    0000003c     UNINITIALIZED
+                  8103e018    0000003c     TP_DSPcfg.obj (.hst)
 
-.gblinit   0    8103c088    00000064     
-                  8103c088    00000064     TP_DSPcfg.obj (.gblinit)
+.swi       0    8103e054    0000002c     UNINITIALIZED
+                  8103e054    0000002c     TP_DSPcfg.obj (.swi)
 
-.log       0    8103c0ec    00000048     
-                  8103c0ec    00000048     TP_DSPcfg.obj (.log)
-
-.sts       0    8103c134    00000040     
-                  8103c134    00000040     TP_DSPcfg.obj (.sts)
-
-.hst       0    8103c174    0000003c     UNINITIALIZED
-                  8103c174    0000003c     TP_DSPcfg.obj (.hst)
-
-.swi       0    8103c1b0    0000002c     UNINITIALIZED
-                  8103c1b0    0000002c     TP_DSPcfg.obj (.swi)
-
-.sys       0    8103c1dc    00000010     UNINITIALIZED
-                  8103c1dc    00000010     TP_DSPcfg.obj (.sys)
+.clk       0    8103e080    00000008     UNINITIALIZED
+                  8103e080    00000008     TP_DSPcfg.obj (.clk)
 
 
 FAR CALL TRAMPOLINES
@@ -561,7 +579,7 @@ callee name               trampoline name
    callee addr  tramp addr   call addr  call info
 --------------  -----------  ---------  ----------------
 $.bios:bios.a64P<log_printf.o64P>$0x0  $Tramp$S$$_LOG_printf
-   8102dd20     8101fd00     8100b8f8   prev_bios_drv_dbg.lib : ddc_previewer.obj (.text)
+   8102f940     81021920     8100b8f8   prev_bios_drv_dbg.lib : ddc_previewer.obj (.text)
                              8100b998                         : ddc_previewer.obj (.text)
                              8100ba24                         : ddc_previewer.obj (.text)
                              8100bb6c                         : ddc_previewer.obj (.text)
@@ -645,126 +663,126 @@ $.bios:bios.a64P<log_printf.o64P>$0x0  $Tramp$S$$_LOG_printf
                              81016fe4                         : dda_previewer.obj (.text)
                              8101706c                         : dda_previewer.obj (.text)
                              810170f0                         : dda_previewer.obj (.text)
-                             8101c398   fonctions.obj (.text)
-                             8101c3b8   fonctions.obj (.text)
+                             8101d404   fonctions.obj (.text)
+                             8101d424   fonctions.obj (.text)
 $.bios:bios.a64P<clk_getltime.o64P>$0x0  $Tramp$S$$_CLK_getltime
-   8102dc60     8101fd20     81015148   vpbe_bios_drv_dbg.lib : ddc_vpbe.obj (.text)
+   8102f880     81021940     81015148   vpbe_bios_drv_dbg.lib : ddc_vpbe.obj (.text)
                              810160d4   vpfe_bios_drv_dbg.lib : ddc_vpfe.obj (.text)
 $.bios:.near:bios.a64P<mem_allo.o64P>$0x0  $Tramp$S$$_MEM_alloc
-   8102b120     8101fd40     81016814   prev_bios_drv_dbg.lib : dda_previewer.obj (.text)
+   8102cd40     81021960     81016814   prev_bios_drv_dbg.lib : dda_previewer.obj (.text)
 $.bios:.near:bios.a64P<mem_free.o64P>$0x0  $Tramp$S$$_MEM_free
-   8102ad20     8101fd60     81016920   prev_bios_drv_dbg.lib : dda_previewer.obj (.text)
+   8102c940     81021980     81016920   prev_bios_drv_dbg.lib : dda_previewer.obj (.text)
                              81016e2c                         : dda_previewer.obj (.text)
-                             8101dc00   palos_bios_dbg.lib : pal_osmem.obj (.text)
+                             8101ec60   palos_bios_dbg.lib : pal_osmem.obj (.text)
 $.bios:bios.a64P<ecm_enableEvent.o64P>$0x0  $Tramp$S$$_ECM_enableEvent
-   8102db00     8101fd80     81017214   prev_bios_drv_dbg.lib : dda_previewer.obj (.text)
-                             8101d600   bios_edma3_sample_cs.obj (.text)
-                             8101d60c   bios_edma3_sample_cs.obj (.text)
-                             8101d628   bios_edma3_sample_cs.obj (.text)
-                             8101eac4   i2c_bios_drv_dbg.lib : dda_i2cbios.obj (.text)
-                             8101f478   vpbe_bios_drv_dbg.lib : dda_vpbeBios.obj (.text)
-                             8101f70c   vpfe_bios_drv_dbg.lib : dda_vpfeBios.obj (.text)
+   8102f720     810219a0     81017214   prev_bios_drv_dbg.lib : dda_previewer.obj (.text)
+                             8101e660   bios_edma3_sample_cs.obj (.text)
+                             8101e66c   bios_edma3_sample_cs.obj (.text)
+                             8101e688   bios_edma3_sample_cs.obj (.text)
+                             81020464   i2c_bios_drv_dbg.lib : dda_i2cbios.obj (.text)
+                             81020f18   vpbe_bios_drv_dbg.lib : dda_vpbeBios.obj (.text)
+                             810211ac   vpfe_bios_drv_dbg.lib : dda_vpfeBios.obj (.text)
 $.bios:bios.a64P<ecm_disableEvent.o64P>$0x0  $Tramp$S$$_ECM_disableEvent
-   8102dac0     8101fda0     810171f0   prev_bios_drv_dbg.lib : dda_previewer.obj (.text)
+   8102f6e0     810219c0     810171f0   prev_bios_drv_dbg.lib : dda_previewer.obj (.text)
                              810172a8                         : dda_previewer.obj (.text)
-                             8101d560   bios_edma3_sample_cs.obj (.text)
-                             8101d56c   bios_edma3_sample_cs.obj (.text)
-                             8101d58c   bios_edma3_sample_cs.obj (.text)
-                             8101eb00   i2c_bios_drv_dbg.lib : dda_i2cbios.obj (.text)
-                             8101f4b0   vpbe_bios_drv_dbg.lib : dda_vpbeBios.obj (.text)
-                             8101f740   vpfe_bios_drv_dbg.lib : dda_vpfeBios.obj (.text)
+                             8101e5c0   bios_edma3_sample_cs.obj (.text)
+                             8101e5cc   bios_edma3_sample_cs.obj (.text)
+                             8101e5ec   bios_edma3_sample_cs.obj (.text)
+                             810204a0   i2c_bios_drv_dbg.lib : dda_i2cbios.obj (.text)
+                             81020f50   vpbe_bios_drv_dbg.lib : dda_vpbeBios.obj (.text)
+                             810211e0   vpfe_bios_drv_dbg.lib : dda_vpfeBios.obj (.text)
 $.bios:bios.a64P<ecm_dispatchPlug.o64P>$0x0  $Tramp$S$$_ECM_dispatchPlug
-   8102d6c0     8101fdc0     81017208   prev_bios_drv_dbg.lib : dda_previewer.obj (.text)
-                             8101ea94   i2c_bios_drv_dbg.lib : dda_i2cbios.obj (.text)
-                             8101f46c   vpbe_bios_drv_dbg.lib : dda_vpbeBios.obj (.text)
-                             8101f700   vpfe_bios_drv_dbg.lib : dda_vpfeBios.obj (.text)
+   8102f2e0     810219e0     81017208   prev_bios_drv_dbg.lib : dda_previewer.obj (.text)
+                             81020434   i2c_bios_drv_dbg.lib : dda_i2cbios.obj (.text)
+                             81020f0c   vpbe_bios_drv_dbg.lib : dda_vpbeBios.obj (.text)
+                             810211a0   vpfe_bios_drv_dbg.lib : dda_vpfeBios.obj (.text)
 $.bios:bios.a64P<c62_c.o64P>$0x18  $Tramp$S$$_C64_enableIER
-   8102da98     8101fde0     81017220   prev_bios_drv_dbg.lib : dda_previewer.obj (.text)
-                             8101ead4   i2c_bios_drv_dbg.lib : dda_i2cbios.obj (.text)
-                             8101f488   vpbe_bios_drv_dbg.lib : dda_vpbeBios.obj (.text)
-                             8101f720   vpfe_bios_drv_dbg.lib : dda_vpfeBios.obj (.text)
+   8102f6b8     81021a00     81017220   prev_bios_drv_dbg.lib : dda_previewer.obj (.text)
+                             81020474   i2c_bios_drv_dbg.lib : dda_i2cbios.obj (.text)
+                             81020f28   vpbe_bios_drv_dbg.lib : dda_vpbeBios.obj (.text)
+                             810211c0   vpfe_bios_drv_dbg.lib : dda_vpfeBios.obj (.text)
 $.bios:bios.a64P<malloc.o64P>$0x28  $Tramp$S$$_malloc
-   8102a188     8101fe00     81018af0   deriche.obj (.text)
-                             81018b08   deriche.obj (.text)
-                             8101c274   fonctions.obj (.text)
-                             8101c288   fonctions.obj (.text)
-                             8101c298   fonctions.obj (.text)
+   8102bda8     81021a20     81019470   deriche.obj (.text)
+                             81019488   deriche.obj (.text)
+                             8101d294   fonctions.obj (.text)
+                             8101d2a8   fonctions.obj (.text)
+                             8101d2b8   fonctions.obj (.text)
 $.bios:bios.a64P<malloc.o64P>$0x0  $Tramp$S$$_free
-   8102a160     8101fe20     81019304   deriche.obj (.text)
-                             8101930c   deriche.obj (.text)
+   8102bd80     81021a40     81019c84   deriche.obj (.text)
+                             81019c8c   deriche.obj (.text)
 $.bios:bios.a64P<gio_crea.o64P>$0x0  $Tramp$S$$_GIO_create
-   81029ec0     8101fe40     8101c0a8   fonctions.obj (.text)
-                             8101c170   fonctions.obj (.text)
-                             8101c224   fonctions.obj (.text)
+   8102bae0     81021a60     8101d0c8   fonctions.obj (.text)
+                             8101d190   fonctions.obj (.text)
+                             8101d244   fonctions.obj (.text)
 $.bios:bios.a64P<gio_cntl.o64P>$0x0  $Tramp$S$$_GIO_control
-   8102dce0     8101fe60     8101c0d8   fonctions.obj (.text)
+   8102f900     81021a80     8101d0f8   fonctions.obj (.text)
 $.bios:bios.a64P<gio_sbmt.o64P>$0x0  $Tramp$S$$_GIO_submit
-   8102b8a0     8101fe80     8101c110   fonctions.obj (.text)
-                             8101c134   fonctions.obj (.text)
-                             8101c1c4   fonctions.obj (.text)
-                             8101c1e8   fonctions.obj (.text)
-                             8101c250   fonctions.obj (.text)
-                             8101c260   fonctions.obj (.text)
-                             8101c2b8   fonctions.obj (.text)
-                             8101c450   fonctions.obj (.text)
-                             8101c488   fonctions.obj (.text)
-                             8101c4b8   fonctions.obj (.text)
-                             8101c4d8   fonctions.obj (.text)
+   8102d4c0     81021aa0     8101d130   fonctions.obj (.text)
+                             8101d154   fonctions.obj (.text)
+                             8101d1e4   fonctions.obj (.text)
+                             8101d208   fonctions.obj (.text)
+                             8101d270   fonctions.obj (.text)
+                             8101d280   fonctions.obj (.text)
+                             8101d2e0   fonctions.obj (.text)
+                             8101d4b8   fonctions.obj (.text)
+                             8101d4ec   fonctions.obj (.text)
+                             8101d520   fonctions.obj (.text)
+                             8101d540   fonctions.obj (.text)
 $.bios:bios.a64P<gio_dele.o64P>$0x0  $Tramp$S$$_GIO_delete
-   8102cbe0     8101fea0     8101c500   fonctions.obj (.text)
-                             8101c508   fonctions.obj (.text)
-                             8101c510   fonctions.obj (.text)
+   8102e800     81021ac0     8101d560   fonctions.obj (.text)
+                             8101d568   fonctions.obj (.text)
+                             8101d570   fonctions.obj (.text)
 $.bios:bios.a64P<hwi_c.o64P>$0x0  $Tramp$S$$_HWI_disable
-   8102d780     8101fec0     8101d544   bios_edma3_sample_cs.obj (.text)
-                             8101f974   palos_bios_dbg.lib : pal_osprotect.obj (.text)
+   8102f3a0     81021ae0     8101e5a4   bios_edma3_sample_cs.obj (.text)
+                             81021494   palos_bios_dbg.lib : pal_osprotect.obj (.text)
 $.bios:bios.a64P<tsk_disa.o64P>$0x24  $Tramp$S$$_TSK_disable
-   8102d4a4     8101fee0     8101d558   bios_edma3_sample_cs.obj (.text)
-                             8101f98c   palos_bios_dbg.lib : pal_osprotect.obj (.text)
+   8102f0c4     81021b00     8101e5b8   bios_edma3_sample_cs.obj (.text)
+                             810214ac   palos_bios_dbg.lib : pal_osprotect.obj (.text)
 $.bios:bios.a64P<hwi_c.o64P>$0x2c  $Tramp$S$$_HWI_restore
-   8102d7ac     8101ff00     8101d5ec   bios_edma3_sample_cs.obj (.text)
-                             8101f9b4   palos_bios_dbg.lib : pal_osprotect.obj (.text)
+   8102f3cc     81021b20     8101e64c   bios_edma3_sample_cs.obj (.text)
+                             810214d4   palos_bios_dbg.lib : pal_osprotect.obj (.text)
 $.bios:bios.a64P<tsk_disa.o64P>$0x0  $Tramp$S$$_TSK_enable
-   8102d480     8101ff20     8101d5f8   bios_edma3_sample_cs.obj (.text)
-                             8101f9c8   palos_bios_dbg.lib : pal_osprotect.obj (.text)
+   8102f0a0     81021b40     8101e658   bios_edma3_sample_cs.obj (.text)
+                             810214e8   palos_bios_dbg.lib : pal_osprotect.obj (.text)
 $.bios:bios.a64P<clk_countspms.o64P>$0x0  $Tramp$S$$_CLK_countspms
-   8102dc40     8101ff40     8101d680   bios_edma3_sample_cs.obj (.text)
-                             8101f374   palos_bios_dbg.lib : pal_osWait.obj (.text)
-                             8101f3d8                      : pal_osWait.obj (.text)
+   8102f860     81021b60     8101e6e0   bios_edma3_sample_cs.obj (.text)
+                             81020e14   palos_bios_dbg.lib : pal_osWait.obj (.text)
+                             81020e78                      : pal_osWait.obj (.text)
 $.bios:bios.a64P<clk_getprd.o64P>$0x0  $Tramp$S$$_CLK_getprd
-   8102dc80     8101ff60     8101d684   bios_edma3_sample_cs.obj (.text)
-                             8101f380   palos_bios_dbg.lib : pal_osWait.obj (.text)
-                             8101f3e0                      : pal_osWait.obj (.text)
+   8102f8a0     81021b80     8101e6e4   bios_edma3_sample_cs.obj (.text)
+                             81020e20   palos_bios_dbg.lib : pal_osWait.obj (.text)
+                             81020e80                      : pal_osWait.obj (.text)
 $.bios:bios.a64P<sem_pend_counting.o64P>$0x0  $Tramp$S$$_SEM_pend
-   8102d8a0     8101ff80     8101d6a8   bios_edma3_sample_cs.obj (.text)
-                             8101d7a4   bios_edma3_sample_cs.obj (.text)
-                             8101ee30   palos_bios_dbg.lib : pal_ossem.obj (.text)
-                             8101f3a8                      : pal_osWait.obj (.text)
+   8102f4c0     81021ba0     8101e708   bios_edma3_sample_cs.obj (.text)
+                             8101e804   bios_edma3_sample_cs.obj (.text)
+                             810208d0   palos_bios_dbg.lib : pal_ossem.obj (.text)
+                             81020e48                      : pal_osWait.obj (.text)
 $.bios:biosDM420.a64P<bcache_block.o64P>$0x194  $Tramp$S$$_BCACHE_inv
-   8102bdb4     8101ffa0     8101d6cc   bios_edma3_sample_cs.obj (.text)
+   8102d9d4     81021bc0     8101e72c   bios_edma3_sample_cs.obj (.text)
 $.bios:biosDM420.a64P<bcache_block.o64P>$0x184  $Tramp$S$$_BCACHE_wb
-   8102bda4     8101ffc0     8101d6ec   bios_edma3_sample_cs.obj (.text)
+   8102d9c4     81021be0     8101e74c   bios_edma3_sample_cs.obj (.text)
 $.bios:bios.a64P<sem_crea.o64P>$0x0  $Tramp$S$$_SEM_create
-   8102d400     8101ffe0     8101d724   bios_edma3_sample_cs.obj (.text)
-                             8101edc8   palos_bios_dbg.lib : pal_ossem.obj (.text)
+   8102f020     81021c00     8101e784   bios_edma3_sample_cs.obj (.text)
+                             81020868   palos_bios_dbg.lib : pal_ossem.obj (.text)
 $.bios:bios.a64P<sem_dele.o64P>$0x0  $Tramp$S$$_SEM_delete
-   8102dd40     81020000     8101d770   bios_edma3_sample_cs.obj (.text)
-                             8101ee08   palos_bios_dbg.lib : pal_ossem.obj (.text)
+   8102f960     81021c20     8101e7d0   bios_edma3_sample_cs.obj (.text)
+                             810208a8   palos_bios_dbg.lib : pal_ossem.obj (.text)
 $.bios:bios.a64P<sem_post_asm.o64P>$0x0  $Tramp$S$$_SEM_post
-   8102cce0     81020020     8101d7ec   bios_edma3_sample_cs.obj (.text)
-                             8101ee70   palos_bios_dbg.lib : pal_ossem.obj (.text)
+   8102e900     81021c40     8101e84c   bios_edma3_sample_cs.obj (.text)
+                             81020910   palos_bios_dbg.lib : pal_ossem.obj (.text)
 $.bios:bios.a64P<mem_defi.o64P>$0x0  $Tramp$S$$_MEM_define
-   8102a8c0     81020040     8101db48   palos_bios_dbg.lib : pal_osmem.obj (.text)
+   8102c4e0     81021c60     8101eba8   palos_bios_dbg.lib : pal_osmem.obj (.text)
 $.bios:bios.a64P<mem_unde.o64P>$0x0  $Tramp$S$$_MEM_undefine
-   8102c8a0     81020060     8101db74   palos_bios_dbg.lib : pal_osmem.obj (.text)
+   8102e4c0     81021c80     8101ebd4   palos_bios_dbg.lib : pal_osmem.obj (.text)
 $.bios:.near:bios.a64P<mem_vall.o64P>$0x0  $Tramp$S$$_MEM_valloc
-   8102d600     81020080     8101dbac   palos_bios_dbg.lib : pal_osmem.obj (.text)
+   8102f220     81021ca0     8101ec0c   palos_bios_dbg.lib : pal_osmem.obj (.text)
 $.bios:bios.a64P<lck.o64P>$0x0  $Tramp$S$$_LCK_post
-   8102d280     810200a0     8101f2a0   bios.a64P : tsk_stup.o64P (.text)
+   8102eea0     81021cc0     81020d40   bios.a64P : tsk_stup.o64P (.text)
 $.bios:bios.a64P<lck.o64P>$0x20  $Tramp$S$$_LCK_pend
-   8102d2a0     810200c0     8101f304   bios.a64P : tsk_stup.o64P (.text)
+   8102eec0     81021ce0     81020da4   bios.a64P : tsk_stup.o64P (.text)
 $.bios:bios.a64P<sys_abor.o64P>$0x0  $Tramp$S$$_SYS_abort
-   8102d960     810200e0     8101f308   bios.a64P : tsk_stup.o64P (.text)
-                             8101f324             : tsk_stup.o64P (.text)
+   8102f580     81021d00     81020da8   bios.a64P : tsk_stup.o64P (.text)
+                             81020dc4             : tsk_stup.o64P (.text)
 
 [32 trampolines]
 [173 trampoline calls]
@@ -774,34 +792,34 @@ GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name
 
 address    name
 --------   ----
-81039660   $bss
-81039660   .bss
+8103b500   $bss
+8103b500   .bss
 80000000   .data
 81000000   .text
-8103a064   BIOS$$CLKOFF
-8103a024   BIOS$$CLKON
-81039ea0   BIOS_init
-8103a120   BIOS_start
+8103bf04   BIOS$$CLKOFF
+8103bec4   BIOS$$CLKON
+8103bd40   BIOS_init
+8103bfc0   BIOS_start
 00000000   BUF$
 00000001   BUF_ENABLED
 ffffffff   CACHE_L1D
 ffffffff   CACHE_L1P
 00000001   CLK$
-8103ad38   CLK_A_TABBEG
+8103e080   CLK_A_TABBEG
 00000001   CLK_CALDIV
 00000001   CLK_CALMULT
 00091050   CLK_COUNTSPMS
 00000009   CLK_COUNTSPMSHIGH
-81039bb8   CLK_D_idletime
-81039bb4   CLK_D_isrhook
-81039bb0   CLK_D_tabbeg
-81039bac   CLK_D_timefxn
+8103ba58   CLK_D_idletime
+8103ba54   CLK_D_isrhook
+8103ba50   CLK_D_tabbeg
+8103ba4c   CLK_D_timefxn
 00000001   CLK_ENABLEHTIME
-8102ddc0   CLK_F_gethtime
-8102bf80   CLK_F_getltime
-8102bf90   CLK_F_isr
-8102c0d0   CLK_F_itime
-810291a0   CLK_HOOKFXN
+8102f9e0   CLK_F_gethtime
+8102dba0   CLK_F_getltime
+8102dbb0   CLK_F_isr
+8102dcf0   CLK_F_itime
+8102adc0   CLK_HOOKFXN
 00000001   CLK_HTIMEDIV
 00000001   CLK_HTIMEMULT
 00091050   CLK_HTIMEPERLTIME
@@ -814,16 +832,16 @@ ffffffff   CACHE_L1P
 00000000   CLK_PRDHIGH
 01c21800   CLK_REGS
 00000001   CLK_RESETTIMER
-81039ba8   CLK_R_time
+8103ba48   CLK_R_time
 00000020   CLK_TCR
 00000000   CLK_TDDR
 00000000   CLK_TDDRHIGH
-8102ddc0   CLK_TIMEFXN
+8102f9e0   CLK_TIMEFXN
 00000001   CLK_TIMERNUM
 00000005   CLK_TIMMODE
 00000001   CLK_USETIMER
-8103ad3c   CLK_null
-81039a6c   DDR2
+8103e084   CLK_null
+8103b90c   DDR2
 80000000   DDR2$B
 01000000   DDR2$L
 00000000   DEV$
@@ -835,7 +853,7 @@ ffffffff   CACHE_L1P
 00000000   DIO_NUMTSKBASE
 00000000   DIO_STATIC
 00000000   DPI$
-8103c11c   DVTEvent_Log
+8103dfc0   DVTEvent_Log
 10800000   DVTEvent_Log$buf
 00000001   DVTEvent_Log$datatype
 00000000   DVTEvent_Log$log
@@ -970,9 +988,9 @@ ffffffff   ECM_EVTMASK3
 00000061   EVENT97
 00000062   EVENT98
 00000063   EVENT99
-8102d720   FXN_F_nop
-8102d724   FXN_F_run
-8102d760   FXN_F_zero
+8102f340   FXN_F_nop
+8102f344   FXN_F_run
+8102f380   FXN_F_zero
 00000001   GBL$
 00005205   GBL_A_VERSION
 00000000   GBL_BCACHEREADADDR0
@@ -1008,39 +1026,39 @@ ffffffff   ECM_EVTMASK3
 00000000   GBL_SUPPORTCSL
 0000dbef   GBL_TRCMASKVALUE
 00000000   GBL_USERINIT
-8102dca0   GBL_USERINITFXN
+8102f8c0   GBL_USERINITFXN
 00000001   GBL_boot
-81039e9c   GBL_initdone
-81020100   GBL_stackbeg
-810280ff   GBL_stackend
+8103bd3c   GBL_initdone
+81021d20   GBL_stackbeg
+81029d1f   GBL_stackend
 00000000   GIO$
-8102dca0   GIO_CREATEFXN
-8102dca0   GIO_DELETEFXN
-8102dca0   GIO_PENDFXN
-8102dca0   GIO_POSTFXN
+8102f8c0   GIO_CREATEFXN
+8102f8c0   GIO_DELETEFXN
+8102f8c0   GIO_PENDFXN
+8102f8c0   GIO_POSTFXN
 00000000   HOOK$
 00000000   HOOK_KNLID
 00000001   HST$
-8103c174   HST_A_TABBEG
-8103c1b0   HST_A_TABEND
+8103e018   HST_A_TABBEG
+8103e054   HST_A_TABEND
 00000000   HST_DSM
-81039a6c   HST_DSMBUFSEG
+8103b90c   HST_DSMBUFSEG
 00000400   HST_DSMMEMSIZE
-81039c24   HST_D_chanmask
-81039c28   HST_D_tabbeg
-81039c2c   HST_D_tabend
+8103bac4   HST_D_chanmask
+8103bac8   HST_D_tabbeg
+8103bacc   HST_D_tabend
 000000ff   HST_MAXFRAMEALLOWED
 00000040   HST_MAXFRAMESET
 00000000   HST_NONE
 00000001   HST_RTDX
 00000001   HWI$
-8103bc00   HWI_A_VECS
+8103dc00   HWI_A_VECS
 00009f88   HWI_CFGDISPATCHED
-81039d8c   HWI_D_bss
-81039d90   HWI_D_ccmask
-81039d7c   HWI_D_spsave
+8103bc2c   HWI_D_bss
+8103bc30   HWI_D_ccmask
+8103bc1c   HWI_D_spsave
 00000001   HWI_ENABLE_EXC
-810291a0   HWI_F_dispatch
+8102adc0   HWI_F_dispatch
 00000000   HWI_GENERATE_RESET_VEC
 0000000a   HWI_INT10
 00000000   HWI_INT10$hwi
@@ -1080,105 +1098,105 @@ ffffffff   ECM_EVTMASK3
 00000000   HWI_RESET$hwi
 00000000   HWI_ZEROTAB
 00000001   IDL$
-8103ad28   IDL_A_CALBEG
-8103ad18   IDL_A_TABBEG
+8103dbdc   IDL_A_CALBEG
+8103bd24   IDL_A_TABBEG
 00000006   IDL_CALIBRERROR
-8102db40   IDL_CALIBRFXN
-81039e5c   IDL_D_busyObj
-81039b98   IDL_D_calbeg
-81039b94   IDL_D_calibrate
-81039b90   IDL_D_tabbeg
-8103ad24   IDL_END
-8103ad34   IDL_END$
-8102d7e0   IDL_F_busy
-8102d580   IDL_F_calibrate
-8102dd00   IDL_F_loop
-8102db40   IDL_F_stub
+8102f760   IDL_CALIBRFXN
+8103bcfc   IDL_D_busyObj
+8103ba38   IDL_D_calbeg
+8103ba34   IDL_D_calibrate
+8103ba30   IDL_D_tabbeg
+8103bd30   IDL_END
+8103dbe8   IDL_END$
+8102f400   IDL_F_busy
+8102f1a0   IDL_F_calibrate
+8102f920   IDL_F_loop
+8102f760   IDL_F_stub
 00000001   IDL_USECLKIDLTIME
-8103c168   IDL_busyObj
-8103ad69   IDL_busyObj$avgfmt
+8103e00c   IDL_busyObj
+8103cc11   IDL_busyObj$avgfmt
 00000001   IDL_busyObj$filter
 00000001   IDL_busyObj$iA
 00000000   IDL_busyObj$iB
 00000001   IDL_busyObj$iC
-8103ad63   IDL_busyObj$maxfmt
+8103cc0b   IDL_busyObj$maxfmt
 00000000   IDL_busyObj$operation
-8103c164   IDL_busyObj$stsobj
-8103ad66   IDL_busyObj$sumfmt
+8103e008   IDL_busyObj$stsobj
+8103cc0e   IDL_busyObj$sumfmt
 00000002   IDL_busyObj$unittype
-8103ad18   IDL_cpuLoad
-8103ad28   IDL_cpuLoad$
+8103bd24   IDL_cpuLoad
+8103dbdc   IDL_cpuLoad$
 ffffffff   IRAM
 00000001   ISRC$
-8102c278   KNL_glue
-8103c1b0   KNL_swi
+8102de98   KNL_glue
+8103e054   KNL_swi
 00000001   KNL_swi$dorta
 00000000   KNL_swi$ord
 00000000   KNL_swi$pri
-8103c138   KNL_swi$sts
-8103ad25   KNL_swi$sts$avgfmt
+8103dfdc   KNL_swi$sts
+8103cbcd   KNL_swi$sts$avgfmt
 00000002   KNL_swi$sts$filter
 00000001   KNL_swi$sts$filtmaxmult
 00000001   KNL_swi$sts$filtsummult
-8103ad15   KNL_swi$sts$maxfmt
-8103c134   KNL_swi$sts$stsobj
-8103ad1d   KNL_swi$sts$sumfmt
+8103cbbd   KNL_swi$sts$maxfmt
+8103dfd8   KNL_swi$sts$stsobj
+8103cbc5   KNL_swi$sts$sumfmt
 00000000   KNL_swi$sts$unittype
 00000000   KNL_swi$swi
 ffffffff   L1DSRAM
 00000001   LCK$
-810286c0   LNK_F_checkBufferCall
-81028740   LNK_F_dataPump
-810286e0   LNK_F_getChanPtr
-81028738   LNK_F_init
-81028c48   LNK_F_readCallBack
-8103ad1c   LNK_dataPump
-8103ad2c   LNK_dataPump$
-81039d98   LNK_dspFrameReadyMask
-81039d94   LNK_dspFrameRequestMask
-810289c0   LNK_newin
-81028af4   LNK_newout
-81028750   LNK_rcloop
-81028814   LNK_rdrtry
-81039da0   LNK_readDone
-81039da4   LNK_readFail
-81039d9c   LNK_readPend
-81028824   LNK_rrloop
-81039da8   LNK_writeFail
-810288f0   LNK_wrloop
-810288e4   LNK_wrrtry
+8102a2e0   LNK_F_checkBufferCall
+8102a360   LNK_F_dataPump
+8102a300   LNK_F_getChanPtr
+8102a358   LNK_F_init
+8102a868   LNK_F_readCallBack
+8103bd28   LNK_dataPump
+8103dbe0   LNK_dataPump$
+8103bc38   LNK_dspFrameReadyMask
+8103bc34   LNK_dspFrameRequestMask
+8102a5e0   LNK_newin
+8102a714   LNK_newout
+8102a370   LNK_rcloop
+8102a434   LNK_rdrtry
+8103bc40   LNK_readDone
+8103bc44   LNK_readFail
+8103bc3c   LNK_readPend
+8102a444   LNK_rrloop
+8103bc48   LNK_writeFail
+8102a510   LNK_wrloop
+8102a504   LNK_wrrtry
 00000001   LOG$
-8103c0ec   LOG_A_TABBEG
-8103c134   LOG_A_TABEND
+8103df90   LOG_A_TABBEG
+8103dfd8   LOG_A_TABEND
 00000003   LOG_A_TABLEN
-81039b9c   LOG_D_system
+8103ba3c   LOG_D_system
 00000001   LOG_ENABLED
-8102d300   LOG_F_event
-8103c0ec   LOG_system
+8102ef20   LOG_F_event
+8103df90   LOG_system
 10808000   LOG_system$buf
 00000000   LOG_system$datatype
 00000000   LOG_system$log
 00000400   LOG_system$size
 00000000   MBX$
 00000001   MEM$
-81039a6c   MEM_MALLOCSEG
+8103b90c   MEM_MALLOCSEG
 00000000   MEM_NULL
-81039a6c   MEM_SEGZERO
+8103b90c   MEM_SEGZERO
 00000000   MEM_USEMPC
 00000001   MEM_gNumHeap
 00000000   MSGQ$
 00000000   MSGQ_USEMSGQ
 00000000   OBJ$
 00000000   PIP$
-8103bf00   PIP_A_TABBEG
-8103bfc8   PIP_A_TABEND
+8103db14   PIP_A_TABBEG
+8103dbdc   PIP_A_TABEND
 00000002   PIP_A_TABLEN
-81039ba0   PIP_D_tabbeg
-81039ba4   PIP_D_tablen
-8102b738   PIP_F_give
-8102b738   PIP_F_probe
-8102b808   PIP_F_start
-8102b6c0   PIP_F_take
+8103ba40   PIP_D_tabbeg
+8103ba44   PIP_D_tablen
+8102d358   PIP_F_give
+8102d358   PIP_F_probe
+8102d428   PIP_F_start
+8102d2e0   PIP_F_take
 00000064   PIP_OBJSIZE
 00000000   PIP_gNextId
 00000002   PIP_gNumEmbed
@@ -1188,66 +1206,66 @@ ffffffff   L1DSRAM
 80000000   PRD_A_TABBEG
 80000000   PRD_A_TABEND
 00000000   PRD_A_TABLEN
-81039be0   PRD_D_cur
-81039be4   PRD_D_elapsed
-81039be8   PRD_D_prevtim
-81039bec   PRD_D_scalar
-81039bf0   PRD_D_swihandle
-81039bf4   PRD_D_tabbeg
-81039bf8   PRD_D_tablen
-81039bfc   PRD_D_thook
-81039bdc   PRD_D_tick
-81029b40   PRD_F_swi
-81029dc4   PRD_F_tick
+8103ba80   PRD_D_cur
+8103ba84   PRD_D_elapsed
+8103ba88   PRD_D_prevtim
+8103ba8c   PRD_D_scalar
+8103ba90   PRD_D_swihandle
+8103ba94   PRD_D_tabbeg
+8103ba98   PRD_D_tablen
+8103ba9c   PRD_D_thook
+8103ba7c   PRD_D_tick
+8102b760   PRD_F_swi
+8102b9e4   PRD_F_tick
 00004000   PRD_SCALAR
 00000000   PRD_SWIHANDLE
-8102b6ac   PRD_THOOKFXN
-8103ad38   PRD_clock
+8102d2cc   PRD_THOOKFXN
+8103e080   PRD_clock
 00000001   QUE$
-81039c00   RTA_D_fromHost
-81039c08   RTA_D_logval
-81039c18   RTA_D_stsval
-81039c04   RTA_D_toHost
-8102dbc0   RTA_F_andn
-8102a4e0   RTA_F_dispatch
-8102a400   RTA_F_getlog
-8102a438   RTA_F_getsts
-8102dbd8   RTA_F_or
-8102a478   RTA_F_readblk
-8102a4a0   RTA_F_resetmem
-8102a494   RTA_F_writeword
-8103ad20   RTA_dispatcher
-8103ad30   RTA_dispatcher$
-8102a52c   RTA_execute
-8103c178   RTA_fromHost
-81039e84   RTA_fromHost$buf
+8103baa0   RTA_D_fromHost
+8103baa8   RTA_D_logval
+8103bab8   RTA_D_stsval
+8103baa4   RTA_D_toHost
+8102f7e0   RTA_F_andn
+8102c100   RTA_F_dispatch
+8102c020   RTA_F_getlog
+8102c058   RTA_F_getsts
+8102f7f8   RTA_F_or
+8102c098   RTA_F_readblk
+8102c0c0   RTA_F_resetmem
+8102c0b4   RTA_F_writeword
+8103bd2c   RTA_dispatcher
+8103dbe4   RTA_dispatcher$
+8102c14c   RTA_execute
+8103e01c   RTA_fromHost
+8103a524   RTA_fromHost$buf
 00000004   RTA_fromHost$framesize
 00000000   RTA_fromHost$hst
 00000001   RTA_fromHost$id
 00000000   RTA_fromHost$mode
-8103bf00   RTA_fromHost$pipe
-8103bf30   RTA_fromHost$pipe$aaa
-8103bf60   RTA_fromHost$pipe$bbb
-81039a70   RTA_fromHost$pipe$dtab
-8103bf04   RTA_fromHost$pipe$rd
-8103bf34   RTA_fromHost$pipe$wr
-8103c180   RTA_fromHost$rtdx
-8103c194   RTA_toHost
-8103be00   RTA_toHost$buf
+8103db14   RTA_fromHost$pipe
+8103db44   RTA_fromHost$pipe$aaa
+8103db74   RTA_fromHost$pipe$bbb
+8103b910   RTA_fromHost$pipe$dtab
+8103db18   RTA_fromHost$pipe$rd
+8103db48   RTA_fromHost$pipe$wr
+8103e024   RTA_fromHost$rtdx
+8103e038   RTA_toHost
+8103da14   RTA_toHost$buf
 00000040   RTA_toHost$framesize
 00000000   RTA_toHost$hst
 00000000   RTA_toHost$id
 00000001   RTA_toHost$mode
-8103bf64   RTA_toHost$pipe
-8103bf94   RTA_toHost$pipe$aaa
-8103bfc4   RTA_toHost$pipe$bbb
-81039a7c   RTA_toHost$pipe$dtab
-8103bf68   RTA_toHost$pipe$rd
-8103bf98   RTA_toHost$pipe$wr
-8103c19c   RTA_toHost$rtdx
+8103db78   RTA_toHost$pipe
+8103dba8   RTA_toHost$pipe$aaa
+8103dbd8   RTA_toHost$pipe$bbb
+8103b91c   RTA_toHost$pipe$dtab
+8103db7c   RTA_toHost$pipe$rd
+8103dbac   RTA_toHost$pipe$wr
+8103e040   RTA_toHost$rtdx
 00000001   RTDX$
 00000408   RTDX_BUFMEMSIZE
-81039a6c   RTDX_DATAMEMSEG
+8103b90c   RTDX_DATAMEMSEG
 00000000   RTDX_MODE
 00000001   RTDX_NORMALIZED_HDR
 00000001   RTDX_USERTDX
@@ -1256,162 +1274,162 @@ ffffffff   L1DSRAM
 00000000   SIO$
 ffffffff   SRAM
 00000001   STS$
-8103c134   STS_A_TABBEG
-8103c174   STS_A_TABEND
-8102d92c   STS_F_add
-8102d900   STS_F_delta
-8102d948   STS_F_reset
+8103dfd8   STS_A_TABBEG
+8103e018   STS_A_TABEND
+8102f54c   STS_F_add
+8102f520   STS_F_delta
+8102f568   STS_F_reset
 00000001   SWI$
-8103c1b0   SWI_A_TABBEG
-8103c1dc   SWI_A_TABEND
+8103e054   SWI_A_TABBEG
+8103e080   SWI_A_TABEND
 00000001   SWI_A_TABLEN
-81039c74   SWI_D_curfxn
-81039c64   SWI_D_curmask
-81039c70   SWI_D_curmbox
-81039c68   SWI_D_curset
-81039c60   SWI_D_execaddr
-81039c7c   SWI_D_inswi
-81039c6c   SWI_D_lock
-81039c78   SWI_D_rdybeg
-81039c80   SWI_D_rdytab
-81039c5c   SWI_D_runaddr
+8103bb14   SWI_D_curfxn
+8103bb04   SWI_D_curmask
+8103bb10   SWI_D_curmbox
+8103bb08   SWI_D_curset
+8103bb00   SWI_D_execaddr
+8103bb1c   SWI_D_inswi
+8103bb0c   SWI_D_lock
+8103bb18   SWI_D_rdybeg
+8103bb20   SWI_D_rdytab
+8103bafc   SWI_D_runaddr
 00000000   SWI_EHOOKFXN
-81029864   SWI_EXECFXN
-81029680   SWI_F_enable
-81029864   SWI_F_exec
-8102988c   SWI_F_iexec
-810296f0   SWI_F_post
-8102990c   SWI_F_run
+8102b484   SWI_EXECFXN
+8102b2a0   SWI_F_enable
+8102b484   SWI_F_exec
+8102b4ac   SWI_F_iexec
+8102b310   SWI_F_post
+8102b52c   SWI_F_run
 00000000   SWI_IHOOKFXN
-8102990c   SWI_RUNFXN
+8102b52c   SWI_RUNFXN
 00000001   SYS$
-8103c1dc   SYS$config
-8102dc00   SYS_ABORTFXN
-8102dd80   SYS_ERRORFXN
-8102dda0   SYS_EXITFXN
-8102d9c0   SYS_PUTCFXN
-8103c034   TACHEVIDEO
+8103dbec   SYS$config
+8102f820   SYS_ABORTFXN
+8102f9a0   SYS_ERRORFXN
+8102f9c0   SYS_EXITFXN
+8102f5e0   SYS_PUTCFXN
+8103de6c   TACHEVIDEO
 00000003   TACHEVIDEO$ord
 00000001   TACHEVIDEO$pri
-810323c8   TACHEVIDEO$stack
-81036360   TACHEVIDEO$stkptr
-8103c158   TACHEVIDEO$sts
-8103ad59   TACHEVIDEO$sts$avgfmt
+81034108   TACHEVIDEO$stack
+810380a0   TACHEVIDEO$stkptr
+8103dffc   TACHEVIDEO$sts
+8103cc01   TACHEVIDEO$sts$avgfmt
 00000002   TACHEVIDEO$sts$filter
 00000001   TACHEVIDEO$sts$filtmaxmult
 00000001   TACHEVIDEO$sts$filtsummult
-8103ad49   TACHEVIDEO$sts$maxfmt
-8103c154   TACHEVIDEO$sts$stsobj
-8103ad51   TACHEVIDEO$sts$sumfmt
+8103cbf1   TACHEVIDEO$sts$maxfmt
+8103dff8   TACHEVIDEO$sts$stsobj
+8103cbf9   TACHEVIDEO$sts$sumfmt
 00000000   TACHEVIDEO$sts$unittype
 00000000   TACHEVIDEO$tsk
-81039e98   TRC_R_mask
-81039e94   TRC_cinit
+8103bd38   TRC_R_mask
+8103bd34   TRC_cinit
 00000001   TSK$
 00000000   TSK_NUM_HOOKS
 00000001   TSK_PRIORITY
 00000000   TSK_READYFXN
-81039a6c   TSK_STACKSEG
+8103b90c   TSK_STACKSEG
 00000400   TSK_STACKSIZE
 00000000   TSK_SWITCHFXN
-8102dca0   TSK_VCREATEFXN
-8102dca0   TSK_VDELETEFXN
-8102dca0   TSK_VEXITFXN
-8103bfd4   TSK_idle
+8102f8c0   TSK_VCREATEFXN
+8102f8c0   TSK_VDELETEFXN
+8102f8c0   TSK_VEXITFXN
+8103de0c   TSK_idle
 00000000   TSK_idle$ord
 00000000   TSK_idle$pri
-8103b238   TSK_idle$stack
-8103b5d0   TSK_idle$stkptr
-8103c148   TSK_idle$sts
-8103ad3f   TSK_idle$sts$avgfmt
+8103d0b8   TSK_idle$stack
+8103d450   TSK_idle$stkptr
+8103dfec   TSK_idle$sts
+8103cbe7   TSK_idle$sts$avgfmt
 00000002   TSK_idle$sts$filter
 00000001   TSK_idle$sts$filtmaxmult
 00000001   TSK_idle$sts$filtsummult
-8103ad2f   TSK_idle$sts$maxfmt
-8103c144   TSK_idle$sts$stsobj
-8103ad37   TSK_idle$sts$sumfmt
+8103cbd7   TSK_idle$sts$maxfmt
+8103dfe8   TSK_idle$sts$stsobj
+8103cbdf   TSK_idle$sts$sumfmt
 00000000   TSK_idle$sts$unittype
 00000000   TSK_idle$tsk
 00000001   UDEV$
-8103bbe8   UDEV_I2C0$device
-8103bbdc   UDEV_I2C0$obj
-8103bba0   UDEV_VPBE0$device
-8103bb94   UDEV_VPBE0$obj
-8103bbc4   UDEV_VPFE0$device
-8103bbb8   UDEV_VPFE0$obj
-8102d080   _ATM_andi
-8102d080   _ATM_andu
-8102d090   _ATM_cleari
-8102d090   _ATM_clearu
-8102d0a0   _ATM_deci
-8102d0a0   _ATM_decu
-8102d0b0   _ATM_inci
-8102d0b0   _ATM_incu
-8102d0c4   _ATM_ori
-8102d0c4   _ATM_oru
-8102d0d4   _ATM_seti
-8102d0d4   _ATM_setu
-8102dca0   _BCACHE_bootInit
-8102c634   _BCACHE_getMar
-8102c5e4   _BCACHE_getSize
-8102bdb4   _BCACHE_inv
-8102c5b4   _BCACHE_setCacheToSram
-8102c564   _BCACHE_setMar
-8102c520   _BCACHE_setSize
-8102d500   _BCACHE_wait
-8102bda4   _BCACHE_wb
-8102bd90   _BCACHE_wbInv
-8101f3c4   _BIOS_OsGetOsTicksPerMSecs
-81039ea0   _BIOS_init
-8103a120   _BIOS_start
-8102daac   _C62_clearIFR
-8102da80   _C62_disableIER
-8102da98   _C62_enableIER
-8101fc5c   _C64P_getltime
-8101fc40   _C64P_getltime8
-8102daac   _C64_clearIFR
-8102da80   _C64_disableIER
-8102da98   _C64_enableIER
+8103df14   UDEV_I2C0$device
+8103df08   UDEV_I2C0$obj
+8103decc   UDEV_VPBE0$device
+8103dec0   UDEV_VPBE0$obj
+8103def0   UDEV_VPFE0$device
+8103dee4   UDEV_VPFE0$obj
+8102eca0   _ATM_andi
+8102eca0   _ATM_andu
+8102ecb0   _ATM_cleari
+8102ecb0   _ATM_clearu
+8102ecc0   _ATM_deci
+8102ecc0   _ATM_decu
+8102ecd0   _ATM_inci
+8102ecd0   _ATM_incu
+8102ece4   _ATM_ori
+8102ece4   _ATM_oru
+8102ecf4   _ATM_seti
+8102ecf4   _ATM_setu
+8102f8c0   _BCACHE_bootInit
+8102e254   _BCACHE_getMar
+8102e204   _BCACHE_getSize
+8102d9d4   _BCACHE_inv
+8102e1d4   _BCACHE_setCacheToSram
+8102e184   _BCACHE_setMar
+8102e140   _BCACHE_setSize
+8102f120   _BCACHE_wait
+8102d9c4   _BCACHE_wb
+8102d9b0   _BCACHE_wbInv
+81020e64   _BIOS_OsGetOsTicksPerMSecs
+8103bd40   _BIOS_init
+8103bfc0   _BIOS_start
+8102f6cc   _C62_clearIFR
+8102f6a0   _C62_disableIER
+8102f6b8   _C62_enableIER
+8102185c   _C64P_getltime
+81021840   _C64P_getltime8
+8102f6cc   _C64_clearIFR
+8102f6a0   _C64_disableIER
+8102f6b8   _C64_enableIER
 ffffffff   _CACHE_L1D
 ffffffff   _CACHE_L1P
 00091050   _CLK_COUNTSPMS
-81039e28   _CLK_DFLTMICROSECS
-81039bd8   _CLK_D_countspms
-81039bcc   _CLK_D_dirty
-81039e2c   _CLK_D_microseconds
-81039bd0   _CLK_D_prd
-81039bd4   _CLK_D_tddr
-8102c0d0   _CLK_F_itime
+8103bcc8   _CLK_DFLTMICROSECS
+8103ba78   _CLK_D_countspms
+8103ba6c   _CLK_D_dirty
+8103bccc   _CLK_D_microseconds
+8103ba70   _CLK_D_prd
+8103ba74   _CLK_D_tddr
+8102dcf0   _CLK_F_itime
 00006978   _CLK_PRD
 01c21800   _CLK_REGS
 00000000   _CLK_TDDR
 00000001   _CLK_TIMERNUM
 00000001   _CLK_USETIMER
-8102dc40   _CLK_countspms
-8103a380   _CLK_enableTimer
-8102ddc0   _CLK_gethtime
-8102dc60   _CLK_getltime
-8102dc80   _CLK_getprd
-81039bbc   _CLK_htimeDiv
-81039bc0   _CLK_htimeMult
-81039e50   _CLK_htimePerLtime
-81031c7c   _CLK_inputClock
-8102c0d0   _CLK_itime
-81039bc4   _CLK_ltimeDiv
-81039bc8   _CLK_ltimeMult
-8102da20   _CLK_measure
+8102f860   _CLK_countspms
+8103c220   _CLK_enableTimer
+8102f9e0   _CLK_gethtime
+8102f880   _CLK_getltime
+8102f8a0   _CLK_getprd
+8103ba5c   _CLK_htimeDiv
+8103ba60   _CLK_htimeMult
+8103bcf0   _CLK_htimePerLtime
+8103389c   _CLK_inputClock
+8102dcf0   _CLK_itime
+8103ba64   _CLK_ltimeDiv
+8103ba68   _CLK_ltimeMult
+8102f640   _CLK_measure
 81016288   _DDC_ConfigextVDParams
 81014b24   _DDC_VPBEAddQueue
 81015160   _DDC_VPBEAllocFrameBuffer
 810144d4   _DDC_VPBECheckFrameBuffer
 81013e60   _DDC_VPBECloseHandle
-81019b88   _DDC_VPBEConfigBMPCLUT
-8101978c   _DDC_VPBEConfigBlending
-8101e820   _DDC_VPBEConfigCursorParams
-8101996c   _DDC_VPBEConfigMainCLUT
-81019340   _DDC_VPBEConfigOsdParams
-8101986c   _DDC_VPBEConfigTransparency
-8101b2e0   _DDC_VPBEConfigVencParams
+8101a508   _DDC_VPBEConfigBMPCLUT
+8101a10c   _DDC_VPBEConfigBlending
+8101fce0   _DDC_VPBEConfigCursorParams
+8101a2ec   _DDC_VPBEConfigMainCLUT
+81019cc0   _DDC_VPBEConfigOsdParams
+8101a1ec   _DDC_VPBEConfigTransparency
+8101bc60   _DDC_VPBEConfigVencParams
 81014588   _DDC_VPBEConfigWindowBoundary
 81014798   _DDC_VPBEConfigZoomParameters
 81014214   _DDC_VPBEDeQueueFrameBuffer
@@ -1469,20 +1487,20 @@ ffffffff   _CACHE_L1P
 8100dd98   _DDC_prevISR
 8100bbb4   _DDC_prevIoctl
 8100b86c   _DDC_prevOpenHandle
-81039a6c   _DDR2
+8103b90c   _DDR2
 80000000   _DDR2_base
 01000000   _DDR2_length
-810323c0   _DEV_D_devinit
-81039a88   _DEV_devinit
-8103a260   _DEV_init
-8102cdc0   _DEV_match
-8103c11c   _DVTEvent_Log
-810323a0   _ECM_ATTRS
-8102dac0   _ECM_disableEvent
-8102cae0   _ECM_dispatch
-8102d6c0   _ECM_dispatchPlug
-8103966c   _ECM_dispatchTab
-8102db00   _ECM_enableEvent
+81034100   _DEV_D_devinit
+8103b928   _DEV_devinit
+8103c100   _DEV_init
+8102e9e0   _DEV_match
+8103dfc0   _DVTEvent_Log
+810340e0   _ECM_ATTRS
+8102f6e0   _ECM_disableEvent
+8102e700   _ECM_dispatch
+8102f2e0   _ECM_dispatchPlug
+8103b50c   _ECM_dispatchTab
+8102f720   _ECM_enableEvent
 81002ba4   _EDMA3_DRV_chainChannel
 81001734   _EDMA3_DRV_clearErrorBits
 810009ec   _EDMA3_DRV_close
@@ -1650,49 +1668,49 @@ ffffffff   _CACHE_L1P
 00000061   _EVENT97
 00000062   _EVENT98
 00000063   _EVENT99
-81029170   _EXC_clearLastStatus
-8102b300   _EXC_dispatch
-81028ff4   _EXC_exceptionHandler
-81039dac   _EXC_exceptionHook
-81028fc0   _EXC_external
-81039db4   _EXC_externalHook
-81028fa0   _EXC_getLastStatus
-81028f60   _EXC_init
-81028cb4   _EXC_internal
-81039db0   _EXC_internalHook
-81028c80   _EXC_nmi
-81039db8   _EXC_nmiHook
-81039d48   _EXC_returnPtr
-8102b4c4   _EXC_setReturnPtr
-8103234c   _EXC_status
-81039d40   _EXC_sysTrapTable
-8101d6e0   _Edma3_CacheFlush
-8101d6c0   _Edma3_CacheInvalidate
-8102dca0   _FXN_F_nop
-8102d724   _FXN_F_run
-8102d760   _FXN_F_zero
+8102ad90   _EXC_clearLastStatus
+8102cf20   _EXC_dispatch
+8102ac14   _EXC_exceptionHandler
+8103bc4c   _EXC_exceptionHook
+8102abe0   _EXC_external
+8103bc54   _EXC_externalHook
+8102abc0   _EXC_getLastStatus
+8102ab80   _EXC_init
+8102a8d4   _EXC_internal
+8103bc50   _EXC_internalHook
+8102a8a0   _EXC_nmi
+8103bc58   _EXC_nmiHook
+8103bbe8   _EXC_returnPtr
+8102d0e4   _EXC_setReturnPtr
+8103408c   _EXC_status
+8103bbe0   _EXC_sysTrapTable
+8101e740   _Edma3_CacheFlush
+8101e720   _Edma3_CacheInvalidate
+8102f8c0   _FXN_F_nop
+8102f344   _FXN_F_run
+8102f380   _FXN_F_zero
 00000000   _GBL_CACHE
-8102c6c4   _GBL_cacheInit64P
-81039c34   _GBL_clkIn
-81039c38   _GBL_freq
-8102dcc0   _GBL_getVersion
-81039c30   _GBL_procId
-81039e58   _GIO
-810323a8   _GIO_ATTRS
-8103235c   _GIO_CONFIG
-8102dce0   _GIO_control
-81029ec0   _GIO_create
-8102cbe0   _GIO_delete
-8103a620   _GIO_init
-8102b8a0   _GIO_submit
-810386a0   _HSRTDX_rec
-81038e00   _HSRTDX_xmt
-8103c174   _HST_A_TABBEG
-8103c1b0   _HST_A_TABEND
+8102e2e4   _GBL_cacheInit64P
+8103bad4   _GBL_clkIn
+8103bad8   _GBL_freq
+8102f8e0   _GBL_getVersion
+8103bad0   _GBL_procId
+8103bcf8   _GIO
+810340e8   _GIO_ATTRS
+8103409c   _GIO_CONFIG
+8102f900   _GIO_control
+8102bae0   _GIO_create
+8102e800   _GIO_delete
+8103c4c0   _GIO_init
+8102d4c0   _GIO_submit
+8103a540   _HSRTDX_rec
+8103aca0   _HSRTDX_xmt
+8103e018   _HST_A_TABBEG
+8103e054   _HST_A_TABEND
 00009f88   _HWI_CFGDISPATCHED
-81039d88   _HWI_D_inhwi
-81039d7c   _HWI_D_spsave
-810291a0   _HWI_F_dispatch
+8103bc28   _HWI_D_inhwi
+8103bc1c   _HWI_D_spsave
+8102adc0   _HWI_F_dispatch
 0000000a   _HWI_INT10
 0000000b   _HWI_INT11
 0000000c   _HWI_INT12
@@ -1709,55 +1727,55 @@ ffffffff   _CACHE_L1P
 00000002   _HWI_RESERVED0
 00000003   _HWI_RESERVED1
 00000000   _HWI_RESET
-810280f8   _HWI_STKBOTTOM
-81020100   _HWI_STKTOP
-81039d7c   _HWI_data
-8102d780   _HWI_disable
-81039a90   _HWI_dispatchTab
-8102d798   _HWI_enable
-8102d7ac   _HWI_restore
-81031c80   _I2CMD_FXNS
-8101f8e0   _I2C_INIT
-8103231c   _I2C_devParams
-8103c168   _IDL_busyObj
-8103ad18   _IDL_cpuLoad
-8102dd00   _IDL_loop
+81029d18   _HWI_STKBOTTOM
+81021d20   _HWI_STKTOP
+8103bc1c   _HWI_data
+8102f3a0   _HWI_disable
+8103b930   _HWI_dispatchTab
+8102f3b8   _HWI_enable
+8102f3cc   _HWI_restore
+810338a0   _I2CMD_FXNS
+81021400   _I2C_INIT
+8103405c   _I2C_devParams
+8103e00c   _IDL_busyObj
+8103bd24   _IDL_cpuLoad
+8102f920   _IDL_loop
 ffffffff   _IRAM
-81039d00   _KNL_alarm
-8102c780   _KNL_check
-81039d24   _KNL_curqueue
-81039d14   _KNL_curtask
-81039d1c   _KNL_curtime
-81031f60   _KNL_dummy
-8102cec0   _KNL_enter
-8102ce80   _KNL_exit
-8102c848   _KNL_idle
-81039d3c   _KNL_idlefxn
-81039d08   _KNL_inactive
-8102d180   _KNL_ipost
-8102c870   _KNL_max
-81039d28   _KNL_maxqueue
-8102d200   _KNL_post
-81039d18   _KNL_prevtask
-81039d0c   _KNL_priority
-81031ec0   _KNL_queues
-8102a680   _KNL_run
-8102c120   _KNL_saveIsrFrame
-81039d10   _KNL_set
-81039d04   _KNL_setpri
-8103c1b0   _KNL_swi
-81039d20   _KNL_swiptr
-8102c1cc   _KNL_switch
-81039d30   _KNL_tcreatefxn
-81039d34   _KNL_tdeletefxn
-8102b6ac   _KNL_tick
-81039d38   _KNL_treadyfxn
-81039d2c   _KNL_tswitchfxn
-81039cf8   _KNL_wFlag
-81039cfc   _KNL_wList
+8103bba0   _KNL_alarm
+8102e3a0   _KNL_check
+8103bbc4   _KNL_curqueue
+8103bbb4   _KNL_curtask
+8103bbbc   _KNL_curtime
+81033ca0   _KNL_dummy
+8102eae0   _KNL_enter
+8102eaa0   _KNL_exit
+8102e468   _KNL_idle
+8103bbdc   _KNL_idlefxn
+8103bba8   _KNL_inactive
+8102eda0   _KNL_ipost
+8102e490   _KNL_max
+8103bbc8   _KNL_maxqueue
+8102ee20   _KNL_post
+8103bbb8   _KNL_prevtask
+8103bbac   _KNL_priority
+81033c00   _KNL_queues
+8102c2a0   _KNL_run
+8102dd40   _KNL_saveIsrFrame
+8103bbb0   _KNL_set
+8103bba4   _KNL_setpri
+8103e054   _KNL_swi
+8103bbc0   _KNL_swiptr
+8102ddec   _KNL_switch
+8103bbd0   _KNL_tcreatefxn
+8103bbd4   _KNL_tdeletefxn
+8102d2cc   _KNL_tick
+8103bbd8   _KNL_treadyfxn
+8103bbcc   _KNL_tswitchfxn
+8103bb98   _KNL_wFlag
+8103bb9c   _KNL_wList
 ffffffff   _L1DSRAM
-8102d2a0   _LCK_pend
-8102d280   _LCK_post
+8102eec0   _LCK_pend
+8102eea0   _LCK_post
 81011b78   _LLC_Ccdc_ALawDisable
 81011b38   _LLC_Ccdc_ALawEnable
 81011bb4   _LLC_Ccdc_ALaw_SetGammaInput
@@ -1860,17 +1878,17 @@ ffffffff   _L1DSRAM
 8100f6d4   _LLC_setClutEntry_Cb
 8100f724   _LLC_setClutEntry_Cr
 8100f680   _LLC_setClutEntry_Y
-8101d898   _LLC_setCursorCLUTSelectRAM
-8101d868   _LLC_setCursorCLUTSelectROM
-8101d834   _LLC_setCursorDisable
-8101d800   _LLC_setCursorEnable
-8101d94c   _LLC_setCursorHWidth
-8101d8cc   _LLC_setCursorROMTYPE
-8101d908   _LLC_setCursorVWidth
-8101d994   _LLC_setCursorXPosition
-8101da34   _LLC_setCursorXSize
-8101d9e4   _LLC_setCursorYPosition
-8101da84   _LLC_setCursorYSize
+8101e8f8   _LLC_setCursorCLUTSelectRAM
+8101e8c8   _LLC_setCursorCLUTSelectROM
+8101e894   _LLC_setCursorDisable
+8101e860   _LLC_setCursorEnable
+8101e9ac   _LLC_setCursorHWidth
+8101e92c   _LLC_setCursorROMTYPE
+8101e968   _LLC_setCursorVWidth
+8101e9f4   _LLC_setCursorXPosition
+8101ea94   _LLC_setCursorXSize
+8101ea44   _LLC_setCursorYPosition
+8101eae4   _LLC_setCursorYSize
 81017f74   _LLC_setDac1OutVidFormatSVidY
 81017fb4   _LLC_setDac2OutVidFormatSVidC
 81017918   _LLC_setDacBNormalMode
@@ -1952,79 +1970,79 @@ ffffffff   _L1DSRAM
 81017d30   _LLC_setVideoOutputTYP_NTSC
 81017d64   _LLC_setVideoOutputTYP_PAL
 81011568   _LLC_setYBitPosOddPixel
-8103ad1c   _LNK_dataPump
-81039d98   _LNK_dspFrameReadyMask
-81039d94   _LNK_dspFrameRequestMask
-81039da0   _LNK_readDone
-81039da4   _LNK_readFail
-81039d9c   _LNK_readPend
-81039da8   _LNK_writeFail
-8103c0ec   _LOG_A_TABBEG
-8103c134   _LOG_A_TABEND
+8103bd28   _LNK_dataPump
+8103bc38   _LNK_dspFrameReadyMask
+8103bc34   _LNK_dspFrameRequestMask
+8103bc40   _LNK_readDone
+8103bc44   _LNK_readFail
+8103bc3c   _LNK_readPend
+8103bc48   _LNK_writeFail
+8103df90   _LOG_A_TABBEG
+8103dfd8   _LOG_A_TABEND
 00000003   _LOG_A_TABLEN
-81039b9c   _LOG_D_system
-8102d300   _LOG_event
-8102dd20   _LOG_printf
-8103c0ec   _LOG_system
-81039e60   _MEM
-81031754   _MEM_ATTRS
-81039c3c   _MEM_D_NUMSEGMENTS
-81039c44   _MEM_D_freelist
-81039c48   _MEM_D_lockaddr
-81039c40   _MEM_D_memtab
-81039c4c   _MEM_D_unlockaddr
-8102b120   _MEM_alloc
-8102a8c0   _MEM_define
-8102ad20   _MEM_free
-8103a520   _MEM_init
-81039660   _MEM_memtab
-8102ab00   _MEM_redefine
-81039e64   _MEM_staticMemtab
-8102c8a0   _MEM_undefine
-8102d600   _MEM_valloc
-8102d380   _OBJ_create
-8102d840   _OBJ_delete
-8103a640   _OBJ_init
-81032230   _OBJ_segtab
-810321f8   _OBJ_table
-8101db84   _PAL_osMemAlloc
-8101dc30   _PAL_osMemCopy
-8101dbd8   _PAL_osMemFree
-8101dae0   _PAL_osMemInit
-8101dd08   _PAL_osMemLock
-8101dd50   _PAL_osMemPhy2Virt
-8101dd64   _PAL_osMemReport
-8101daf4   _PAL_osMemSegDefine
-8101db6c   _PAL_osMemSegUndefine
-8101dcac   _PAL_osMemSet
-8101dd24   _PAL_osMemUnlock
-8101dd40   _PAL_osMemVirt2Phy
-8101f960   _PAL_osProtectEntry
-8101f9a0   _PAL_osProtectExit
-8101eda0   _PAL_osSemCreate
-8101edf4   _PAL_osSemDelete
-8101ee60   _PAL_osSemGive
-8101ee18   _PAL_osSemTake
-8101f360   _PAL_osWaitMsecs
-8103bf00   _PIP_A_TABBEG
-8103bfc8   _PIP_A_TABEND
-81039bdc   _PRD_D_tick
-8103ad38   _PRD_clock
-8101c754   _PSP_VPBEClose
-8101c540   _PSP_VPBECreate
-8101c5e4   _PSP_VPBEDelete
-8101c8a8   _PSP_VPBEIoctl
-8101c664   _PSP_VPBEOpen
-8101c7c0   _PSP_VPBESubmitRequest
-8101cbb4   _PSP_VPFEClose
-8101c9c0   _PSP_VPFECreate
-8101ca48   _PSP_VPFEDelete
-8101cd30   _PSP_VPFEIoctl
-8101cac8   _PSP_VPFEOpen
-8101cc20   _PSP_VPFESubmitRequest
-81019c44   _PSP_VPFE_TVP5146_Close
-81019c78   _PSP_VPFE_TVP5146_Control
-81019c20   _PSP_VPFE_TVP5146_Open
+8103ba3c   _LOG_D_system
+8102ef20   _LOG_event
+8102f940   _LOG_printf
+8103df90   _LOG_system
+8103bd00   _MEM
+81033374   _MEM_ATTRS
+8103badc   _MEM_D_NUMSEGMENTS
+8103bae4   _MEM_D_freelist
+8103bae8   _MEM_D_lockaddr
+8103bae0   _MEM_D_memtab
+8103baec   _MEM_D_unlockaddr
+8102cd40   _MEM_alloc
+8102c4e0   _MEM_define
+8102c940   _MEM_free
+8103c3c0   _MEM_init
+8103b500   _MEM_memtab
+8102c720   _MEM_redefine
+8103bd04   _MEM_staticMemtab
+8102e4c0   _MEM_undefine
+8102f220   _MEM_valloc
+8102efa0   _OBJ_create
+8102f460   _OBJ_delete
+8103c4e0   _OBJ_init
+81033f70   _OBJ_segtab
+81033f38   _OBJ_table
+8101ebe4   _PAL_osMemAlloc
+8101ec90   _PAL_osMemCopy
+8101ec38   _PAL_osMemFree
+8101eb40   _PAL_osMemInit
+8101ed68   _PAL_osMemLock
+8101edb0   _PAL_osMemPhy2Virt
+8101edc4   _PAL_osMemReport
+8101eb54   _PAL_osMemSegDefine
+8101ebcc   _PAL_osMemSegUndefine
+8101ed0c   _PAL_osMemSet
+8101ed84   _PAL_osMemUnlock
+8101eda0   _PAL_osMemVirt2Phy
+81021480   _PAL_osProtectEntry
+810214c0   _PAL_osProtectExit
+81020840   _PAL_osSemCreate
+81020894   _PAL_osSemDelete
+81020900   _PAL_osSemGive
+810208b8   _PAL_osSemTake
+81020e00   _PAL_osWaitMsecs
+8103db14   _PIP_A_TABBEG
+8103dbdc   _PIP_A_TABEND
+8103ba7c   _PRD_D_tick
+8103e080   _PRD_clock
+8101d7b4   _PSP_VPBEClose
+8101d5a0   _PSP_VPBECreate
+8101d644   _PSP_VPBEDelete
+8101d908   _PSP_VPBEIoctl
+8101d6c4   _PSP_VPBEOpen
+8101d820   _PSP_VPBESubmitRequest
+8101dc14   _PSP_VPFEClose
+8101da20   _PSP_VPFECreate
+8101daa8   _PSP_VPFEDelete
+8101dd90   _PSP_VPFEIoctl
+8101db28   _PSP_VPFEOpen
+8101dc80   _PSP_VPFESubmitRequest
+8101a5c4   _PSP_VPFE_TVP5146_Close
+8101a5f8   _PSP_VPFE_TVP5146_Control
+8101a5a0   _PSP_VPFE_TVP5146_Open
 81012860   _PSP_i2cClose
 810121a0   _PSP_i2cCreate
 81012474   _PSP_i2cDelete
@@ -2038,238 +2056,249 @@ ffffffff   _L1DSRAM
 810170b4   _PSP_prevGetPSPHandle
 81016a88   _PSP_prevIoctl
 810165e4   _PSP_prevOpen
-8102db80   _QUE_get
-8102dba8   _QUE_put
-8103ad20   _RTA_dispatcher
-8103c178   _RTA_fromHost
-8103c194   _RTA_toHost
-8103adc0   _RTDX_Buffer
-8103b1cc   _RTDX_Buffer_End
-81039480   _RTDX_Buffer_Initialize
-81039600   _RTDX_Buffer_Read
-81039540   _RTDX_Buffer_ReadCB
-81039580   _RTDX_Buffer_Size
-8103b1c8   _RTDX_Buffer_Start
-81039620   _RTDX_Buffer_Write
-81038940   _RTDX_Buffer_WriteCB
-81039400   _RTDX_Final_RT_Monitor
-810394e0   _RTDX_Init_RT_Monitor
+8102f7a0   _QUE_get
+8102f7c8   _QUE_put
+8103bd2c   _RTA_dispatcher
+8103e01c   _RTA_fromHost
+8103e038   _RTA_toHost
+8103cc40   _RTDX_Buffer
+8103d04c   _RTDX_Buffer_End
+8103b320   _RTDX_Buffer_Initialize
+8103b4a0   _RTDX_Buffer_Read
+8103b3e0   _RTDX_Buffer_ReadCB
+8103b420   _RTDX_Buffer_Size
+8103d048   _RTDX_Buffer_Start
+8103b4c0   _RTDX_Buffer_Write
+8103a7e0   _RTDX_Buffer_WriteCB
+8103b2a0   _RTDX_Final_RT_Monitor
+8103b380   _RTDX_Init_RT_Monitor
 00000002   _RTDX_JTAGONLY
-81039640   _RTDX_Mask_IER
-81039100   _RTDX_Mon_Queue
-81039360   _RTDX_Poll
+8103b4e0   _RTDX_Mask_IER
+8103afa0   _RTDX_Mon_Queue
+8103b200   _RTDX_Poll
 00000000   _RTDX_interrupt_mask
-810395c0   _RTDX_memfill
-8103b220   _RTDX_writing
-810323b0   _SEM_ATTRS
-8102d400   _SEM_create
-8102dd40   _SEM_delete
-8102d8a0   _SEM_pend
-8102af20   _SEM_pendEnterKnl
-8102cce0   _SEM_post
-8102cce0   _SEM_postBinary
-8102cf40   _SEM_postEnterKnl
+8103b460   _RTDX_memfill
+8103d0a0   _RTDX_writing
+810340f0   _SEM_ATTRS
+8102f020   _SEM_create
+8102f960   _SEM_delete
+8102f4c0   _SEM_pend
+8102cb40   _SEM_pendEnterKnl
+8102e900   _SEM_post
+8102e900   _SEM_postBinary
+8102eb60   _SEM_postEnterKnl
 ffffffff   _SRAM
-8103c134   _STS_A_TABBEG
-8103c174   _STS_A_TABEND
-8102d92c   _STS_add
-8102d900   _STS_delta
-8102d948   _STS_reset
-8102dd60   _STS_set
-81039c74   _SWI_D_curfxn
-81039c64   _SWI_D_curmask
-81039c68   _SWI_D_curset
-81039c60   _SWI_D_execaddr
-81039c7c   _SWI_D_inswi
-81039c6c   _SWI_D_lock
-81039c78   _SWI_D_rdybeg
-81039c5c   _SWI_D_runaddr
-81039c5c   _SWI_data
-810296f0   _SWI_post
-81039c50   _SYS
-8103b994   _SYS_PUTCBEG
-8103bb93   _SYS_PUTCEND
-8102d960   _SYS_abort
-8102d660   _SYS_error
-8102cfe0   _SYS_exit
-810322a0   _SYS_exitStack
-81039e30   _SYS_exitStackPtr
-81039e34   _SYS_exitStackTop
-81028670   _SYS_printf
-81028644   _SYS_sprintf
-81028634   _SYS_vprintf
-81028200   _SYS_vsprintf
-8103c034   _TACHEVIDEO
-81039e98   _TRC_R_mask
-81039df4   _TSK
-8103219c   _TSK_ATTRS
-810321b8   _TSK_config
-8102d4a4   _TSK_disable
-8102d480   _TSK_enable
-8102c3e0   _TSK_exit
-8103bfd4   _TSK_idle
-8103a5c0   _TSK_init
-81039dec   _TSK_nTasks
-81039df0   _TSK_pid
-8102bde0   _TSK_setup
-8102ca64   _TSK_startup
-810321d8   _TSK_timerSem
-8102dc00   _UTL_doAbort
-8102dd80   _UTL_doError
-8102d9c0   _UTL_doPutc
-8102dda0   _UTL_halt
+8103dfd8   _STS_A_TABBEG
+8103e018   _STS_A_TABEND
+8102f54c   _STS_add
+8102f520   _STS_delta
+8102f568   _STS_reset
+8102f980   _STS_set
+8103bb14   _SWI_D_curfxn
+8103bb04   _SWI_D_curmask
+8103bb08   _SWI_D_curset
+8103bb00   _SWI_D_execaddr
+8103bb1c   _SWI_D_inswi
+8103bb0c   _SWI_D_lock
+8103bb18   _SWI_D_rdybeg
+8103bafc   _SWI_D_runaddr
+8103bafc   _SWI_data
+8102b310   _SWI_post
+8103baf0   _SYS
+8103d814   _SYS_PUTCBEG
+8103da13   _SYS_PUTCEND
+8102f580   _SYS_abort
+8102f280   _SYS_error
+8102ec00   _SYS_exit
+81033fe0   _SYS_exitStack
+8103bcd0   _SYS_exitStackPtr
+8103bcd4   _SYS_exitStackTop
+8102a290   _SYS_printf
+8102a264   _SYS_sprintf
+8102a254   _SYS_vprintf
+81029e20   _SYS_vsprintf
+8103de6c   _TACHEVIDEO
+8103bd38   _TRC_R_mask
+8103bc94   _TSK
+81033edc   _TSK_ATTRS
+81033ef8   _TSK_config
+8102f0c4   _TSK_disable
+8102f0a0   _TSK_enable
+8102e000   _TSK_exit
+8103de0c   _TSK_idle
+8103c460   _TSK_init
+8103bc8c   _TSK_nTasks
+8103bc90   _TSK_pid
+8102da00   _TSK_setup
+8102e684   _TSK_startup
+81033f18   _TSK_timerSem
+8102f820   _UTL_doAbort
+8102f9a0   _UTL_doError
+8102f5e0   _UTL_doPutc
+8102f9c0   _UTL_halt
 81015130   _VPBEGetTimeStamp
-81031dc0   _VPBEMD_FXNS
-8101ac60   _VPBE_mdBindDev
-8101b06c   _VPBE_mdControlChan
-8101adc8   _VPBE_mdCreateChan
-8101af88   _VPBE_mdDeleteChan
-8101b0f0   _VPBE_mdSubmitChan
-8101ad2c   _VPBE_mdUnBindDev
-81032128   _VPFEMD_FXNS
-8101b9e0   _VPFE_mdBindDev
-8101bdc0   _VPFE_mdControlChan
-8101bb38   _VPFE_mdCreateChan
-8101bce4   _VPFE_mdDeleteChan
-8101be44   _VPFE_mdSubmitChan
-8101baac   _VPFE_mdUnBindDev
-810319a4   __BCACHE_emifAddr
-8102c0f0   __CLK_lat1beg
-8102c110   __CLK_lat1end
-8101f420   __DDA_VPBERegisterIntrHandler
-8101f4a4   __DDA_VPBEUnregisterIntrHandler
-8101f6c0   __DDA_VPFERegisterIntrHandler
-8101f730   __DDA_VPFEUnregisterIntrHandler
-8101eb70   __DDA_i2cOsGetTicks
-8101ea20   __DDA_i2cRegisterIntrHandler
-8101eb60   __DDA_i2cSleep
-8101eaf0   __DDA_i2cUnregisterIntrHandler
+81033b00   _VPBEMD_FXNS
+8101b5e0   _VPBE_mdBindDev
+8101b9ec   _VPBE_mdControlChan
+8101b748   _VPBE_mdCreateChan
+8101b908   _VPBE_mdDeleteChan
+8101ba70   _VPBE_mdSubmitChan
+8101b6ac   _VPBE_mdUnBindDev
+81033e68   _VPFEMD_FXNS
+8101ca00   _VPFE_mdBindDev
+8101cde0   _VPFE_mdControlChan
+8101cb58   _VPFE_mdCreateChan
+8101cd04   _VPFE_mdDeleteChan
+8101ce64   _VPFE_mdSubmitChan
+8101cacc   _VPFE_mdUnBindDev
+810335c4   __BCACHE_emifAddr
+8102dd10   __CLK_lat1beg
+8102dd30   __CLK_lat1end
+81020ec0   __DDA_VPBERegisterIntrHandler
+81020f44   __DDA_VPBEUnregisterIntrHandler
+81021160   __DDA_VPFERegisterIntrHandler
+810211d0   __DDA_VPFEUnregisterIntrHandler
+81020510   __DDA_i2cOsGetTicks
+810203c0   __DDA_i2cRegisterIntrHandler
+81020500   __DDA_i2cSleep
+81020490   __DDA_i2cUnregisterIntrHandler
 81012b68   __DDC_i2cIntrHandler
-81039e54   __DEV_D_NUMINITFXNS
-81039a8c   __DEV_NUMINITFXNS
-8102d100   __GIO_iomCallback
-81039c58   __HOOK_NUMHOOKS
-81039c54   __HOOK_knlId
-810291a0   __HWI_lat1beg
-81029328   __HWI_lat1end
-81029328   __HWI_lat2beg
-81029504   __HWI_lat2end1
-81029490   __HWI_lat2end2
-81029520   __HWI_lat3beg
-810294c0   __HWI_lat3end2
-8102d7e0   __IDL_lat1beg
-8102d820   __IDL_lat1end
-8102c7cc   __KNL_lat1beg
-8102c848   __KNL_lat1end
-8102d300   __LOG_lat1beg
-81032274   __MEM_mutex
-8102db80   __QUE_lat1beg
-8102dba0   __QUE_lat1end
-8102dba8   __QUE_lat2beg
-8102dbb4   __QUE_lat2end
-8102a4a0   __RTA_lat1beg
-8102a4d4   __RTA_lat1end
-8102ba60   __SEM_dopost
-81028100   __STACK_END
+8103bcf4   __DEV_D_NUMINITFXNS
+8103b92c   __DEV_NUMINITFXNS
+8102ed20   __GIO_iomCallback
+8103baf8   __HOOK_NUMHOOKS
+8103baf4   __HOOK_knlId
+8102adc0   __HWI_lat1beg
+8102af48   __HWI_lat1end
+8102af48   __HWI_lat2beg
+8102b124   __HWI_lat2end1
+8102b0b0   __HWI_lat2end2
+8102b140   __HWI_lat3beg
+8102b0e0   __HWI_lat3end2
+8102f400   __IDL_lat1beg
+8102f440   __IDL_lat1end
+8102e3ec   __KNL_lat1beg
+8102e468   __KNL_lat1end
+8102ef20   __LOG_lat1beg
+81033fb4   __MEM_mutex
+8102f7a0   __QUE_lat1beg
+8102f7c0   __QUE_lat1end
+8102f7c8   __QUE_lat2beg
+8102f7d4   __QUE_lat2end
+8102c0c0   __RTA_lat1beg
+8102c0f4   __RTA_lat1end
+8102d680   __SEM_dopost
+81029d20   __STACK_END
 00008000   __STACK_SIZE
-810297f8   __SWI_lat1beg
-810298a4   __SWI_lat1end
-810298a8   __SWI_lat2beg
-81029908   __SWI_lat2end
-81029680   __SWI_lat3beg
-810296ec   __SWI_lat3end
-8103224c   __TSK_mutex
-8103239c   ___TI_enable_exit_profile_output
+8102b418   __SWI_lat1beg
+8102b4c4   __SWI_lat1end
+8102b4c8   __SWI_lat2beg
+8102b528   __SWI_lat2end
+8102b2a0   __SWI_lat3beg
+8102b30c   __SWI_lat3end
+81033f8c   __TSK_mutex
+810340dc   ___TI_enable_exit_profile_output
 ffffffff   ___TI_pprof_out_hndl
 ffffffff   ___TI_prof_data_size
 ffffffff   ___TI_prof_data_start
-8101fb00   ___add_dtor
-810319a8   ___atexit_func_id__
+81021680   ___add_dtor
+810335c8   ___atexit_func_id__
 ffffffff   ___binit__
-81039660   ___bss__
+8103b500   ___bss__
 ffffffff   ___c_args__
-810363c8   ___cinit__
+81038108   ___cinit__
 80000000   ___data__
 80000000   ___edata__
-81039e84   ___end__
-81020100   ___etext__
-81038694   ___pinit__
+8103bd24   ___end__
+81021d20   ___etext__
+8103a534   ___pinit__
 81000000   ___text__
-8101e220   __addd
-8101d220   __addf
-8102c2a0   __auto_init
-8101f060   __c6xabi_divu
-8101f580   __c6xabi_remu
-81032394   __cleanup_ptr
-8101eea0   __cmpd
-8101f760   __cmpf
-8101f9e0   __cvtfd
-8101ce40   __divf
-8101f060   __divu
-81032398   __dtors_ptr
-8101f7e0   __fixdu
-8101fb40   __fltud
-8101fb80   __fltuf
-8101e420   __frcaddd
-8101eba0   __frcmpyd
-8101fa40   __frcmpyf
-8101f4e0   __frcmpyf_div
-810323b8   __lock
-8101dd80   __mpyd
-8101e620   __mpyf
-8101fca0   __nop
-8101fcc0   __register_lock
-8101fce0   __register_unlock
-8101f580   __remu
-8101f860   __renormd
-81020100   __stack
-8101fbc0   __subd
-8101fc00   __subf
-810323bc   __unlock
-81030d20   _allocatedTCCs
-8101f120   _atexit
-8103a460   _c_int00
-8101eca0   _call_dtors
-8102a398   _calloc
-81039e00   _ccErrorInt
-81039dfc   _ccXferCompInt
-8101faa0   _ceil
-81039e10   _ddaPrevInterruptMapInfo
-81039e14   _ddaPrevInterruptMapRequired
-81032388   _ddaPrevPortObj
-81039e18   _ddaPrevSegId
-810320b0   _ddcI2CDriver
-81032060   _ddcI2CObj
-81031998   _ddcPrevDeviceObj
-81018a60   _deriche_nonopt
-81031dbc   _dtors
-81030d28   _edma3GblCfgParams
+8101f6e0   __addd
+8101e280   __addf
+8102dec0   __auto_init
+81020b00   __c6xabi_divu
+81021020   __c6xabi_remu
+810340d4   __cleanup_ptr
+81020940   __cmpd
+81021200   __cmpf
+81021500   __cvtfd
+8101c320   __divd
+8101dea0   __divf
+81020b00   __divu
+810340d8   __dtors_ptr
+81021280   __fixdi
+81021300   __fixdu
+81021560   __fltid
+81021700   __fltud
+81021740   __fltuf
+8101f8e0   __frcaddd
+81020540   __frcmpyd
+81020240   __frcmpyd_div
+810215c0   __frcmpyf
+81020f80   __frcmpyf_div
+810340f8   __lock
+8101ede0   __mpyd
+8101fae0   __mpyf
+81021780   __negd
+810218a0   __nop
+81020640   __nround
+810218c0   __register_lock
+810218e0   __register_unlock
+81021020   __remu
+81021380   __renormd
+81021d20   __stack
+810217c0   __subd
+81021800   __subf
+81021900   __trunc
+810340fc   __unlock
+81032940   _allocatedTCCs
+81020bc0   _atexit
+8101f424   _binarisation
+8103c300   _c_int00
+81020740   _call_dtors
+8102bfb8   _calloc
+8103bca0   _ccErrorInt
+8103bc9c   _ccXferCompInt
+81021620   _ceil
+8103bcb0   _ddaPrevInterruptMapInfo
+8103bcb4   _ddaPrevInterruptMapRequired
+810340c8   _ddaPrevPortObj
+8103bcb8   _ddaPrevSegId
+81033df0   _ddcI2CDriver
+81033da0   _ddcI2CObj
+810335b8   _ddcPrevDeviceObj
+810193e0   _deriche_nonopt
+81033fdc   _dtors
+81032948   _edma3GblCfgParams
 81008694   _edma3MemCpy
 8100862c   _edma3MemSet
-81039de4   _edma3NumPaRAMSets
-8101d520   _edma3OsProtectEntry
-8101d5d8   _edma3OsProtectExit
-8101d700   _edma3OsSemCreate
-8101d750   _edma3OsSemDelete
-8101d7cc   _edma3OsSemGive
-8101d784   _edma3OsSemTake
-8101d670   _edma3OsWaitMsecs
-8102a160   _free
-81039e38   _hEdma
+8103bc84   _edma3NumPaRAMSets
+8101e580   _edma3OsProtectEntry
+8101e638   _edma3OsProtectExit
+8101e760   _edma3OsSemCreate
+8101e7b0   _edma3OsSemDelete
+8101e82c   _edma3OsSemGive
+8101e7e4   _edma3OsSemTake
+8101e6d0   _edma3OsWaitMsecs
+810339dc   _errno
+8102bd80   _free
+810200a0   _frexp
+8103bcd8   _hEdma
 81013934   _i2cCalculateClockSettings
-81039e48   _i2cHandle1
+8103bce8   _i2cHandle1
 81013a10   _i2c_cancelIO
-8101e1b0   _i2c_deInit
-8101e038   _i2c_init
-8101a460   _i2c_mdBindDev
-8101a9f4   _i2c_mdControlChan
-8101a650   _i2c_mdCreateChan
-8101ab10   _i2c_mdDeleteChan
-8101a810   _i2c_mdSubmitChan
-8101aa84   _i2c_mdUnBindDev
-8101e100   _i2c_readReg
-8101e088   _i2c_writeReg
-81031000   _instanceInitConfig
+8101f210   _i2c_deInit
+8101f098   _i2c_init
+8101ade0   _i2c_mdBindDev
+8101b374   _i2c_mdControlChan
+8101afd0   _i2c_mdCreateChan
+8101b490   _i2c_mdDeleteChan
+8101b190   _i2c_mdSubmitChan
+8101b404   _i2c_mdUnBindDev
+8101f160   _i2c_readReg
+8101f0e8   _i2c_writeReg
+81032c20   _instanceInitConfig
+8101fee0   _ldexp
 81007bec   _lisrEdma3CCErrHandler0
 81007638   _lisrEdma3ComplHandler0
 81008074   _lisrEdma3TC0ErrHandler0
@@ -2280,63 +2309,66 @@ ffffffff   ___c_args__
 81008100   _lisrEdma3TC5ErrHandler0
 81008118   _lisrEdma3TC6ErrHandler0
 81008134   _lisrEdma3TC7ErrHandler0
-81039e24   _llcPrevDebugErrorStatus
-8101f8e4   _main
-8102a188   _malloc
-8102a2b8   _memalign
-8101f620   _memcpy
-8101ef80   _memset
-8101f1e0   _modf
-81039df8   _numEdma3Tc
-81031c98   _ports
-81031758   _prevDebugErrorTraceArray
-81039e40   _prevDebugErrorTraceIndex
-81031798   _prevDebugTraceArray
-81039e44   _prevDebugTraceIndex
-81039e1c   _prevRegs
-810322e0   _ptrEdma3TcIsrHandler
-8102a1ec   _realloc
-81039dc4   _rtdxNullChanCnt
-81039dc8   _rtdxNullFuncCnt
-81039dd0   _rtdxRecNotDoneCnt
-81039dd8   _rtdxXmtErrorCnt
-81039dcc   _rtdxXmtNotDoneCnt
-81039dd4   _rtdxXmtRestartCnt
-8103b214   _rtdx_buffer_state
-8103b1d0   _rtdx_mon_state
-8101c040   _start_boucle
-8101f8e8   _tachevideo
-810322c0   _tcErrorInt
-8103c104   _trace
-810312a0   _vpbeDeviceObject
-81031e08   _vpbe_ports
-81031b30   _vpfeDeviceObject
-81039e7c   _vpfePrevRegs
-81032170   _vpfe_ports
-81039e20   _vpssRegs
+8103bcc4   _llcPrevDebugErrorStatus
+81021404   _main
+8102bda8   _malloc
+8102bed8   _memalign
+810210c0   _memcpy
+81020a20   _memset
+81020c80   _modf
+8103bc98   _numEdma3Tc
+810338b8   _ports
+81018a60   _pow
+81033378   _prevDebugErrorTraceArray
+8103bce0   _prevDebugErrorTraceIndex
+810333b8   _prevDebugTraceArray
+8103bce4   _prevDebugTraceIndex
+8103bcbc   _prevRegs
+81034020   _ptrEdma3TcIsrHandler
+8102be0c   _realloc
+8101f280   _roberts_nonopt
+8103bc64   _rtdxNullChanCnt
+8103bc68   _rtdxNullFuncCnt
+8103bc70   _rtdxRecNotDoneCnt
+8103bc78   _rtdxXmtErrorCnt
+8103bc6c   _rtdxXmtNotDoneCnt
+8103bc74   _rtdxXmtRestartCnt
+8103d094   _rtdx_buffer_state
+8103d050   _rtdx_mon_state
+8101f4c0   _sqrt
+8101d060   _start_boucle
+81021408   _tachevideo
+81034000   _tcErrorInt
+8103dfa8   _trace
+81032ec0   _vpbeDeviceObject
+81033b48   _vpbe_ports
+81033750   _vpfeDeviceObject
+8103bd1c   _vpfePrevRegs
+81033eb0   _vpfe_ports
+8103bcc0   _vpssRegs
 ffffffff   binit
-810363c8   cinit
+81038108   cinit
 80000000   edata
-81039e84   end
-81020100   etext
-8103bc00   hwi0
-8103bc20   hwi1
-8103bd40   hwi10
-8103bd60   hwi11
-8103bd80   hwi12
-8103bda0   hwi13
-8103bdc0   hwi14
-8103bde0   hwi15
-8103bc40   hwi2
-8103bc60   hwi3
-8103bc80   hwi4
-8103bca0   hwi5
-8103bcc0   hwi6
-8103bce0   hwi7
-8103bd00   hwi8
-8103bd20   hwi9
-81038694   pinit
-8103c104   trace
+8103bd24   end
+81021d20   etext
+8103dc00   hwi0
+8103dc20   hwi1
+8103dd40   hwi10
+8103dd60   hwi11
+8103dd80   hwi12
+8103dda0   hwi13
+8103ddc0   hwi14
+8103dde0   hwi15
+8103dc40   hwi2
+8103dc60   hwi3
+8103dc80   hwi4
+8103dca0   hwi5
+8103dcc0   hwi6
+8103dce0   hwi7
+8103dd00   hwi8
+8103dd20   hwi9
+8103a534   pinit
+8103dfa8   trace
 10809000   trace$buf
 00000001   trace$datatype
 00000000   trace$log
@@ -3173,727 +3205,741 @@ address    name
 81018000   _DDC_VPFEConfigCcdcParams
 8101886c   _DDC_VPFEBlackAdjust
 8101898c   _DDC_VPFEFpc
-81018a60   _deriche_nonopt
-81019340   _DDC_VPBEConfigOsdParams
-8101978c   _DDC_VPBEConfigBlending
-8101986c   _DDC_VPBEConfigTransparency
-8101996c   _DDC_VPBEConfigMainCLUT
-81019b88   _DDC_VPBEConfigBMPCLUT
-81019c20   _PSP_VPFE_TVP5146_Open
-81019c44   _PSP_VPFE_TVP5146_Close
-81019c78   _PSP_VPFE_TVP5146_Control
-8101a460   _i2c_mdBindDev
-8101a650   _i2c_mdCreateChan
-8101a810   _i2c_mdSubmitChan
-8101a9f4   _i2c_mdControlChan
-8101aa84   _i2c_mdUnBindDev
-8101ab10   _i2c_mdDeleteChan
-8101ac60   _VPBE_mdBindDev
-8101ad2c   _VPBE_mdUnBindDev
-8101adc8   _VPBE_mdCreateChan
-8101af88   _VPBE_mdDeleteChan
-8101b06c   _VPBE_mdControlChan
-8101b0f0   _VPBE_mdSubmitChan
-8101b2e0   _DDC_VPBEConfigVencParams
-8101b9e0   _VPFE_mdBindDev
-8101baac   _VPFE_mdUnBindDev
-8101bb38   _VPFE_mdCreateChan
-8101bce4   _VPFE_mdDeleteChan
-8101bdc0   _VPFE_mdControlChan
-8101be44   _VPFE_mdSubmitChan
-8101c040   _start_boucle
-8101c540   _PSP_VPBECreate
-8101c5e4   _PSP_VPBEDelete
-8101c664   _PSP_VPBEOpen
-8101c754   _PSP_VPBEClose
-8101c7c0   _PSP_VPBESubmitRequest
-8101c8a8   _PSP_VPBEIoctl
-8101c9c0   _PSP_VPFECreate
-8101ca48   _PSP_VPFEDelete
-8101cac8   _PSP_VPFEOpen
-8101cbb4   _PSP_VPFEClose
-8101cc20   _PSP_VPFESubmitRequest
-8101cd30   _PSP_VPFEIoctl
-8101ce40   __divf
-8101d220   __addf
-8101d520   _edma3OsProtectEntry
-8101d5d8   _edma3OsProtectExit
-8101d670   _edma3OsWaitMsecs
-8101d6c0   _Edma3_CacheInvalidate
-8101d6e0   _Edma3_CacheFlush
-8101d700   _edma3OsSemCreate
-8101d750   _edma3OsSemDelete
-8101d784   _edma3OsSemTake
-8101d7cc   _edma3OsSemGive
-8101d800   _LLC_setCursorEnable
-8101d834   _LLC_setCursorDisable
-8101d868   _LLC_setCursorCLUTSelectROM
-8101d898   _LLC_setCursorCLUTSelectRAM
-8101d8cc   _LLC_setCursorROMTYPE
-8101d908   _LLC_setCursorVWidth
-8101d94c   _LLC_setCursorHWidth
-8101d994   _LLC_setCursorXPosition
-8101d9e4   _LLC_setCursorYPosition
-8101da34   _LLC_setCursorXSize
-8101da84   _LLC_setCursorYSize
-8101dae0   _PAL_osMemInit
-8101daf4   _PAL_osMemSegDefine
-8101db6c   _PAL_osMemSegUndefine
-8101db84   _PAL_osMemAlloc
-8101dbd8   _PAL_osMemFree
-8101dc30   _PAL_osMemCopy
-8101dcac   _PAL_osMemSet
-8101dd08   _PAL_osMemLock
-8101dd24   _PAL_osMemUnlock
-8101dd40   _PAL_osMemVirt2Phy
-8101dd50   _PAL_osMemPhy2Virt
-8101dd64   _PAL_osMemReport
-8101dd80   __mpyd
-8101e038   _i2c_init
-8101e088   _i2c_writeReg
-8101e100   _i2c_readReg
-8101e1b0   _i2c_deInit
-8101e220   __addd
-8101e420   __frcaddd
-8101e620   __mpyf
-8101e820   _DDC_VPBEConfigCursorParams
-8101ea20   __DDA_i2cRegisterIntrHandler
-8101eaf0   __DDA_i2cUnregisterIntrHandler
-8101eb60   __DDA_i2cSleep
-8101eb70   __DDA_i2cOsGetTicks
-8101eba0   __frcmpyd
-8101eca0   _call_dtors
-8101eda0   _PAL_osSemCreate
-8101edf4   _PAL_osSemDelete
-8101ee18   _PAL_osSemTake
-8101ee60   _PAL_osSemGive
-8101eea0   __cmpd
-8101ef80   _memset
-8101f060   __c6xabi_divu
-8101f060   __divu
-8101f120   _atexit
-8101f1e0   _modf
-8101f360   _PAL_osWaitMsecs
-8101f3c4   _BIOS_OsGetOsTicksPerMSecs
-8101f420   __DDA_VPBERegisterIntrHandler
-8101f4a4   __DDA_VPBEUnregisterIntrHandler
-8101f4e0   __frcmpyf_div
-8101f580   __c6xabi_remu
-8101f580   __remu
-8101f620   _memcpy
-8101f6c0   __DDA_VPFERegisterIntrHandler
-8101f730   __DDA_VPFEUnregisterIntrHandler
-8101f760   __cmpf
-8101f7e0   __fixdu
-8101f860   __renormd
-8101f8e0   _I2C_INIT
-8101f8e4   _main
-8101f8e8   _tachevideo
-8101f960   _PAL_osProtectEntry
-8101f9a0   _PAL_osProtectExit
-8101f9e0   __cvtfd
-8101fa40   __frcmpyf
-8101faa0   _ceil
-8101fb00   ___add_dtor
-8101fb40   __fltud
-8101fb80   __fltuf
-8101fbc0   __subd
-8101fc00   __subf
-8101fc40   _C64P_getltime8
-8101fc5c   _C64P_getltime
-8101fca0   __nop
-8101fcc0   __register_lock
-8101fce0   __register_unlock
-81020100   GBL_stackbeg
-81020100   _HWI_STKTOP
-81020100   ___etext__
-81020100   __stack
-81020100   etext
-810280f8   _HWI_STKBOTTOM
-810280ff   GBL_stackend
-81028100   __STACK_END
-81028200   _SYS_vsprintf
-81028634   _SYS_vprintf
-81028644   _SYS_sprintf
-81028670   _SYS_printf
-810286c0   LNK_F_checkBufferCall
-810286e0   LNK_F_getChanPtr
-81028738   LNK_F_init
-81028740   LNK_F_dataPump
-81028750   LNK_rcloop
-81028814   LNK_rdrtry
-81028824   LNK_rrloop
-810288e4   LNK_wrrtry
-810288f0   LNK_wrloop
-810289c0   LNK_newin
-81028af4   LNK_newout
-81028c48   LNK_F_readCallBack
-81028c80   _EXC_nmi
-81028cb4   _EXC_internal
-81028f60   _EXC_init
-81028fa0   _EXC_getLastStatus
-81028fc0   _EXC_external
-81028ff4   _EXC_exceptionHandler
-81029170   _EXC_clearLastStatus
-810291a0   CLK_HOOKFXN
-810291a0   HWI_F_dispatch
-810291a0   _HWI_F_dispatch
-810291a0   __HWI_lat1beg
-81029328   __HWI_lat1end
-81029328   __HWI_lat2beg
-81029490   __HWI_lat2end2
-810294c0   __HWI_lat3end2
-81029504   __HWI_lat2end1
-81029520   __HWI_lat3beg
-81029680   SWI_F_enable
-81029680   __SWI_lat3beg
-810296ec   __SWI_lat3end
-810296f0   SWI_F_post
-810296f0   _SWI_post
-810297f8   __SWI_lat1beg
-81029864   SWI_EXECFXN
-81029864   SWI_F_exec
-8102988c   SWI_F_iexec
-810298a4   __SWI_lat1end
-810298a8   __SWI_lat2beg
-81029908   __SWI_lat2end
-8102990c   SWI_F_run
-8102990c   SWI_RUNFXN
-81029b40   PRD_F_swi
-81029dc4   PRD_F_tick
-81029ec0   _GIO_create
-8102a160   _free
-8102a188   _malloc
-8102a1ec   _realloc
-8102a2b8   _memalign
-8102a398   _calloc
-8102a400   RTA_F_getlog
-8102a438   RTA_F_getsts
-8102a478   RTA_F_readblk
-8102a494   RTA_F_writeword
-8102a4a0   RTA_F_resetmem
-8102a4a0   __RTA_lat1beg
-8102a4d4   __RTA_lat1end
-8102a4e0   RTA_F_dispatch
-8102a52c   RTA_execute
-8102a680   _KNL_run
-8102a8c0   _MEM_define
-8102ab00   _MEM_redefine
-8102ad20   _MEM_free
-8102af20   _SEM_pendEnterKnl
-8102b120   _MEM_alloc
-8102b300   _EXC_dispatch
-8102b4c4   _EXC_setReturnPtr
-8102b6ac   PRD_THOOKFXN
-8102b6ac   _KNL_tick
-8102b6c0   PIP_F_take
-8102b738   PIP_F_give
-8102b738   PIP_F_probe
-8102b808   PIP_F_start
-8102b8a0   _GIO_submit
-8102ba60   __SEM_dopost
-8102bd90   _BCACHE_wbInv
-8102bda4   _BCACHE_wb
-8102bdb4   _BCACHE_inv
-8102bde0   _TSK_setup
-8102bf80   CLK_F_getltime
-8102bf90   CLK_F_isr
-8102c0d0   CLK_F_itime
-8102c0d0   _CLK_F_itime
-8102c0d0   _CLK_itime
-8102c0f0   __CLK_lat1beg
-8102c110   __CLK_lat1end
-8102c120   _KNL_saveIsrFrame
-8102c1cc   _KNL_switch
-8102c278   KNL_glue
-8102c2a0   __auto_init
-8102c3e0   _TSK_exit
-8102c520   _BCACHE_setSize
-8102c564   _BCACHE_setMar
-8102c5b4   _BCACHE_setCacheToSram
-8102c5e4   _BCACHE_getSize
-8102c634   _BCACHE_getMar
-8102c6c4   _GBL_cacheInit64P
-8102c780   _KNL_check
-8102c7cc   __KNL_lat1beg
-8102c848   _KNL_idle
-8102c848   __KNL_lat1end
-8102c870   _KNL_max
-8102c8a0   _MEM_undefine
-8102ca64   _TSK_startup
-8102cae0   _ECM_dispatch
-8102cbe0   _GIO_delete
-8102cce0   _SEM_post
-8102cce0   _SEM_postBinary
-8102cdc0   _DEV_match
-8102ce80   _KNL_exit
-8102cec0   _KNL_enter
-8102cf40   _SEM_postEnterKnl
-8102cfe0   _SYS_exit
-8102d080   _ATM_andi
-8102d080   _ATM_andu
-8102d090   _ATM_cleari
-8102d090   _ATM_clearu
-8102d0a0   _ATM_deci
-8102d0a0   _ATM_decu
-8102d0b0   _ATM_inci
-8102d0b0   _ATM_incu
-8102d0c4   _ATM_ori
-8102d0c4   _ATM_oru
-8102d0d4   _ATM_seti
-8102d0d4   _ATM_setu
-8102d100   __GIO_iomCallback
-8102d180   _KNL_ipost
-8102d200   _KNL_post
-8102d280   _LCK_post
-8102d2a0   _LCK_pend
-8102d300   LOG_F_event
-8102d300   _LOG_event
-8102d300   __LOG_lat1beg
-8102d380   _OBJ_create
-8102d400   _SEM_create
-8102d480   _TSK_enable
-8102d4a4   _TSK_disable
-8102d500   _BCACHE_wait
-8102d580   IDL_F_calibrate
-8102d600   _MEM_valloc
-8102d660   _SYS_error
-8102d6c0   _ECM_dispatchPlug
-8102d720   FXN_F_nop
-8102d724   FXN_F_run
-8102d724   _FXN_F_run
-8102d760   FXN_F_zero
-8102d760   _FXN_F_zero
-8102d780   _HWI_disable
-8102d798   _HWI_enable
-8102d7ac   _HWI_restore
-8102d7e0   IDL_F_busy
-8102d7e0   __IDL_lat1beg
-8102d820   __IDL_lat1end
-8102d840   _OBJ_delete
-8102d8a0   _SEM_pend
-8102d900   STS_F_delta
-8102d900   _STS_delta
-8102d92c   STS_F_add
-8102d92c   _STS_add
-8102d948   STS_F_reset
-8102d948   _STS_reset
-8102d960   _SYS_abort
-8102d9c0   SYS_PUTCFXN
-8102d9c0   _UTL_doPutc
-8102da20   _CLK_measure
-8102da80   _C62_disableIER
-8102da80   _C64_disableIER
-8102da98   _C62_enableIER
-8102da98   _C64_enableIER
-8102daac   _C62_clearIFR
-8102daac   _C64_clearIFR
-8102dac0   _ECM_disableEvent
-8102db00   _ECM_enableEvent
-8102db40   IDL_CALIBRFXN
-8102db40   IDL_F_stub
-8102db80   _QUE_get
-8102db80   __QUE_lat1beg
-8102dba0   __QUE_lat1end
-8102dba8   _QUE_put
-8102dba8   __QUE_lat2beg
-8102dbb4   __QUE_lat2end
-8102dbc0   RTA_F_andn
-8102dbd8   RTA_F_or
-8102dc00   SYS_ABORTFXN
-8102dc00   _UTL_doAbort
-8102dc40   _CLK_countspms
-8102dc60   _CLK_getltime
-8102dc80   _CLK_getprd
-8102dca0   GBL_USERINITFXN
-8102dca0   GIO_CREATEFXN
-8102dca0   GIO_DELETEFXN
-8102dca0   GIO_PENDFXN
-8102dca0   GIO_POSTFXN
-8102dca0   TSK_VCREATEFXN
-8102dca0   TSK_VDELETEFXN
-8102dca0   TSK_VEXITFXN
-8102dca0   _BCACHE_bootInit
-8102dca0   _FXN_F_nop
-8102dcc0   _GBL_getVersion
-8102dce0   _GIO_control
-8102dd00   IDL_F_loop
-8102dd00   _IDL_loop
-8102dd20   _LOG_printf
-8102dd40   _SEM_delete
-8102dd60   _STS_set
-8102dd80   SYS_ERRORFXN
-8102dd80   _UTL_doError
-8102dda0   SYS_EXITFXN
-8102dda0   _UTL_halt
-8102ddc0   CLK_F_gethtime
-8102ddc0   CLK_TIMEFXN
-8102ddc0   _CLK_gethtime
-81030d20   _allocatedTCCs
-81030d28   _edma3GblCfgParams
-81031000   _instanceInitConfig
-810312a0   _vpbeDeviceObject
-81031754   _MEM_ATTRS
-81031758   _prevDebugErrorTraceArray
-81031798   _prevDebugTraceArray
-81031998   _ddcPrevDeviceObj
-810319a4   __BCACHE_emifAddr
-810319a8   ___atexit_func_id__
-81031b30   _vpfeDeviceObject
-81031c7c   _CLK_inputClock
-81031c80   _I2CMD_FXNS
-81031c98   _ports
-81031dbc   _dtors
-81031dc0   _VPBEMD_FXNS
-81031e08   _vpbe_ports
-81031ec0   _KNL_queues
-81031f60   _KNL_dummy
-81032060   _ddcI2CObj
-810320b0   _ddcI2CDriver
-81032128   _VPFEMD_FXNS
-81032170   _vpfe_ports
-8103219c   _TSK_ATTRS
-810321b8   _TSK_config
-810321d8   _TSK_timerSem
-810321f8   _OBJ_table
-81032230   _OBJ_segtab
-8103224c   __TSK_mutex
-81032274   __MEM_mutex
-810322a0   _SYS_exitStack
-810322c0   _tcErrorInt
-810322e0   _ptrEdma3TcIsrHandler
-8103231c   _I2C_devParams
-8103234c   _EXC_status
-8103235c   _GIO_CONFIG
-81032388   _ddaPrevPortObj
-81032394   __cleanup_ptr
-81032398   __dtors_ptr
-8103239c   ___TI_enable_exit_profile_output
-810323a0   _ECM_ATTRS
-810323a8   _GIO_ATTRS
-810323b0   _SEM_ATTRS
-810323b8   __lock
-810323bc   __unlock
-810323c0   _DEV_D_devinit
-810323c8   TACHEVIDEO$stack
-81036360   TACHEVIDEO$stkptr
-810363c8   ___cinit__
-810363c8   cinit
-81038694   ___pinit__
-81038694   pinit
-810386a0   _HSRTDX_rec
-81038940   _RTDX_Buffer_WriteCB
-81038e00   _HSRTDX_xmt
-81039100   _RTDX_Mon_Queue
-81039360   _RTDX_Poll
-81039400   _RTDX_Final_RT_Monitor
-81039480   _RTDX_Buffer_Initialize
-810394e0   _RTDX_Init_RT_Monitor
-81039540   _RTDX_Buffer_ReadCB
-81039580   _RTDX_Buffer_Size
-810395c0   _RTDX_memfill
-81039600   _RTDX_Buffer_Read
-81039620   _RTDX_Buffer_Write
-81039640   _RTDX_Mask_IER
-81039660   $bss
-81039660   .bss
-81039660   _MEM_memtab
-81039660   ___bss__
-8103966c   _ECM_dispatchTab
-81039a6c   DDR2
-81039a6c   HST_DSMBUFSEG
-81039a6c   MEM_MALLOCSEG
-81039a6c   MEM_SEGZERO
-81039a6c   RTDX_DATAMEMSEG
-81039a6c   TSK_STACKSEG
-81039a6c   _DDR2
-81039a70   RTA_fromHost$pipe$dtab
-81039a7c   RTA_toHost$pipe$dtab
-81039a88   _DEV_devinit
-81039a8c   __DEV_NUMINITFXNS
-81039a90   _HWI_dispatchTab
-81039b90   IDL_D_tabbeg
-81039b94   IDL_D_calibrate
-81039b98   IDL_D_calbeg
-81039b9c   LOG_D_system
-81039b9c   _LOG_D_system
-81039ba0   PIP_D_tabbeg
-81039ba4   PIP_D_tablen
-81039ba8   CLK_R_time
-81039bac   CLK_D_timefxn
-81039bb0   CLK_D_tabbeg
-81039bb4   CLK_D_isrhook
-81039bb8   CLK_D_idletime
-81039bbc   _CLK_htimeDiv
-81039bc0   _CLK_htimeMult
-81039bc4   _CLK_ltimeDiv
-81039bc8   _CLK_ltimeMult
-81039bcc   _CLK_D_dirty
-81039bd0   _CLK_D_prd
-81039bd4   _CLK_D_tddr
-81039bd8   _CLK_D_countspms
-81039bdc   PRD_D_tick
-81039bdc   _PRD_D_tick
-81039be0   PRD_D_cur
-81039be4   PRD_D_elapsed
-81039be8   PRD_D_prevtim
-81039bec   PRD_D_scalar
-81039bf0   PRD_D_swihandle
-81039bf4   PRD_D_tabbeg
-81039bf8   PRD_D_tablen
-81039bfc   PRD_D_thook
-81039c00   RTA_D_fromHost
-81039c04   RTA_D_toHost
-81039c08   RTA_D_logval
-81039c18   RTA_D_stsval
-81039c24   HST_D_chanmask
-81039c28   HST_D_tabbeg
-81039c2c   HST_D_tabend
-81039c30   _GBL_procId
-81039c34   _GBL_clkIn
-81039c38   _GBL_freq
-81039c3c   _MEM_D_NUMSEGMENTS
-81039c40   _MEM_D_memtab
-81039c44   _MEM_D_freelist
-81039c48   _MEM_D_lockaddr
-81039c4c   _MEM_D_unlockaddr
-81039c50   _SYS
-81039c54   __HOOK_knlId
-81039c58   __HOOK_NUMHOOKS
-81039c5c   SWI_D_runaddr
-81039c5c   _SWI_D_runaddr
-81039c5c   _SWI_data
-81039c60   SWI_D_execaddr
-81039c60   _SWI_D_execaddr
-81039c64   SWI_D_curmask
-81039c64   _SWI_D_curmask
-81039c68   SWI_D_curset
-81039c68   _SWI_D_curset
-81039c6c   SWI_D_lock
-81039c6c   _SWI_D_lock
-81039c70   SWI_D_curmbox
-81039c74   SWI_D_curfxn
-81039c74   _SWI_D_curfxn
-81039c78   SWI_D_rdybeg
-81039c78   _SWI_D_rdybeg
-81039c7c   SWI_D_inswi
-81039c7c   _SWI_D_inswi
-81039c80   SWI_D_rdytab
-81039cf8   _KNL_wFlag
-81039cfc   _KNL_wList
-81039d00   _KNL_alarm
-81039d04   _KNL_setpri
-81039d08   _KNL_inactive
-81039d0c   _KNL_priority
-81039d10   _KNL_set
-81039d14   _KNL_curtask
-81039d18   _KNL_prevtask
-81039d1c   _KNL_curtime
-81039d20   _KNL_swiptr
-81039d24   _KNL_curqueue
-81039d28   _KNL_maxqueue
-81039d2c   _KNL_tswitchfxn
-81039d30   _KNL_tcreatefxn
-81039d34   _KNL_tdeletefxn
-81039d38   _KNL_treadyfxn
-81039d3c   _KNL_idlefxn
-81039d40   _EXC_sysTrapTable
-81039d48   _EXC_returnPtr
-81039d7c   HWI_D_spsave
-81039d7c   _HWI_D_spsave
-81039d7c   _HWI_data
-81039d88   _HWI_D_inhwi
-81039d8c   HWI_D_bss
-81039d90   HWI_D_ccmask
-81039d94   LNK_dspFrameRequestMask
-81039d94   _LNK_dspFrameRequestMask
-81039d98   LNK_dspFrameReadyMask
-81039d98   _LNK_dspFrameReadyMask
-81039d9c   LNK_readPend
-81039d9c   _LNK_readPend
-81039da0   LNK_readDone
-81039da0   _LNK_readDone
-81039da4   LNK_readFail
-81039da4   _LNK_readFail
-81039da8   LNK_writeFail
-81039da8   _LNK_writeFail
-81039dac   _EXC_exceptionHook
-81039db0   _EXC_internalHook
-81039db4   _EXC_externalHook
-81039db8   _EXC_nmiHook
-81039dc4   _rtdxNullChanCnt
-81039dc8   _rtdxNullFuncCnt
-81039dcc   _rtdxXmtNotDoneCnt
-81039dd0   _rtdxRecNotDoneCnt
-81039dd4   _rtdxXmtRestartCnt
-81039dd8   _rtdxXmtErrorCnt
-81039de4   _edma3NumPaRAMSets
-81039dec   _TSK_nTasks
-81039df0   _TSK_pid
-81039df4   _TSK
-81039df8   _numEdma3Tc
-81039dfc   _ccXferCompInt
-81039e00   _ccErrorInt
-81039e10   _ddaPrevInterruptMapInfo
-81039e14   _ddaPrevInterruptMapRequired
-81039e18   _ddaPrevSegId
-81039e1c   _prevRegs
-81039e20   _vpssRegs
-81039e24   _llcPrevDebugErrorStatus
-81039e28   _CLK_DFLTMICROSECS
-81039e2c   _CLK_D_microseconds
-81039e30   _SYS_exitStackPtr
-81039e34   _SYS_exitStackTop
-81039e38   _hEdma
-81039e40   _prevDebugErrorTraceIndex
-81039e44   _prevDebugTraceIndex
-81039e48   _i2cHandle1
-81039e50   _CLK_htimePerLtime
-81039e54   __DEV_D_NUMINITFXNS
-81039e58   _GIO
-81039e5c   IDL_D_busyObj
-81039e60   _MEM
-81039e64   _MEM_staticMemtab
-81039e7c   _vpfePrevRegs
-81039e84   RTA_fromHost$buf
-81039e84   ___end__
-81039e84   end
-81039e94   TRC_cinit
-81039e98   TRC_R_mask
-81039e98   _TRC_R_mask
-81039e9c   GBL_initdone
-81039ea0   BIOS_init
-81039ea0   _BIOS_init
-8103a024   BIOS$$CLKON
-8103a064   BIOS$$CLKOFF
-8103a120   BIOS_start
-8103a120   _BIOS_start
-8103a260   _DEV_init
-8103a380   _CLK_enableTimer
-8103a460   _c_int00
-8103a520   _MEM_init
-8103a5c0   _TSK_init
-8103a620   _GIO_init
-8103a640   _OBJ_init
-8103ad15   KNL_swi$sts$maxfmt
-8103ad18   IDL_A_TABBEG
-8103ad18   IDL_cpuLoad
-8103ad18   _IDL_cpuLoad
-8103ad1c   LNK_dataPump
-8103ad1c   _LNK_dataPump
-8103ad1d   KNL_swi$sts$sumfmt
-8103ad20   RTA_dispatcher
-8103ad20   _RTA_dispatcher
-8103ad24   IDL_END
-8103ad25   KNL_swi$sts$avgfmt
-8103ad28   IDL_A_CALBEG
-8103ad28   IDL_cpuLoad$
-8103ad2c   LNK_dataPump$
-8103ad2f   TSK_idle$sts$maxfmt
-8103ad30   RTA_dispatcher$
-8103ad34   IDL_END$
-8103ad37   TSK_idle$sts$sumfmt
-8103ad38   CLK_A_TABBEG
-8103ad38   PRD_clock
-8103ad38   _PRD_clock
-8103ad3c   CLK_null
-8103ad3f   TSK_idle$sts$avgfmt
-8103ad49   TACHEVIDEO$sts$maxfmt
-8103ad51   TACHEVIDEO$sts$sumfmt
-8103ad59   TACHEVIDEO$sts$avgfmt
-8103ad63   IDL_busyObj$maxfmt
-8103ad66   IDL_busyObj$sumfmt
-8103ad69   IDL_busyObj$avgfmt
-8103adc0   _RTDX_Buffer
-8103b1c8   _RTDX_Buffer_Start
-8103b1cc   _RTDX_Buffer_End
-8103b1d0   _rtdx_mon_state
-8103b214   _rtdx_buffer_state
-8103b220   _RTDX_writing
-8103b238   TSK_idle$stack
-8103b5d0   TSK_idle$stkptr
-8103b994   _SYS_PUTCBEG
-8103bb93   _SYS_PUTCEND
-8103bb94   UDEV_VPBE0$obj
-8103bba0   UDEV_VPBE0$device
-8103bbb8   UDEV_VPFE0$obj
-8103bbc4   UDEV_VPFE0$device
-8103bbdc   UDEV_I2C0$obj
-8103bbe8   UDEV_I2C0$device
-8103bc00   HWI_A_VECS
-8103bc00   hwi0
-8103bc20   hwi1
-8103bc40   hwi2
-8103bc60   hwi3
-8103bc80   hwi4
-8103bca0   hwi5
-8103bcc0   hwi6
-8103bce0   hwi7
-8103bd00   hwi8
-8103bd20   hwi9
-8103bd40   hwi10
-8103bd60   hwi11
-8103bd80   hwi12
-8103bda0   hwi13
-8103bdc0   hwi14
-8103bde0   hwi15
-8103be00   RTA_toHost$buf
-8103bf00   PIP_A_TABBEG
-8103bf00   RTA_fromHost$pipe
-8103bf00   _PIP_A_TABBEG
-8103bf04   RTA_fromHost$pipe$rd
-8103bf30   RTA_fromHost$pipe$aaa
-8103bf34   RTA_fromHost$pipe$wr
-8103bf60   RTA_fromHost$pipe$bbb
-8103bf64   RTA_toHost$pipe
-8103bf68   RTA_toHost$pipe$rd
-8103bf94   RTA_toHost$pipe$aaa
-8103bf98   RTA_toHost$pipe$wr
-8103bfc4   RTA_toHost$pipe$bbb
-8103bfc8   PIP_A_TABEND
-8103bfc8   _PIP_A_TABEND
-8103bfd4   TSK_idle
-8103bfd4   _TSK_idle
-8103c034   TACHEVIDEO
-8103c034   _TACHEVIDEO
-8103c0ec   LOG_A_TABBEG
-8103c0ec   LOG_system
-8103c0ec   _LOG_A_TABBEG
-8103c0ec   _LOG_system
-8103c104   _trace
-8103c104   trace
-8103c11c   DVTEvent_Log
-8103c11c   _DVTEvent_Log
-8103c134   KNL_swi$sts$stsobj
-8103c134   LOG_A_TABEND
-8103c134   STS_A_TABBEG
-8103c134   _LOG_A_TABEND
-8103c134   _STS_A_TABBEG
-8103c138   KNL_swi$sts
-8103c144   TSK_idle$sts$stsobj
-8103c148   TSK_idle$sts
-8103c154   TACHEVIDEO$sts$stsobj
-8103c158   TACHEVIDEO$sts
-8103c164   IDL_busyObj$stsobj
-8103c168   IDL_busyObj
-8103c168   _IDL_busyObj
-8103c174   HST_A_TABBEG
-8103c174   STS_A_TABEND
-8103c174   _HST_A_TABBEG
-8103c174   _STS_A_TABEND
-8103c178   RTA_fromHost
-8103c178   _RTA_fromHost
-8103c180   RTA_fromHost$rtdx
-8103c194   RTA_toHost
-8103c194   _RTA_toHost
-8103c19c   RTA_toHost$rtdx
-8103c1b0   HST_A_TABEND
-8103c1b0   KNL_swi
-8103c1b0   SWI_A_TABBEG
-8103c1b0   _HST_A_TABEND
-8103c1b0   _KNL_swi
-8103c1dc   SWI_A_TABEND
-8103c1dc   SYS$config
+81018a60   _pow
+810193e0   _deriche_nonopt
+81019cc0   _DDC_VPBEConfigOsdParams
+8101a10c   _DDC_VPBEConfigBlending
+8101a1ec   _DDC_VPBEConfigTransparency
+8101a2ec   _DDC_VPBEConfigMainCLUT
+8101a508   _DDC_VPBEConfigBMPCLUT
+8101a5a0   _PSP_VPFE_TVP5146_Open
+8101a5c4   _PSP_VPFE_TVP5146_Close
+8101a5f8   _PSP_VPFE_TVP5146_Control
+8101ade0   _i2c_mdBindDev
+8101afd0   _i2c_mdCreateChan
+8101b190   _i2c_mdSubmitChan
+8101b374   _i2c_mdControlChan
+8101b404   _i2c_mdUnBindDev
+8101b490   _i2c_mdDeleteChan
+8101b5e0   _VPBE_mdBindDev
+8101b6ac   _VPBE_mdUnBindDev
+8101b748   _VPBE_mdCreateChan
+8101b908   _VPBE_mdDeleteChan
+8101b9ec   _VPBE_mdControlChan
+8101ba70   _VPBE_mdSubmitChan
+8101bc60   _DDC_VPBEConfigVencParams
+8101c320   __divd
+8101ca00   _VPFE_mdBindDev
+8101cacc   _VPFE_mdUnBindDev
+8101cb58   _VPFE_mdCreateChan
+8101cd04   _VPFE_mdDeleteChan
+8101cde0   _VPFE_mdControlChan
+8101ce64   _VPFE_mdSubmitChan
+8101d060   _start_boucle
+8101d5a0   _PSP_VPBECreate
+8101d644   _PSP_VPBEDelete
+8101d6c4   _PSP_VPBEOpen
+8101d7b4   _PSP_VPBEClose
+8101d820   _PSP_VPBESubmitRequest
+8101d908   _PSP_VPBEIoctl
+8101da20   _PSP_VPFECreate
+8101daa8   _PSP_VPFEDelete
+8101db28   _PSP_VPFEOpen
+8101dc14   _PSP_VPFEClose
+8101dc80   _PSP_VPFESubmitRequest
+8101dd90   _PSP_VPFEIoctl
+8101dea0   __divf
+8101e280   __addf
+8101e580   _edma3OsProtectEntry
+8101e638   _edma3OsProtectExit
+8101e6d0   _edma3OsWaitMsecs
+8101e720   _Edma3_CacheInvalidate
+8101e740   _Edma3_CacheFlush
+8101e760   _edma3OsSemCreate
+8101e7b0   _edma3OsSemDelete
+8101e7e4   _edma3OsSemTake
+8101e82c   _edma3OsSemGive
+8101e860   _LLC_setCursorEnable
+8101e894   _LLC_setCursorDisable
+8101e8c8   _LLC_setCursorCLUTSelectROM
+8101e8f8   _LLC_setCursorCLUTSelectRAM
+8101e92c   _LLC_setCursorROMTYPE
+8101e968   _LLC_setCursorVWidth
+8101e9ac   _LLC_setCursorHWidth
+8101e9f4   _LLC_setCursorXPosition
+8101ea44   _LLC_setCursorYPosition
+8101ea94   _LLC_setCursorXSize
+8101eae4   _LLC_setCursorYSize
+8101eb40   _PAL_osMemInit
+8101eb54   _PAL_osMemSegDefine
+8101ebcc   _PAL_osMemSegUndefine
+8101ebe4   _PAL_osMemAlloc
+8101ec38   _PAL_osMemFree
+8101ec90   _PAL_osMemCopy
+8101ed0c   _PAL_osMemSet
+8101ed68   _PAL_osMemLock
+8101ed84   _PAL_osMemUnlock
+8101eda0   _PAL_osMemVirt2Phy
+8101edb0   _PAL_osMemPhy2Virt
+8101edc4   _PAL_osMemReport
+8101ede0   __mpyd
+8101f098   _i2c_init
+8101f0e8   _i2c_writeReg
+8101f160   _i2c_readReg
+8101f210   _i2c_deInit
+8101f280   _roberts_nonopt
+8101f424   _binarisation
+8101f4c0   _sqrt
+8101f6e0   __addd
+8101f8e0   __frcaddd
+8101fae0   __mpyf
+8101fce0   _DDC_VPBEConfigCursorParams
+8101fee0   _ldexp
+810200a0   _frexp
+81020240   __frcmpyd_div
+810203c0   __DDA_i2cRegisterIntrHandler
+81020490   __DDA_i2cUnregisterIntrHandler
+81020500   __DDA_i2cSleep
+81020510   __DDA_i2cOsGetTicks
+81020540   __frcmpyd
+81020640   __nround
+81020740   _call_dtors
+81020840   _PAL_osSemCreate
+81020894   _PAL_osSemDelete
+810208b8   _PAL_osSemTake
+81020900   _PAL_osSemGive
+81020940   __cmpd
+81020a20   _memset
+81020b00   __c6xabi_divu
+81020b00   __divu
+81020bc0   _atexit
+81020c80   _modf
+81020e00   _PAL_osWaitMsecs
+81020e64   _BIOS_OsGetOsTicksPerMSecs
+81020ec0   __DDA_VPBERegisterIntrHandler
+81020f44   __DDA_VPBEUnregisterIntrHandler
+81020f80   __frcmpyf_div
+81021020   __c6xabi_remu
+81021020   __remu
+810210c0   _memcpy
+81021160   __DDA_VPFERegisterIntrHandler
+810211d0   __DDA_VPFEUnregisterIntrHandler
+81021200   __cmpf
+81021280   __fixdi
+81021300   __fixdu
+81021380   __renormd
+81021400   _I2C_INIT
+81021404   _main
+81021408   _tachevideo
+81021480   _PAL_osProtectEntry
+810214c0   _PAL_osProtectExit
+81021500   __cvtfd
+81021560   __fltid
+810215c0   __frcmpyf
+81021620   _ceil
+81021680   ___add_dtor
+81021700   __fltud
+81021740   __fltuf
+81021780   __negd
+810217c0   __subd
+81021800   __subf
+81021840   _C64P_getltime8
+8102185c   _C64P_getltime
+810218a0   __nop
+810218c0   __register_lock
+810218e0   __register_unlock
+81021900   __trunc
+81021d20   GBL_stackbeg
+81021d20   _HWI_STKTOP
+81021d20   ___etext__
+81021d20   __stack
+81021d20   etext
+81029d18   _HWI_STKBOTTOM
+81029d1f   GBL_stackend
+81029d20   __STACK_END
+81029e20   _SYS_vsprintf
+8102a254   _SYS_vprintf
+8102a264   _SYS_sprintf
+8102a290   _SYS_printf
+8102a2e0   LNK_F_checkBufferCall
+8102a300   LNK_F_getChanPtr
+8102a358   LNK_F_init
+8102a360   LNK_F_dataPump
+8102a370   LNK_rcloop
+8102a434   LNK_rdrtry
+8102a444   LNK_rrloop
+8102a504   LNK_wrrtry
+8102a510   LNK_wrloop
+8102a5e0   LNK_newin
+8102a714   LNK_newout
+8102a868   LNK_F_readCallBack
+8102a8a0   _EXC_nmi
+8102a8d4   _EXC_internal
+8102ab80   _EXC_init
+8102abc0   _EXC_getLastStatus
+8102abe0   _EXC_external
+8102ac14   _EXC_exceptionHandler
+8102ad90   _EXC_clearLastStatus
+8102adc0   CLK_HOOKFXN
+8102adc0   HWI_F_dispatch
+8102adc0   _HWI_F_dispatch
+8102adc0   __HWI_lat1beg
+8102af48   __HWI_lat1end
+8102af48   __HWI_lat2beg
+8102b0b0   __HWI_lat2end2
+8102b0e0   __HWI_lat3end2
+8102b124   __HWI_lat2end1
+8102b140   __HWI_lat3beg
+8102b2a0   SWI_F_enable
+8102b2a0   __SWI_lat3beg
+8102b30c   __SWI_lat3end
+8102b310   SWI_F_post
+8102b310   _SWI_post
+8102b418   __SWI_lat1beg
+8102b484   SWI_EXECFXN
+8102b484   SWI_F_exec
+8102b4ac   SWI_F_iexec
+8102b4c4   __SWI_lat1end
+8102b4c8   __SWI_lat2beg
+8102b528   __SWI_lat2end
+8102b52c   SWI_F_run
+8102b52c   SWI_RUNFXN
+8102b760   PRD_F_swi
+8102b9e4   PRD_F_tick
+8102bae0   _GIO_create
+8102bd80   _free
+8102bda8   _malloc
+8102be0c   _realloc
+8102bed8   _memalign
+8102bfb8   _calloc
+8102c020   RTA_F_getlog
+8102c058   RTA_F_getsts
+8102c098   RTA_F_readblk
+8102c0b4   RTA_F_writeword
+8102c0c0   RTA_F_resetmem
+8102c0c0   __RTA_lat1beg
+8102c0f4   __RTA_lat1end
+8102c100   RTA_F_dispatch
+8102c14c   RTA_execute
+8102c2a0   _KNL_run
+8102c4e0   _MEM_define
+8102c720   _MEM_redefine
+8102c940   _MEM_free
+8102cb40   _SEM_pendEnterKnl
+8102cd40   _MEM_alloc
+8102cf20   _EXC_dispatch
+8102d0e4   _EXC_setReturnPtr
+8102d2cc   PRD_THOOKFXN
+8102d2cc   _KNL_tick
+8102d2e0   PIP_F_take
+8102d358   PIP_F_give
+8102d358   PIP_F_probe
+8102d428   PIP_F_start
+8102d4c0   _GIO_submit
+8102d680   __SEM_dopost
+8102d9b0   _BCACHE_wbInv
+8102d9c4   _BCACHE_wb
+8102d9d4   _BCACHE_inv
+8102da00   _TSK_setup
+8102dba0   CLK_F_getltime
+8102dbb0   CLK_F_isr
+8102dcf0   CLK_F_itime
+8102dcf0   _CLK_F_itime
+8102dcf0   _CLK_itime
+8102dd10   __CLK_lat1beg
+8102dd30   __CLK_lat1end
+8102dd40   _KNL_saveIsrFrame
+8102ddec   _KNL_switch
+8102de98   KNL_glue
+8102dec0   __auto_init
+8102e000   _TSK_exit
+8102e140   _BCACHE_setSize
+8102e184   _BCACHE_setMar
+8102e1d4   _BCACHE_setCacheToSram
+8102e204   _BCACHE_getSize
+8102e254   _BCACHE_getMar
+8102e2e4   _GBL_cacheInit64P
+8102e3a0   _KNL_check
+8102e3ec   __KNL_lat1beg
+8102e468   _KNL_idle
+8102e468   __KNL_lat1end
+8102e490   _KNL_max
+8102e4c0   _MEM_undefine
+8102e684   _TSK_startup
+8102e700   _ECM_dispatch
+8102e800   _GIO_delete
+8102e900   _SEM_post
+8102e900   _SEM_postBinary
+8102e9e0   _DEV_match
+8102eaa0   _KNL_exit
+8102eae0   _KNL_enter
+8102eb60   _SEM_postEnterKnl
+8102ec00   _SYS_exit
+8102eca0   _ATM_andi
+8102eca0   _ATM_andu
+8102ecb0   _ATM_cleari
+8102ecb0   _ATM_clearu
+8102ecc0   _ATM_deci
+8102ecc0   _ATM_decu
+8102ecd0   _ATM_inci
+8102ecd0   _ATM_incu
+8102ece4   _ATM_ori
+8102ece4   _ATM_oru
+8102ecf4   _ATM_seti
+8102ecf4   _ATM_setu
+8102ed20   __GIO_iomCallback
+8102eda0   _KNL_ipost
+8102ee20   _KNL_post
+8102eea0   _LCK_post
+8102eec0   _LCK_pend
+8102ef20   LOG_F_event
+8102ef20   _LOG_event
+8102ef20   __LOG_lat1beg
+8102efa0   _OBJ_create
+8102f020   _SEM_create
+8102f0a0   _TSK_enable
+8102f0c4   _TSK_disable
+8102f120   _BCACHE_wait
+8102f1a0   IDL_F_calibrate
+8102f220   _MEM_valloc
+8102f280   _SYS_error
+8102f2e0   _ECM_dispatchPlug
+8102f340   FXN_F_nop
+8102f344   FXN_F_run
+8102f344   _FXN_F_run
+8102f380   FXN_F_zero
+8102f380   _FXN_F_zero
+8102f3a0   _HWI_disable
+8102f3b8   _HWI_enable
+8102f3cc   _HWI_restore
+8102f400   IDL_F_busy
+8102f400   __IDL_lat1beg
+8102f440   __IDL_lat1end
+8102f460   _OBJ_delete
+8102f4c0   _SEM_pend
+8102f520   STS_F_delta
+8102f520   _STS_delta
+8102f54c   STS_F_add
+8102f54c   _STS_add
+8102f568   STS_F_reset
+8102f568   _STS_reset
+8102f580   _SYS_abort
+8102f5e0   SYS_PUTCFXN
+8102f5e0   _UTL_doPutc
+8102f640   _CLK_measure
+8102f6a0   _C62_disableIER
+8102f6a0   _C64_disableIER
+8102f6b8   _C62_enableIER
+8102f6b8   _C64_enableIER
+8102f6cc   _C62_clearIFR
+8102f6cc   _C64_clearIFR
+8102f6e0   _ECM_disableEvent
+8102f720   _ECM_enableEvent
+8102f760   IDL_CALIBRFXN
+8102f760   IDL_F_stub
+8102f7a0   _QUE_get
+8102f7a0   __QUE_lat1beg
+8102f7c0   __QUE_lat1end
+8102f7c8   _QUE_put
+8102f7c8   __QUE_lat2beg
+8102f7d4   __QUE_lat2end
+8102f7e0   RTA_F_andn
+8102f7f8   RTA_F_or
+8102f820   SYS_ABORTFXN
+8102f820   _UTL_doAbort
+8102f860   _CLK_countspms
+8102f880   _CLK_getltime
+8102f8a0   _CLK_getprd
+8102f8c0   GBL_USERINITFXN
+8102f8c0   GIO_CREATEFXN
+8102f8c0   GIO_DELETEFXN
+8102f8c0   GIO_PENDFXN
+8102f8c0   GIO_POSTFXN
+8102f8c0   TSK_VCREATEFXN
+8102f8c0   TSK_VDELETEFXN
+8102f8c0   TSK_VEXITFXN
+8102f8c0   _BCACHE_bootInit
+8102f8c0   _FXN_F_nop
+8102f8e0   _GBL_getVersion
+8102f900   _GIO_control
+8102f920   IDL_F_loop
+8102f920   _IDL_loop
+8102f940   _LOG_printf
+8102f960   _SEM_delete
+8102f980   _STS_set
+8102f9a0   SYS_ERRORFXN
+8102f9a0   _UTL_doError
+8102f9c0   SYS_EXITFXN
+8102f9c0   _UTL_halt
+8102f9e0   CLK_F_gethtime
+8102f9e0   CLK_TIMEFXN
+8102f9e0   _CLK_gethtime
+81032940   _allocatedTCCs
+81032948   _edma3GblCfgParams
+81032c20   _instanceInitConfig
+81032ec0   _vpbeDeviceObject
+81033374   _MEM_ATTRS
+81033378   _prevDebugErrorTraceArray
+810333b8   _prevDebugTraceArray
+810335b8   _ddcPrevDeviceObj
+810335c4   __BCACHE_emifAddr
+810335c8   ___atexit_func_id__
+81033750   _vpfeDeviceObject
+8103389c   _CLK_inputClock
+810338a0   _I2CMD_FXNS
+810338b8   _ports
+810339dc   _errno
+81033b00   _VPBEMD_FXNS
+81033b48   _vpbe_ports
+81033c00   _KNL_queues
+81033ca0   _KNL_dummy
+81033da0   _ddcI2CObj
+81033df0   _ddcI2CDriver
+81033e68   _VPFEMD_FXNS
+81033eb0   _vpfe_ports
+81033edc   _TSK_ATTRS
+81033ef8   _TSK_config
+81033f18   _TSK_timerSem
+81033f38   _OBJ_table
+81033f70   _OBJ_segtab
+81033f8c   __TSK_mutex
+81033fb4   __MEM_mutex
+81033fdc   _dtors
+81033fe0   _SYS_exitStack
+81034000   _tcErrorInt
+81034020   _ptrEdma3TcIsrHandler
+8103405c   _I2C_devParams
+8103408c   _EXC_status
+8103409c   _GIO_CONFIG
+810340c8   _ddaPrevPortObj
+810340d4   __cleanup_ptr
+810340d8   __dtors_ptr
+810340dc   ___TI_enable_exit_profile_output
+810340e0   _ECM_ATTRS
+810340e8   _GIO_ATTRS
+810340f0   _SEM_ATTRS
+810340f8   __lock
+810340fc   __unlock
+81034100   _DEV_D_devinit
+81034108   TACHEVIDEO$stack
+810380a0   TACHEVIDEO$stkptr
+81038108   ___cinit__
+81038108   cinit
+8103a524   RTA_fromHost$buf
+8103a534   ___pinit__
+8103a534   pinit
+8103a540   _HSRTDX_rec
+8103a7e0   _RTDX_Buffer_WriteCB
+8103aca0   _HSRTDX_xmt
+8103afa0   _RTDX_Mon_Queue
+8103b200   _RTDX_Poll
+8103b2a0   _RTDX_Final_RT_Monitor
+8103b320   _RTDX_Buffer_Initialize
+8103b380   _RTDX_Init_RT_Monitor
+8103b3e0   _RTDX_Buffer_ReadCB
+8103b420   _RTDX_Buffer_Size
+8103b460   _RTDX_memfill
+8103b4a0   _RTDX_Buffer_Read
+8103b4c0   _RTDX_Buffer_Write
+8103b4e0   _RTDX_Mask_IER
+8103b500   $bss
+8103b500   .bss
+8103b500   _MEM_memtab
+8103b500   ___bss__
+8103b50c   _ECM_dispatchTab
+8103b90c   DDR2
+8103b90c   HST_DSMBUFSEG
+8103b90c   MEM_MALLOCSEG
+8103b90c   MEM_SEGZERO
+8103b90c   RTDX_DATAMEMSEG
+8103b90c   TSK_STACKSEG
+8103b90c   _DDR2
+8103b910   RTA_fromHost$pipe$dtab
+8103b91c   RTA_toHost$pipe$dtab
+8103b928   _DEV_devinit
+8103b92c   __DEV_NUMINITFXNS
+8103b930   _HWI_dispatchTab
+8103ba30   IDL_D_tabbeg
+8103ba34   IDL_D_calibrate
+8103ba38   IDL_D_calbeg
+8103ba3c   LOG_D_system
+8103ba3c   _LOG_D_system
+8103ba40   PIP_D_tabbeg
+8103ba44   PIP_D_tablen
+8103ba48   CLK_R_time
+8103ba4c   CLK_D_timefxn
+8103ba50   CLK_D_tabbeg
+8103ba54   CLK_D_isrhook
+8103ba58   CLK_D_idletime
+8103ba5c   _CLK_htimeDiv
+8103ba60   _CLK_htimeMult
+8103ba64   _CLK_ltimeDiv
+8103ba68   _CLK_ltimeMult
+8103ba6c   _CLK_D_dirty
+8103ba70   _CLK_D_prd
+8103ba74   _CLK_D_tddr
+8103ba78   _CLK_D_countspms
+8103ba7c   PRD_D_tick
+8103ba7c   _PRD_D_tick
+8103ba80   PRD_D_cur
+8103ba84   PRD_D_elapsed
+8103ba88   PRD_D_prevtim
+8103ba8c   PRD_D_scalar
+8103ba90   PRD_D_swihandle
+8103ba94   PRD_D_tabbeg
+8103ba98   PRD_D_tablen
+8103ba9c   PRD_D_thook
+8103baa0   RTA_D_fromHost
+8103baa4   RTA_D_toHost
+8103baa8   RTA_D_logval
+8103bab8   RTA_D_stsval
+8103bac4   HST_D_chanmask
+8103bac8   HST_D_tabbeg
+8103bacc   HST_D_tabend
+8103bad0   _GBL_procId
+8103bad4   _GBL_clkIn
+8103bad8   _GBL_freq
+8103badc   _MEM_D_NUMSEGMENTS
+8103bae0   _MEM_D_memtab
+8103bae4   _MEM_D_freelist
+8103bae8   _MEM_D_lockaddr
+8103baec   _MEM_D_unlockaddr
+8103baf0   _SYS
+8103baf4   __HOOK_knlId
+8103baf8   __HOOK_NUMHOOKS
+8103bafc   SWI_D_runaddr
+8103bafc   _SWI_D_runaddr
+8103bafc   _SWI_data
+8103bb00   SWI_D_execaddr
+8103bb00   _SWI_D_execaddr
+8103bb04   SWI_D_curmask
+8103bb04   _SWI_D_curmask
+8103bb08   SWI_D_curset
+8103bb08   _SWI_D_curset
+8103bb0c   SWI_D_lock
+8103bb0c   _SWI_D_lock
+8103bb10   SWI_D_curmbox
+8103bb14   SWI_D_curfxn
+8103bb14   _SWI_D_curfxn
+8103bb18   SWI_D_rdybeg
+8103bb18   _SWI_D_rdybeg
+8103bb1c   SWI_D_inswi
+8103bb1c   _SWI_D_inswi
+8103bb20   SWI_D_rdytab
+8103bb98   _KNL_wFlag
+8103bb9c   _KNL_wList
+8103bba0   _KNL_alarm
+8103bba4   _KNL_setpri
+8103bba8   _KNL_inactive
+8103bbac   _KNL_priority
+8103bbb0   _KNL_set
+8103bbb4   _KNL_curtask
+8103bbb8   _KNL_prevtask
+8103bbbc   _KNL_curtime
+8103bbc0   _KNL_swiptr
+8103bbc4   _KNL_curqueue
+8103bbc8   _KNL_maxqueue
+8103bbcc   _KNL_tswitchfxn
+8103bbd0   _KNL_tcreatefxn
+8103bbd4   _KNL_tdeletefxn
+8103bbd8   _KNL_treadyfxn
+8103bbdc   _KNL_idlefxn
+8103bbe0   _EXC_sysTrapTable
+8103bbe8   _EXC_returnPtr
+8103bc1c   HWI_D_spsave
+8103bc1c   _HWI_D_spsave
+8103bc1c   _HWI_data
+8103bc28   _HWI_D_inhwi
+8103bc2c   HWI_D_bss
+8103bc30   HWI_D_ccmask
+8103bc34   LNK_dspFrameRequestMask
+8103bc34   _LNK_dspFrameRequestMask
+8103bc38   LNK_dspFrameReadyMask
+8103bc38   _LNK_dspFrameReadyMask
+8103bc3c   LNK_readPend
+8103bc3c   _LNK_readPend
+8103bc40   LNK_readDone
+8103bc40   _LNK_readDone
+8103bc44   LNK_readFail
+8103bc44   _LNK_readFail
+8103bc48   LNK_writeFail
+8103bc48   _LNK_writeFail
+8103bc4c   _EXC_exceptionHook
+8103bc50   _EXC_internalHook
+8103bc54   _EXC_externalHook
+8103bc58   _EXC_nmiHook
+8103bc64   _rtdxNullChanCnt
+8103bc68   _rtdxNullFuncCnt
+8103bc6c   _rtdxXmtNotDoneCnt
+8103bc70   _rtdxRecNotDoneCnt
+8103bc74   _rtdxXmtRestartCnt
+8103bc78   _rtdxXmtErrorCnt
+8103bc84   _edma3NumPaRAMSets
+8103bc8c   _TSK_nTasks
+8103bc90   _TSK_pid
+8103bc94   _TSK
+8103bc98   _numEdma3Tc
+8103bc9c   _ccXferCompInt
+8103bca0   _ccErrorInt
+8103bcb0   _ddaPrevInterruptMapInfo
+8103bcb4   _ddaPrevInterruptMapRequired
+8103bcb8   _ddaPrevSegId
+8103bcbc   _prevRegs
+8103bcc0   _vpssRegs
+8103bcc4   _llcPrevDebugErrorStatus
+8103bcc8   _CLK_DFLTMICROSECS
+8103bccc   _CLK_D_microseconds
+8103bcd0   _SYS_exitStackPtr
+8103bcd4   _SYS_exitStackTop
+8103bcd8   _hEdma
+8103bce0   _prevDebugErrorTraceIndex
+8103bce4   _prevDebugTraceIndex
+8103bce8   _i2cHandle1
+8103bcf0   _CLK_htimePerLtime
+8103bcf4   __DEV_D_NUMINITFXNS
+8103bcf8   _GIO
+8103bcfc   IDL_D_busyObj
+8103bd00   _MEM
+8103bd04   _MEM_staticMemtab
+8103bd1c   _vpfePrevRegs
+8103bd24   IDL_A_TABBEG
+8103bd24   IDL_cpuLoad
+8103bd24   _IDL_cpuLoad
+8103bd24   ___end__
+8103bd24   end
+8103bd28   LNK_dataPump
+8103bd28   _LNK_dataPump
+8103bd2c   RTA_dispatcher
+8103bd2c   _RTA_dispatcher
+8103bd30   IDL_END
+8103bd34   TRC_cinit
+8103bd38   TRC_R_mask
+8103bd38   _TRC_R_mask
+8103bd3c   GBL_initdone
+8103bd40   BIOS_init
+8103bd40   _BIOS_init
+8103bec4   BIOS$$CLKON
+8103bf04   BIOS$$CLKOFF
+8103bfc0   BIOS_start
+8103bfc0   _BIOS_start
+8103c100   _DEV_init
+8103c220   _CLK_enableTimer
+8103c300   _c_int00
+8103c3c0   _MEM_init
+8103c460   _TSK_init
+8103c4c0   _GIO_init
+8103c4e0   _OBJ_init
+8103cbbd   KNL_swi$sts$maxfmt
+8103cbc5   KNL_swi$sts$sumfmt
+8103cbcd   KNL_swi$sts$avgfmt
+8103cbd7   TSK_idle$sts$maxfmt
+8103cbdf   TSK_idle$sts$sumfmt
+8103cbe7   TSK_idle$sts$avgfmt
+8103cbf1   TACHEVIDEO$sts$maxfmt
+8103cbf9   TACHEVIDEO$sts$sumfmt
+8103cc01   TACHEVIDEO$sts$avgfmt
+8103cc0b   IDL_busyObj$maxfmt
+8103cc0e   IDL_busyObj$sumfmt
+8103cc11   IDL_busyObj$avgfmt
+8103cc40   _RTDX_Buffer
+8103d048   _RTDX_Buffer_Start
+8103d04c   _RTDX_Buffer_End
+8103d050   _rtdx_mon_state
+8103d094   _rtdx_buffer_state
+8103d0a0   _RTDX_writing
+8103d0b8   TSK_idle$stack
+8103d450   TSK_idle$stkptr
+8103d814   _SYS_PUTCBEG
+8103da13   _SYS_PUTCEND
+8103da14   RTA_toHost$buf
+8103db14   PIP_A_TABBEG
+8103db14   RTA_fromHost$pipe
+8103db14   _PIP_A_TABBEG
+8103db18   RTA_fromHost$pipe$rd
+8103db44   RTA_fromHost$pipe$aaa
+8103db48   RTA_fromHost$pipe$wr
+8103db74   RTA_fromHost$pipe$bbb
+8103db78   RTA_toHost$pipe
+8103db7c   RTA_toHost$pipe$rd
+8103dba8   RTA_toHost$pipe$aaa
+8103dbac   RTA_toHost$pipe$wr
+8103dbd8   RTA_toHost$pipe$bbb
+8103dbdc   IDL_A_CALBEG
+8103dbdc   IDL_cpuLoad$
+8103dbdc   PIP_A_TABEND
+8103dbdc   _PIP_A_TABEND
+8103dbe0   LNK_dataPump$
+8103dbe4   RTA_dispatcher$
+8103dbe8   IDL_END$
+8103dbec   SYS$config
+8103dc00   HWI_A_VECS
+8103dc00   hwi0
+8103dc20   hwi1
+8103dc40   hwi2
+8103dc60   hwi3
+8103dc80   hwi4
+8103dca0   hwi5
+8103dcc0   hwi6
+8103dce0   hwi7
+8103dd00   hwi8
+8103dd20   hwi9
+8103dd40   hwi10
+8103dd60   hwi11
+8103dd80   hwi12
+8103dda0   hwi13
+8103ddc0   hwi14
+8103dde0   hwi15
+8103de0c   TSK_idle
+8103de0c   _TSK_idle
+8103de6c   TACHEVIDEO
+8103de6c   _TACHEVIDEO
+8103dec0   UDEV_VPBE0$obj
+8103decc   UDEV_VPBE0$device
+8103dee4   UDEV_VPFE0$obj
+8103def0   UDEV_VPFE0$device
+8103df08   UDEV_I2C0$obj
+8103df14   UDEV_I2C0$device
+8103df90   LOG_A_TABBEG
+8103df90   LOG_system
+8103df90   _LOG_A_TABBEG
+8103df90   _LOG_system
+8103dfa8   _trace
+8103dfa8   trace
+8103dfc0   DVTEvent_Log
+8103dfc0   _DVTEvent_Log
+8103dfd8   KNL_swi$sts$stsobj
+8103dfd8   LOG_A_TABEND
+8103dfd8   STS_A_TABBEG
+8103dfd8   _LOG_A_TABEND
+8103dfd8   _STS_A_TABBEG
+8103dfdc   KNL_swi$sts
+8103dfe8   TSK_idle$sts$stsobj
+8103dfec   TSK_idle$sts
+8103dff8   TACHEVIDEO$sts$stsobj
+8103dffc   TACHEVIDEO$sts
+8103e008   IDL_busyObj$stsobj
+8103e00c   IDL_busyObj
+8103e00c   _IDL_busyObj
+8103e018   HST_A_TABBEG
+8103e018   STS_A_TABEND
+8103e018   _HST_A_TABBEG
+8103e018   _STS_A_TABEND
+8103e01c   RTA_fromHost
+8103e01c   _RTA_fromHost
+8103e024   RTA_fromHost$rtdx
+8103e038   RTA_toHost
+8103e038   _RTA_toHost
+8103e040   RTA_toHost$rtdx
+8103e054   HST_A_TABEND
+8103e054   KNL_swi
+8103e054   SWI_A_TABBEG
+8103e054   _HST_A_TABEND
+8103e054   _KNL_swi
+8103e080   CLK_A_TABBEG
+8103e080   PRD_clock
+8103e080   SWI_A_TABEND
+8103e080   _PRD_clock
+8103e084   CLK_null
 ffffffff   CACHE_L1D
 ffffffff   CACHE_L1P
 ffffffff   ECM_EVTMASK0
@@ -3915,4 +3961,4 @@ ffffffff   ___binit__
 ffffffff   ___c_args__
 ffffffff   binit
 
-[1567 symbols]
+[1581 symbols]
