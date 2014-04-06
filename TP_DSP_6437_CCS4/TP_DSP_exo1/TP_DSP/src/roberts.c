@@ -28,12 +28,27 @@ void roberts_nonopt(Uint8 *in, Uint8 *out, Uint32 largeur, Uint32 hauteur) {
 		for (i=0; i<largeur; i++) { 
 			Gx  = pow(-in[j*largeur+i] + in[j*largeur+i+1] - in[(j+1)*largeur+i] + in[(j+1)*largeur+i+1],2);
 			Gy = pow(-in[j*largeur+i] + in[(j+1)*largeur+i] - in[j*largeur+i+1] + in[(j+1)*largeur+(i+1)],2);
-			if(Gx < 0) Gx = -Gx;
-			if(Gy < 0) Gy = -Gy;
 			totalG = (Uint32)(valeur_absolue(Gx) + valeur_absolue(Gy));
 			if(totalG > 255) totalG = 255;
 			out[j*largeur+i] = (Uint8)totalG;
 		} 
+	} 
+}
+
+void roberts_optimise(Uint8 *in, Uint8 *out, Uint32 largeur, Uint32 hauteur) { 
+	const Uint32 NB_ELMT = largeur*hauteur; 
+	Uint32 i,G,Gx,Gy; 
+	Uint8 *pi, *ps; 
+		 
+	pi = in; ps = pi + largeur; 
+	 
+	for (i=0; i<NB_ELMT; i++) { 
+		Gx = - pi[0] + pi[1] - ps[0] + ps[1]; 
+		Gy = - pi[0] - pi[1] + ps[0] + ps[1]; 
+		G = (Uint32)(valeur_absolue(Gx*Gx) + valeur_absolue(Gy*Gy)); 
+		if(G > 255) G = 255;
+		out[i] = (Uint8)G;
+		++pi;++ps; 
 	} 
 }
 
