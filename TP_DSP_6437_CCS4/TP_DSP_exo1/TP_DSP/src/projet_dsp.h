@@ -18,10 +18,11 @@
 
 //FONCTIONNE
 void deriche_nonopt(Uint8* in, Uint8* out, Uint32 largeur, Uint32 hauteur, float gamma);
+void deriche_optimise(Uint8* in, Uint8* out, Uint32 largeur, Uint32 hauteur, float gamma);
+
 void roberts_nonopt(Uint8 *in, Uint8 *out, Uint32 largeur, Uint32 hauteur);
+void roberts_optimise(Uint8 *in, Uint8 *out, Uint32 largeur, Uint32 hauteur);
+
 void binarisation(Uint8 *in, Uint8 *out, Uint32 largeur, Uint32 hauteur, Uint32 threshold);
-/*Non implémentées
-void deriche_optimise(Uint16* in, Uint16* out, Uint32 largeur, Uint32 hauteur, float gamma);
-void 
-*/
+
 #endif /*PROJET_DSP_H_*/
