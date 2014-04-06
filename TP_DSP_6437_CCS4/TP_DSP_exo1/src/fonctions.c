@@ -2,8 +2,9 @@
 
 #define WIDTH 720
 #define HEIGHT 480
-#define GAMMA 0.25
-#define SEUIL 160
+#define GAMMA 0.20
+#define SEUIL 30
+#define NB_PIXELS WIDTH*HEIGHT
 
 #define NO_OF_BUFFERS       (2u)
 
@@ -82,7 +83,7 @@ void start_boucle() {
 
   Uint8* imageIn = NULL;
   Uint8* imageOut = NULL;
-  Uint8* imageSaved = NULL;
+  Uint8* imageSaved = NULL; 
 
   // Create ccdc channel
   feinitParams.id = PSP_VPFE_CCDC;
@@ -159,16 +160,19 @@ void start_boucle() {
     	memcpy(imageSaved, imageIn, WIDTH*HEIGHT);
     	
   		ts = C64P_getltime(); 
-  		deriche_nonopt(imageIn, imageOut, largeur, hauteur, GAMMA);
+  		deriche_optimise(imageIn, imageOut, largeur, hauteur, GAMMA);
   		te = C64P_getltime();
+  		LOG_printf( &trace, " Nombre de cycles : Fonction deriche_optimise = %u", te - ts );
   		ts = C64P_getltime(); 
-  		roberts_nonopt(imageOut, imageIn, largeur, hauteur);
+  		roberts_optimise(imageOut, imageIn, largeur, hauteur);
   		te = C64P_getltime();
+  		LOG_printf( &trace, " Nombre de cycles : Fonction roberts_optimise = %u", te - ts );
   		ts = C64P_getltime(); 
   		binarisation(imageIn, imageOut, largeur, hauteur, SEUIL);
   		te = C64P_getltime();
+  		LOG_printf( &trace, " Nombre de cycles : Fonction binarisation = %u", te - ts );
   		
-  		LOG_printf( &trace, " Nombre de cycles : Fonction deriche_nonopt = %u", te - ts );
+  		
   		
   	    LOG_printf( &trace, "Affichage iteration = %u", i );
   	    
