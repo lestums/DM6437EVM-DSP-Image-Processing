@@ -44,7 +44,10 @@ C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug/projet_maths.obj: C:/Temp/TP_DSP_6437
 C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug/projet_maths.obj: C:/Temp/TP_DSP_6437_CCS4/drivers/inc/psp_vpbe.h
 C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug/projet_maths.obj: C:/Temp/TP_DSP_6437_CCS4/drivers/inc/fvid.h
 C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug/projet_maths.obj: C:/Temp/TP_DSP_6437_CCS4/drivers/inc/psp_tvp5146_extVidDecoder.h
-C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug/projet_maths.obj: C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/driver/../TP_DSP/src/vars.h
+C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug/projet_maths.obj: ../src/vars.h
+C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug/projet_maths.obj: ../src/fixed.h
+C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug/projet_maths.obj: C:/CCS/ccsv4/tools/compiler/c6000/include/stdio.h
+C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug/projet_maths.obj: C:/CCS/ccsv4/tools/compiler/c6000/include/stdarg.h
 C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug/projet_maths.obj: C:/Temp/TP_DSP_6437_CCS4/CSL_inc/soc.h
 C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug/projet_maths.obj: C:/Temp/TP_DSP_6437_CCS4/CSL_inc/cslr.h
 C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug/projet_maths.obj: C:/Temp/TP_DSP_6437_CCS4/CSL_inc/cslr_ccdc.h
@@ -93,7 +96,10 @@ C:/Temp/TP_DSP_6437_CCS4/drivers/inc/psp_vpss_extvidDecoder.h:
 C:/Temp/TP_DSP_6437_CCS4/drivers/inc/psp_vpbe.h: 
 C:/Temp/TP_DSP_6437_CCS4/drivers/inc/fvid.h: 
 C:/Temp/TP_DSP_6437_CCS4/drivers/inc/psp_tvp5146_extVidDecoder.h: 
-C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/driver/../TP_DSP/src/vars.h: 
+../src/vars.h: 
+../src/fixed.h: 
+C:/CCS/ccsv4/tools/compiler/c6000/include/stdio.h: 
+C:/CCS/ccsv4/tools/compiler/c6000/include/stdarg.h: 
 C:/Temp/TP_DSP_6437_CCS4/CSL_inc/soc.h: 
 C:/Temp/TP_DSP_6437_CCS4/CSL_inc/cslr.h: 
 C:/Temp/TP_DSP_6437_CCS4/CSL_inc/cslr_ccdc.h: 
