@@ -47,7 +47,7 @@ void hough_nonopt(Uint8 *in, Uint8 *out, Uint32 largeur, Uint32 hauteur, Uint32 
 				for(x=0;x<largeur;x++) { 
 					y = (Uint32)((double)rho - (double)x*cos(angler))/sin(angler); 
 					if(y<hauteur && y>0) { 
-						out[y*largeur+x]=255; 
+						out[y*largeur+x]=0; 
 					} 
 				} 
 			} 
@@ -113,3 +113,54 @@ void hough_optimise(Uint8 *in, Uint8 *out, Uint32 largeur, Uint32 hauteur, Int32
 	} 
 	free(Acc); 
 }
+
+void TracerLine(Uint8 *out,float coeff, float ori){
+	int i,j;
+	coeff=-coeff;
+	ori=HEIGHT-ori;
+	for(i=0;i<WIDTH;i++){
+		j=(int)(coeff*i+ori);
+		if(j>=HEIGHT ||j<0) continue;
+		out[j*WIDTH+i]=255;
+	}
+	for(i=0;i<HEIGHT;i++){
+		j=(int)((i-ori)/coeff);
+		if(j>=WIDTH || j<0) continue;
+		out[i*WIDTH+j]=255;
+	}
+}
+
+
+void hough_test(Uint8 *in, Uint8 *out, Uint32 largeur, Uint32 hauteur, Uint32 vote, Uint32 seuil, double *tSin, double *tCos) { 
+	
+	int rho=0;
+  	int maxrho=(int)sqrt(WIDTH*WIDTH + HEIGHT*HEIGHT);
+  	int angle=0, i,j;
+  	
+  	int* Accu = (int*) calloc(sizeof(int)*180*865,0);
+	// Accumulator calc
+	for(i=1;i<hauteur-1;i++){
+		for(j=1;j<largeur-1;j++){
+			if(in[i*largeur+j]>0){
+				for(angle=1;angle<=180;angle++){
+					rho=(int)((j*tCos[angle]+i*tSin[angle])/2+maxrho/2);
+					if(rho>0 &&	*(Accu+rho*180+angle-1)<255){
+						Accu[rho*180+angle-1] += 1;
+					} else {
+						break;
+					}
+				}	
+			}	
+		}	
+	}
+ 
+ 	// Drawing lines
+	for(i=0;i<180;i++){
+		for(j=0;j<maxrho;j++){
+			if(*(Accu+i+j*180)>seuil){
+				TracerLine(out,tCos[i+1]/tSin[i+1],HEIGHT-((j+1)*2-maxrho)/tSin[angle]);
+			}	
+		}
+	}
+}
+
