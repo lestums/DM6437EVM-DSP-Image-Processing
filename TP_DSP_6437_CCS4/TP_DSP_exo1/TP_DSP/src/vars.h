@@ -19,6 +19,6 @@
 #define SQRT_MAGIC_D 0x5fe6ec85e7de30da
 
 /* VERSION FLAG */
-#define OPTIMISE 1
+#define OPTIMISE 0
 
 #endif /*VARS_H_*/
