@@ -21,9 +21,9 @@ void roberts_nonopt(Uint8 *in, Uint8 *out, Uint32 largeur, Uint32 hauteur) {
 	Uint32 totalG;
 	for (j=0; j<hauteur; j++) { 
 		for (i=0; i<largeur; i++) { 
-			Gx  = pow(-in[j*largeur+i] + in[j*largeur+i+1] - in[(j+1)*largeur+i] + in[(j+1)*largeur+i+1],2);
-			Gy = pow(-in[j*largeur+i] + in[(j+1)*largeur+i] - in[j*largeur+i+1] + in[(j+1)*largeur+(i+1)],2);
-			totalG = (Uint32)(valeur_absolue(Gx) + valeur_absolue(Gy));
+			Gx = pow(in[j*largeur+i] - in[(j+1)*largeur+i+1],2);
+			Gy = pow(in[(j+1)*largeur+i] - in[j*largeur+i+1],2);
+			totalG = valeur_absolue(Gx + Gy);
 			if(totalG > 255) totalG = 255;
 			out[j*largeur+i] = (Uint8)totalG;
 		} 
@@ -38,8 +38,8 @@ void roberts_optimise(Uint8 *in, Uint8 *out, Uint32 largeur, Uint32 hauteur, Uin
 	pi = in; ps = pi + largeur; 
 	 
 	for (i=0; i<NB_ELMT; i++) { 
-		Gx[i] = - pi[0] + pi[1] - ps[0] + ps[1]; 
-		Gy[i] = - pi[0] - pi[1] + ps[0] + ps[1]; 
+		Gx[i] = pi[0] - ps[1]; 
+		Gy[i] = pi[1] - ps[0]; 
 		G = (Uint32)(valeur_absolue(Gx[i]*Gx[i]) + valeur_absolue(Gy[i]*Gy[i])); 
 		if (G > threshold) { 
 			out[i] = 255; 
