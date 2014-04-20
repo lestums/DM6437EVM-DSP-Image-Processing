@@ -1,20 +1,11 @@
 #include "../TP_DSP/src/projet_dsp.h"
 
-#define WIDTH 720
-#define HEIGHT 480
-#define GAMMA 0.20
-#define SEUIL 30
-#define NB_PIXELS WIDTH*HEIGHT
-
 #define NO_OF_BUFFERS       (2u)
 
 // External functions 
 
 extern LOG_Obj trace;  // BIOS LOG object
 extern Uint32 C64P_getltime();
-extern void deriche_nonopt(Uint8* in, Uint8* out, Uint32 largeur, Uint32 hauteur, float gamma);
-extern void roberts_nonopt(Uint8 *in, Uint8 *out, Uint32 largeur, Uint32 hauteur);
-extern void binarisation(Uint8 *in, Uint8 *out, Uint32 largeur, Uint32 hauteur, Uint32 threshold);
 
 // Global Variable Defined 
 static PSP_VPSSSurfaceParams *ccdcAllocFB[NO_OF_BUFFERS]={NULL};
@@ -69,6 +60,10 @@ static PSP_VPBEVencConfigParams vencParams = {
   PSP_VPBE_DISPLAY_NTSC_INTERLACED_COMPOSITE // Display Standard 
 };
 
+/* DATA SECTION DEFINITION */
+double tSin[MAXTHETA+1]; 
+double tCos[MAXTHETA+1];
+
 void start_boucle() {
   PSP_VPBEChannelParams beinitParams;
   PSP_VPFEChannelParams feinitParams;
@@ -77,27 +72,31 @@ void start_boucle() {
   PSP_VPSSSurfaceParams *FBAddrOut = NULL;
   
   Uint32 i = 0, j = 0, k = 0, ts = 0, te = 0;
-  Uint32 largeur = WIDTH;
-  Uint32 hauteur = HEIGHT;
-  Uint32 numOfIterations = 10000;
 
   Uint8* imageIn = NULL;
   Uint8* imageOut = NULL;
-  Uint8* imageSaved = NULL; 
+  Uint8* imageEnd = NULL; 
+  
+  double *Gx = (double*)malloc(NB_PIXELS*sizeof(double)); 
+  double *Gy = (double*)malloc(NB_PIXELS*sizeof(double));
+  int maxrho = ceil(fastSqrtD(HEIGHT*HEIGHT+ WIDTH*WIDTH));
+  
+  //Initialisation des LUT du sinus et du cosinus 
+  for( i = 0; i <= MAXTHETA; i++ ){ 
+  	tCos[i] = cos((double)i*PI/MAXTHETA);
+  	tSin[i] = ((i == MAXTHETA) ? 0 : sin((double)i*PI/MAXTHETA));  
+  }
 
   // Create ccdc channel
   feinitParams.id = PSP_VPFE_CCDC;
   feinitParams.params = (PSP_VPFECcdcConfigParams*)&ccdcParams;
-  ccdcHandle = FVID_create( "/VPFE0", IOM_INOUT, NULL, &feinitParams, 
-                            &gioAttrs);
+  ccdcHandle = FVID_create( "/VPFE0", IOM_INOUT, NULL, &feinitParams, &gioAttrs);
   if ( NULL == ccdcHandle) {
     return;
   }
 
   // Configure the TVP5146 video decoder
-  if( FVID_control( ccdcHandle, 
-                    VPFE_ExtVD_BASE + PSP_VPSS_EXT_VIDEO_DECODER_CONFIG,
-                    &tvp5146Params) != IOM_COMPLETED ) {
+  if( FVID_control( ccdcHandle, VPFE_ExtVD_BASE + PSP_VPSS_EXT_VIDEO_DECODER_CONFIG, &tvp5146Params) != IOM_COMPLETED ) {
 	return;
   } else {
     for ( i=0; i < NO_OF_BUFFERS; i++ ) {
@@ -112,8 +111,8 @@ void start_boucle() {
   // Create video channel
   beinitParams.id = PSP_VPBE_VIDEO_0;
   beinitParams.params = (PSP_VPBEOsdConfigParams*)&vid0Params;
-  vid0Handle = FVID_create( "/VPBE0", IOM_INOUT,NULL, &beinitParams, 
-                            &gioAttrs );
+  vid0Handle = FVID_create( "/VPBE0", IOM_INOUT,NULL, &beinitParams, &gioAttrs );
+  
   if ( NULL == vid0Handle ) {
     return;
   } else {
@@ -129,8 +128,7 @@ void start_boucle() {
   // Create venc channel
   beinitParams.id = PSP_VPBE_VENC;
   beinitParams.params = (PSP_VPBEVencConfigParams *)&vencParams;
-  vencHandle = FVID_create( "/VPBE0", IOM_INOUT, NULL, &beinitParams, 
-                            &gioAttrs);
+  vencHandle = FVID_create( "/VPBE0", IOM_INOUT, NULL, &beinitParams, &gioAttrs);
   if ( NULL == vencHandle ) {
     return;
   }
@@ -141,10 +139,11 @@ void start_boucle() {
   //Allocation mémoire des conteneurs pour le traitement des images
   imageIn = (Uint8*) malloc(WIDTH*HEIGHT*sizeof(Uint8));
   imageOut = (Uint8*) malloc(WIDTH*HEIGHT*sizeof(Uint8));
-  imageSaved = (Uint8*) malloc(WIDTH*HEIGHT*sizeof(Uint8));
+  imageEnd = (Uint8*) malloc(WIDTH*HEIGHT*sizeof(Uint8));
+  
   //================BOUCLE ACQUISITION & COPIE & AFFICHAGE DES IMAGES========================
   //1)Acquisition
-  	for( i = 0; i < numOfIterations; i++ ) {
+  	for( i = 0; i < ITERNUM; i++ ) {
   		if ( IOM_COMPLETED != FVID_exchange( ccdcHandle, &FBAddr ) ) {
 			return;
     	}
@@ -157,29 +156,27 @@ void start_boucle() {
     	}
     	
     	//Sauvegarde de l'image en niveau de gris
-    	memcpy(imageSaved, imageIn, WIDTH*HEIGHT);
-    	
-  		ts = C64P_getltime(); 
-  		deriche_optimise(imageIn, imageOut, largeur, hauteur, GAMMA);
-  		te = C64P_getltime();
-  		LOG_printf( &trace, " Nombre de cycles : Fonction deriche_optimise = %u", te - ts );
-  		ts = C64P_getltime(); 
-  		roberts_optimise(imageOut, imageIn, largeur, hauteur);
-  		te = C64P_getltime();
-  		LOG_printf( &trace, " Nombre de cycles : Fonction roberts_optimise = %u", te - ts );
-  		ts = C64P_getltime(); 
-  		binarisation(imageIn, imageOut, largeur, hauteur, SEUIL);
-  		te = C64P_getltime();
-  		LOG_printf( &trace, " Nombre de cycles : Fonction binarisation = %u", te - ts );
+    	memcpy(imageEnd, imageIn, NB_PIXELS);
+    	ts = C64P_getltime();
+		#if OPTIMISE == 1
+		  		deriche_optimise(imageIn, imageOut, WIDTH, HEIGHT, GAMMA);
+		  		roberts_optimise(imageOut, imageEnd, WIDTH, HEIGHT, SEUIL, Gx, Gy);
+		  		//hough_optimise(imageIn, imageEnd, maxrho, WIDTH, HEIGHT, MAX_VOTES, Gx, Gy, tSin, tCos);
+		  		//hough_nonopt(imageIn, imageEnd, maxrho, WIDTH, HEIGHT, MAX_VOTES);
+		#else
+		  		deriche_nonopt(imageIn, imageOut, WIDTH, HEIGHT, GAMMA);
+		  		roberts_nonopt(imageOut, imageIn, WIDTH, HEIGHT);
+		  		binarisation(imageIn, imageEnd, WIDTH, HEIGHT, SEUIL);
+		  		//hough_nonopt(imageOut, imageEnd, WIDTH, HEIGHT, MAX_VOTES);
+		#endif
+		te = C64P_getltime(); 		
   		
-  		
-  		
-  	    LOG_printf( &trace, "Affichage iteration = %u", i );
-  	    
+  	    LOG_printf( &trace, "Nombre de cycles total = %u", te-ts);	 
+  	       
   	    //Conversion en Uint16 pour affichage et mise à 0x80 (mise à zéro) de la chrominance 
   	    for( j = 0; j < HEIGHT; j++ ) { 
   	    	for( k = 0; k < WIDTH ; k++ ) { 
-  	    		((Uint16*)FBAddrOut->frameBufferPtr)[j*WIDTH + k] = ((((Uint16)imageIn[j*WIDTH + k])<<8) | 0x0080); 
+  	    			((Uint16*)FBAddrOut->frameBufferPtr)[j*WIDTH + k] = ((((Uint16)imageEnd[j*WIDTH + k])<<8) | 0x0080); 
   	    	}
   	    }
   // 2)Affichage :

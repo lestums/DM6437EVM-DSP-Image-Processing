@@ -1,0 +1,122 @@
+/*
+ *  Load platform file for DM6437
+ */
+utils.loadPlatform("ti.platforms.evmDM6437");
+
+/* This setting have been removed due to a BIOS bug (33568217) */
+/* bios.LOG.TS = true; */
+
+/*
+ * Enable common BIOS features used by all examples
+ */
+bios.enableRealTimeAnalysis(prog);
+bios.enableMemoryHeaps(prog);
+bios.enableRtdx(prog);  
+bios.enableTskManager(prog);
+
+/* Enable ECM Handler */
+bios.ECM.ENABLE = 1;
+
+/*
+ *  Import driver TCI files.
+ */
+utils.importFile("dm6437_i2c0.tci");
+utils.importFile("dm6437_vpfe0.tci"); 
+utils.importFile("dm6437_vpbe0.tci");
+
+/*
+ * Enable heap usage.
+ * Note: Heap Size is so large due to VPSS test application
+ */
+bios.MEM.instance("DDR2").createHeap = 1;
+bios.MEM.instance("DDR2").heapSize = 0x01000000;
+
+bios.LOG.instance("LOG_system").bufLen = 1024;
+bios.LOG.instance("LOG_system").bufSeg = prog.get("IRAM");
+
+bios.LOG_system.bufLen = 1024;
+bios.LOG_system.logType = "circular";
+
+bios.LOG.create("trace");
+bios.LOG.instance("trace").bufLen = 1024;
+bios.LOG.instance("trace").bufSeg = prog.get("IRAM");
+
+bios.LOG.create("DVTEvent_Log");
+bios.LOG.instance("DVTEvent_Log").bufSeg = prog.get("IRAM");
+bios.LOG.instance("DVTEvent_Log").bufLen = 8192;
+bios.LOG.instance("DVTEvent_Log").comment = "DVT";
+
+/*Decide on sections*/
+bios.SIO.OBJMEMSEG = prog.get("DDR2");
+bios.DIO.OBJMEMSEG = prog.get("DDR2");
+bios.SEM.OBJMEMSEG = prog.get("DDR2");
+bios.MBX.OBJMEMSEG = prog.get("DDR2");
+bios.QUE.OBJMEMSEG = prog.get("DDR2");
+bios.LCK.OBJMEMSEG = prog.get("DDR2");
+bios.SWI.OBJMEMSEG = prog.get("DDR2");
+bios.TSK.OBJMEMSEG = prog.get("DDR2");
+bios.TSK.STACKSEG = prog.get("DDR2");
+bios.PRD.OBJMEMSEG = prog.get("DDR2");
+bios.MEM.BIOSOBJSEG = prog.get("DDR2");
+bios.MEM.MALLOCSEG = prog.get("DDR2");
+bios.MEM.ARGSSEG = prog.get("DDR2");
+bios.MEM.STACKSEG = prog.get("DDR2");
+bios.MEM.GBLINITSEG = prog.get("DDR2");
+bios.MEM.TRCDATASEG = prog.get("DDR2");
+bios.MEM.OBJSEG = prog.get("DDR2");
+bios.MEM.SYSDATASEG = prog.get("DDR2");
+bios.MEM.TEXTSEG = prog.get("DDR2");
+bios.MEM.SWITCHSEG = prog.get("DDR2");
+bios.MEM.BSSSEG = prog.get("DDR2");
+bios.MEM.CINITSEG = prog.get("DDR2");
+bios.MEM.FARSEG = prog.get("DDR2");
+bios.MEM.PINITSEG = prog.get("DDR2");
+bios.MEM.CONSTSEG = prog.get("DDR2");
+bios.MEM.DATASEG = prog.get("DDR2");
+bios.MEM.CIOSEG = prog.get("DDR2");
+bios.MEM.BIOSSEG = prog.get("DDR2");
+bios.MEM.SYSINITSEG = prog.get("DDR2");
+bios.MEM.HWISEG = prog.get("DDR2");
+bios.MEM.HWIVECSEG = prog.get("DDR2");
+bios.MEM.RTDXTEXTSEG = prog.get("DDR2");
+
+bios.MEM.MALLOCSEG = prog.get("DDR2");
+bios.BUF.OBJMEMSEG = prog.get("DDR2");
+bios.LOG.OBJMEMSEG = prog.get("DDR2");
+bios.STS.OBJMEMSEG = prog.get("DDR2");
+bios.IDL.OBJMEMSEG = prog.get("DDR2");
+bios.DHL.OBJMEMSEG = prog.get("DDR2");
+bios.RTDX.RTDXDATASEG = prog.get("DDR2");
+bios.TSK.instance("TSK_idle").stackMemSeg = prog.get("DDR2");
+
+bios.HST.OBJMEMSEG = prog.get("DDR2");
+bios.HST.instance("RTA_fromHost").bufSeg = prog.get("DDR2");
+bios.HST.instance("RTA_toHost").bufSeg = prog.get("DDR2");
+bios.SYS.TRACESEG = prog.get("DDR2");
+bios.PIP.OBJMEMSEG = prog.get("DDR2");
+bios.CLK.OBJMEMSEG = prog.get("DDR2");
+
+bios.CLK.RESETTIMER = 1;
+
+bios.GBL.ENABLEINST = 1;
+bios.GBL.C64PLUSMAR128to159 = 0x0000ffff;
+
+bios.MEM.STACKSIZE = 0x8000;
+
+/* ECM configuration - manually Reflect these settings in soc.h */
+bios.HWI.instance("HWI_INT7").interruptSelectNumber = 0;
+bios.HWI.instance("HWI_INT8").interruptSelectNumber = 1;
+bios.HWI.instance("HWI_INT9").interruptSelectNumber = 2;
+bios.HWI.instance("HWI_INT10").interruptSelectNumber = 3;
+
+/*task configuration*/
+
+bios.TSK.create("TACHEVIDEO");
+bios.TSK.instance("TACHEVIDEO").stackSize = 16384;
+bios.TSK.instance("TACHEVIDEO").order = 3;
+bios.TSK.instance("TACHEVIDEO").fxn = prog.extern("tachevideo");
+bios.TSK.instance("TACHEVIDEO").comment = "Sample Application";
+
+// !GRAPHICAL_CONFIG_TOOL_SCRIPT_INSERT_POINT!
+prog.gen();
+

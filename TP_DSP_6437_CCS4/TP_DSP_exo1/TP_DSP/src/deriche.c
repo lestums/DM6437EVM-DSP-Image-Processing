@@ -79,29 +79,31 @@ void deriche_nonopt(Uint8* in, Uint8* out, Uint32 largeur, Uint32 hauteur, float
 void deriche_optimise(Uint8 *in, Uint8 *out, Uint32 largeur, Uint32 hauteur, float gamma) { 
  
 	int i,j,k; 
-	float g1 = (1-gamma)*(1-gamma); 
-	float g2 = 2*gamma; 
-	float gg = gamma*gamma; 
-	 
-	double *X = (double*) malloc(largeur*hauteur*sizeof(double)); 
-	double *Y = (double*) malloc(largeur*hauteur*sizeof(double)); 
+	fixed g1 = MULT(FLOAT2FIXED(1-gamma),FLOAT2FIXED(1-gamma)); 
+	fixed g2 = MULT(2,FLOAT2FIXED(gamma)); 
+	fixed gg = MULT(FLOAT2FIXED(gamma),FLOAT2FIXED(gamma)); 
+	fixed in_fixed = 0;
+		 
+	fixed* X = (fixed*) malloc(largeur*hauteur*sizeof(fixed)); 
+	fixed* Y = (fixed*) malloc(largeur*hauteur*sizeof(fixed)); 
 	 
 	k=0; 
 	// Horizontal smoothing 
 	for (j=0; j<hauteur; j++) { // for every line : 
 		// Filtre causal 
-		X[k] = g1*((double)in[k]);k++; 
-		X[k] = g1*((double)in[k])+ g2*X[k-1];k++; 
+		in_fixed = FLOAT2FIXED((float)in[k]);
+		X[k] = MULT(g1,in_fixed);k++; 
+		X[k] = MULT(g1,in_fixed)+ MULT(g2,X[k-1]);k++; 
 		for (i=2; i<largeur; i++) { 
-			X[k]= g1*((double)in[k]) + g2*X[k-1] + gg*X[k-2];k++; 
+			X[k]= MULT(g1,in_fixed) + MULT(g2,X[k-1]) + MULT(gg,X[k-2]);k++; 
 		} 
 	
 		// Filtre anticausal 
 		k--; 
-		Y[k] = g1*X[k];k--; 
-		Y[k] = g1*X[k] + g2*Y[k+1];k--; 
+		Y[k] = MULT(g1,X[k]);k--; 
+		Y[k] = MULT(g1,X[k]) + MULT(g2,Y[k+1]);k--; 
 		for (i=largeur-3; i>=0; i--) { 
-			Y[k] = g1*X[k] + g2*Y[k+1] + gg*Y[k+2];k--; 
+			Y[k] = MULT(g1,X[k]) + MULT(g2,Y[k+1]) + MULT(gg,Y[k+2]);k--; 
 		} 
 		k+=largeur+1; 
 	} 
@@ -116,18 +118,18 @@ void deriche_optimise(Uint8 *in, Uint8 *out, Uint32 largeur, Uint32 hauteur, flo
 	// Vertical smoothing 
 	for (i=0; i<largeur; i++) { // for every line : 
 		// Filtre causal 
-		Y[k] = g1*X[k];k++; 
-		Y[k] = g1*X[k] + g2*Y[k-1];k++; 
+		Y[k] = MULT(g1,X[k]);k++; 
+		Y[k] = MULT(g1,X[k]) + MULT(g2,Y[k-1]);k++; 
 		for (j=2; j<hauteur; j++) { 
-			out[k]= g1*Y[k] + g2*X[k-1] + gg*X[k-2];k++; 
+			out[k]= MULT(g1,Y[k]) + MULT(g2,X[k-1]) + MULT(gg,X[k-2]);k++; 
 		} 
 	
 	  	// Filtre anticausal 
 		k--; 
-		out[k] = g1*Y[k];k--; 
-		out[k] = g1*Y[k] + g2*out[k+1];k--; 
+		out[k] = MULT(g1,Y[k]);k--; 
+		out[k] = MULT(g1,Y[k]) + MULT(g2,out[k+1]);k--; 
 		for (j=hauteur-3; j>=0; j--) { 
-			out[k] = g1*Y[k] + g2*out[k+1] + gg*out[k+2];k--; 
+			out[k] =MULT(g1,Y[k]) + MULT(g2,out[k+1]) + MULT(gg,out[k+2]);k--; 
 		} 
 		k+=hauteur+1; 
 	} 

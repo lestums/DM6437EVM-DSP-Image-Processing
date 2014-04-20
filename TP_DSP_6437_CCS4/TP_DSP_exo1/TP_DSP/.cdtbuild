@@ -45,6 +45,8 @@
 <listOptionValue builtIn="false" value="&quot;BIOS_BUILD&quot;"/>
 </option>
 <option id="com.ti.ccstudio.buildDefinitions.C6000_7.0.compilerID.SILICON_VERSION.1680346294" superClass="com.ti.ccstudio.buildDefinitions.C6000_7.0.compilerID.SILICON_VERSION" value="6400+" valueType="string"/>
+<option id="com.ti.ccstudio.buildDefinitions.C6000_7.0.compilerID.OPT_LEVEL.405222710" superClass="com.ti.ccstudio.buildDefinitions.C6000_7.0.compilerID.OPT_LEVEL" value="com.ti.ccstudio.buildDefinitions.C6000_7.0.compilerID.OPT_LEVEL.2" valueType="enumerated"/>
+<option id="com.ti.ccstudio.buildDefinitions.C6000_7.0.compilerID.OPT_FOR_SPACE.1279657986" superClass="com.ti.ccstudio.buildDefinitions.C6000_7.0.compilerID.OPT_FOR_SPACE" value="com.ti.ccstudio.buildDefinitions.C6000_7.0.compilerID.OPT_FOR_SPACE.2" valueType="enumerated"/>
 </tool>
 <tool id="com.ti.ccstudio.buildDefinitions.C6000_7.0.exe.linkerDebug.1727033513" name="C6000 Linker" superClass="com.ti.ccstudio.buildDefinitions.C6000_7.0.exe.linkerDebug">
 <option id="com.ti.ccstudio.buildDefinitions.C6000_7.0.linkerID.OUTPUT_FILE.1367835940" superClass="com.ti.ccstudio.buildDefinitions.C6000_7.0.linkerID.OUTPUT_FILE" value="&quot;${EXT_ROOT__TP_DSP}/TP_DSP_exo1/Debug/TP-DSP.out&quot;" valueType="string"/>
@@ -190,6 +192,9 @@
 </option>
 </tool>
 </resourceConfiguration>
+<resourceConfiguration exclude="true" id="com.ti.ccstudio.buildDefinitions.C6000.Debug.1732389291./TP_DSP/TP_DSP.cmd" name="TP_DSP.cmd" rcbsApplicability="disable" resourcePath="/TP_DSP/TP_DSP.cmd" toolsToInvoke="com.ti.ccstudio.buildDefinitions.C6000_7.0.exe.linkerDebug.1727033513./TP_DSP/TP_DSP.cmd">
+<tool id="com.ti.ccstudio.buildDefinitions.C6000_7.0.exe.linkerDebug.1727033513./TP_DSP/TP_DSP.cmd" name="C6000 Linker" superClass="com.ti.ccstudio.buildDefinitions.C6000_7.0.exe.linkerDebug.1727033513"/>
+</resourceConfiguration>
 </configuration>
 <configuration artifactExtension="out" artifactName="${EXT_ROOT__TP_DSP}/TP_DSP_exo1/Release/TP-DSP" description="" id="com.ti.ccstudio.buildDefinitions.C6000.Release.1531420035" name="Release" parent="com.ti.ccstudio.buildDefinitions.C6000.Release">
 <toolChain id="com.ti.ccstudio.buildDefinitions.C6000_7.0.exe.ReleaseToolchain.337709330" name="TI Code Generation Tools" superClass="com.ti.ccstudio.buildDefinitions.C6000_7.0.exe.ReleaseToolchain" targetTool="com.ti.ccstudio.buildDefinitions.C6000_7.0.exe.linkerRelease.41980175">
@@ -287,6 +292,207 @@
 </resourceConfiguration>
 <resourceConfiguration exclude="false" id="com.ti.ccstudio.buildDefinitions.C6000.Release.1531420035./TP_DSP/src/tvp5146_extDecoder.c" name="tvp5146_extDecoder.c" rcbsApplicability="disable" resourcePath="/TP_DSP/src/tvp5146_extDecoder.c" toolsToInvoke="com.ti.ccstudio.buildDefinitions.C6000_7.0.exe.compilerRelease.898918460./TP_DSP/src/tvp5146_extDecoder.c">
 <tool id="com.ti.ccstudio.buildDefinitions.C6000_7.0.exe.compilerRelease.898918460./TP_DSP/src/tvp5146_extDecoder.c" name="C6000 Compiler" superClass="com.ti.ccstudio.buildDefinitions.C6000_7.0.exe.compilerRelease.898918460"/>
+</resourceConfiguration>
+<resourceConfiguration exclude="true" id="com.ti.ccstudio.buildDefinitions.C6000.Release.1531420035./TP_DSP/TP_DSP.cmd" name="TP_DSP.cmd" rcbsApplicability="disable" resourcePath="/TP_DSP/TP_DSP.cmd" toolsToInvoke="com.ti.ccstudio.buildDefinitions.C6000_7.0.exe.linkerRelease.41980175./TP_DSP/TP_DSP.cmd">
+<tool id="com.ti.ccstudio.buildDefinitions.C6000_7.0.exe.linkerRelease.41980175./TP_DSP/TP_DSP.cmd" name="C6000 Linker" superClass="com.ti.ccstudio.buildDefinitions.C6000_7.0.exe.linkerRelease.41980175"/>
+</resourceConfiguration>
+</configuration>
+<configuration artifactExtension="out" artifactName="${EXT_ROOT__TP_DSP}/TP_DSP_exo1/Debug/TP-DSP" description="" id="com.ti.ccstudio.buildDefinitions.C6000.Debug.629924458" name="Linkage Test" parent="com.ti.ccstudio.buildDefinitions.C6000.Debug">
+<toolChain id="com.ti.ccstudio.buildDefinitions.C6000_7.2.exe.DebugToolchain.808466634" name="TI Code Generation Tools" superClass="com.ti.ccstudio.buildDefinitions.C6000_7.2.exe.DebugToolchain" targetTool="com.ti.ccstudio.buildDefinitions.C6000_7.2.exe.linkerDebug.1132434498">
+<option id="com.ti.ccstudio.buildDefinitions.core.OPT_TAGS.816803540" superClass="com.ti.ccstudio.buildDefinitions.core.OPT_TAGS" valueType="stringList">
+<listOptionValue builtIn="false" value="DEVICE_CONFIGURATION_ID=TMS320C64XX.TMS320DM6431"/>
+<listOptionValue builtIn="false" value="DEVICE_ENDIANNESS=little"/>
+<listOptionValue builtIn="false" value="OUTPUT_FORMAT=COFF"/>
+<listOptionValue builtIn="false" value="CCS_MBS_VERSION=4.2.4"/>
+<listOptionValue builtIn="false" value="LINKER_COMMAND_FILE="/>
+<listOptionValue builtIn="false" value="RUNTIME_SUPPORT_LIBRARY=libc.a"/>
+<listOptionValue builtIn="false" value="DSPBIOS_VERSION=5.41.10.36"/>
+<listOptionValue builtIn="false" value="OUTPUT_TYPE=bios5Application:rtscApplication:executable"/>
+<listOptionValue builtIn="false" value="RTSC_PRODUCTS=com.ti.rtsc.XDAIS:latest;"/>
+<listOptionValue builtIn="false" value="LINK_ORDER=TP_DSP.cmd;"/>
+</option>
+<option id="com.ti.ccstudio.buildDefinitions.core.OPT_CODEGEN_VERSION.1343233699" superClass="com.ti.ccstudio.buildDefinitions.core.OPT_CODEGEN_VERSION" value="7.2.3" valueType="string"/>
+<tool id="com.ti.ccstudio.buildDefinitions.C6000_7.2.exe.compilerDebug.358522621" name="C6000 Compiler" superClass="com.ti.ccstudio.buildDefinitions.C6000_7.2.exe.compilerDebug">
+<option id="com.ti.ccstudio.buildDefinitions.C6000_7.2.compilerID.DIAG_WARNING.398177545" superClass="com.ti.ccstudio.buildDefinitions.C6000_7.2.compilerID.DIAG_WARNING" valueType="stringList">
+<listOptionValue builtIn="false" value="225"/>
+</option>
+<option id="com.ti.ccstudio.buildDefinitions.C6000_7.2.compilerID.SILICON_VERSION.2043370954" superClass="com.ti.ccstudio.buildDefinitions.C6000_7.2.compilerID.SILICON_VERSION" value="64+" valueType="string"/>
+<option id="com.ti.ccstudio.buildDefinitions.C6000_7.2.compilerID.OPT_LEVEL.1449514384" superClass="com.ti.ccstudio.buildDefinitions.C6000_7.2.compilerID.OPT_LEVEL" value="com.ti.ccstudio.buildDefinitions.C6000_7.2.compilerID.OPT_LEVEL.2" valueType="enumerated"/>
+<option id="com.ti.ccstudio.buildDefinitions.C6000_7.2.compilerID.OPT_FOR_SPACE.127830735" superClass="com.ti.ccstudio.buildDefinitions.C6000_7.2.compilerID.OPT_FOR_SPACE" value="com.ti.ccstudio.buildDefinitions.C6000_7.2.compilerID.OPT_FOR_SPACE.2" valueType="enumerated"/>
+<option id="com.ti.ccstudio.buildDefinitions.C6000_7.2.compilerID.DEFINE.374449764" superClass="com.ti.ccstudio.buildDefinitions.C6000_7.2.compilerID.DEFINE" valueType="definedSymbols">
+<listOptionValue builtIn="false" value="&quot;_DEBUG&quot;"/>
+<listOptionValue builtIn="false" value="&quot;CHIP_DM6437&quot;"/>
+<listOptionValue builtIn="false" value="&quot;DM643X_SOC_BUILD&quot;"/>
+<listOptionValue builtIn="false" value="&quot;BIOS_BUILD&quot;"/>
+</option>
+<option id="com.ti.ccstudio.buildDefinitions.C6000_7.2.compilerID.INCLUDE_PATH.2143666952" superClass="com.ti.ccstudio.buildDefinitions.C6000_7.2.compilerID.INCLUDE_PATH" valueType="includePath">
+<listOptionValue builtIn="false" value="&quot;${CG_TOOL_ROOT}/include&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${PROJECT_BUILD_DIR}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${BIOS_INCLUDE_DIR}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${RTDX_INCLUDE_DIR}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${XDAIS_CG_ROOT}/packages/ti/xdais&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${C6000_CSL_CG_ROOT}/include&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${EXT_ROOT__TP_DSP}/TP_DSP_exo1/driver&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${EXT_ROOT__TP_DSP}/pal_os/inc&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${EXT_ROOT__TP_DSP}/drivers/i2c/inc&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${EXT_ROOT__TP_DSP}/drivers/previewer/inc&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${EXT_ROOT__TP_DSP}/drivers/inc&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${EXT_ROOT__TP_DSP}/CSL_inc&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${TCONF_OUTPUT_DIR}&quot;"/>
+</option>
+<option id="com.ti.ccstudio.buildDefinitions.C6000_7.2.compilerID.ABI.404247333" superClass="com.ti.ccstudio.buildDefinitions.C6000_7.2.compilerID.ABI" value="com.ti.ccstudio.buildDefinitions.C6000_7.2.compilerID.ABI.coffabi" valueType="enumerated"/>
+<option id="com.ti.ccstudio.buildDefinitions.C6000_7.2.compilerID.DIRECTORY_MODE.1487267967" superClass="com.ti.ccstudio.buildDefinitions.C6000_7.2.compilerID.DIRECTORY_MODE" value="com.ti.ccstudio.buildDefinitions.C6000_7.2.compilerID.DIRECTORY_MODE.manual" valueType="enumerated"/>
+<option id="com.ti.ccstudio.buildDefinitions.C6000_7.2.compilerID.OBJ_DIRECTORY.1432254720" superClass="com.ti.ccstudio.buildDefinitions.C6000_7.2.compilerID.OBJ_DIRECTORY" value="&quot;${EXT_ROOT__TP_DSP}/TP_DSP_exo1/Debug&quot;" valueType="string"/>
+</tool>
+<tool id="com.ti.ccstudio.buildDefinitions.C6000_7.2.exe.linkerDebug.1132434498" name="C6000 Linker" superClass="com.ti.ccstudio.buildDefinitions.C6000_7.2.exe.linkerDebug">
+<option id="com.ti.ccstudio.buildDefinitions.C6000_7.2.linkerID.STACK_SIZE.748255430" superClass="com.ti.ccstudio.buildDefinitions.C6000_7.2.linkerID.STACK_SIZE" value="800" valueType="string"/>
+<option id="com.ti.ccstudio.buildDefinitions.C6000_7.2.linkerID.HEAP_SIZE.1584941624" superClass="com.ti.ccstudio.buildDefinitions.C6000_7.2.linkerID.HEAP_SIZE" value="800" valueType="string"/>
+<option id="com.ti.ccstudio.buildDefinitions.C6000_7.2.linkerID.OUTPUT_FILE.1422518345" superClass="com.ti.ccstudio.buildDefinitions.C6000_7.2.linkerID.OUTPUT_FILE" value="&quot;${EXT_ROOT__TP_DSP}/TP_DSP_exo1/Debug/TP-DSP.out&quot;" valueType="string"/>
+<option id="com.ti.ccstudio.buildDefinitions.C6000_7.2.linkerID.MAP_FILE.2066959339" superClass="com.ti.ccstudio.buildDefinitions.C6000_7.2.linkerID.MAP_FILE" value="&quot;${EXT_ROOT__TP_DSP}/TP_DSP_exo1/Debug/TP-DSP.map&quot;" valueType="string"/>
+<option id="com.ti.ccstudio.buildDefinitions.C6000_7.2.linkerID.LIBRARY.439395812" superClass="com.ti.ccstudio.buildDefinitions.C6000_7.2.linkerID.LIBRARY" valueType="libs">
+<listOptionValue builtIn="false" value="&quot;../pal_os/lib/palos_bios_dbg.lib&quot;"/>
+<listOptionValue builtIn="false" value="&quot;../drivers/vpbe/lib/vpbe_bios_drv_dbg.lib&quot;"/>
+<listOptionValue builtIn="false" value="&quot;../drivers/vpfe/lib/vpfe_bios_drv_dbg.lib&quot;"/>
+<listOptionValue builtIn="false" value="&quot;../drivers/i2c/lib/i2c_bios_drv_dbg.lib&quot;"/>
+<listOptionValue builtIn="false" value="&quot;../drivers/previewer/lib/prev_bios_drv_dbg.lib&quot;"/>
+<listOptionValue builtIn="false" value="&quot;edma3_drv_bios_dbg.lib&quot;"/>
+<listOptionValue builtIn="false" value="&quot;edma3_rm_bios_dbg.lib&quot;"/>
+<listOptionValue builtIn="false" value="&quot;libc.a&quot;"/>
+</option>
+<option id="com.ti.ccstudio.buildDefinitions.C6000_7.2.linkerID.SEARCH_PATH.496273030" superClass="com.ti.ccstudio.buildDefinitions.C6000_7.2.linkerID.SEARCH_PATH" valueType="stringList">
+<listOptionValue builtIn="false" value="&quot;${CG_TOOL_ROOT}/lib&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${CG_TOOL_ROOT}/include&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${RTDX_LIB_DIR}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${BIOS_LIB_DIR}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${PROJECT_ROOT}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${EXT_ROOT__TP_DSP}/TP_DSP_exo1&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${C6000_CSL_CG_ROOT}/lib&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${EXT_ROOT__TP_DSP}/TP_DSP_exo1/driver&quot;"/>
+</option>
+</tool>
+<tool id="com.ti.rtsc.buildDefinitions.DSPBIOS_5.40.tool.291894094" name="TConf Script Compiler" superClass="com.ti.rtsc.buildDefinitions.DSPBIOS_5.40.tool">
+<option id="com.ti.rtsc.buildDefinitions.DSPBIOS_5.40.tool.CONFIG_IMPORT_PATH.287937336" superClass="com.ti.rtsc.buildDefinitions.DSPBIOS_5.40.tool.CONFIG_IMPORT_PATH" valueType="includePath">
+<listOptionValue builtIn="false" value="&quot;${BIOS_CG_ROOT}/packages&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${EXT_ROOT__TP_DSP}/TP_DSP_exo1&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${env_var:BIOS_INSTALL_DIR}/packages/ti/bios/examples/common&quot;"/>
+</option>
+</tool>
+<macros/>
+</toolChain>
+<resourceConfiguration exclude="false" id="com.ti.ccstudio.buildDefinitions.C6000.Debug.629924458./TP_DSP/vpbe_bios_drv_dbg.lib" name="vpbe_bios_drv_dbg.lib" rcbsApplicability="disable" resourcePath="/TP_DSP/vpbe_bios_drv_dbg.lib" toolsToInvoke="com.ti.ccstudio.buildDefinitions.C6000_7.2.exe.linkerDebug.1132434498./TP_DSP/vpbe_bios_drv_dbg.lib">
+<tool id="com.ti.ccstudio.buildDefinitions.C6000_7.2.exe.linkerDebug.1132434498./TP_DSP/vpbe_bios_drv_dbg.lib" name="C6000 Linker" superClass="com.ti.ccstudio.buildDefinitions.C6000_7.2.exe.linkerDebug.1132434498"/>
+</resourceConfiguration>
+<resourceConfiguration exclude="false" id="com.ti.ccstudio.buildDefinitions.C6000.Debug.629924458./TP_DSP/vpbe_bios_drv_rel.lib" name="vpbe_bios_drv_rel.lib" rcbsApplicability="disable" resourcePath="/TP_DSP/vpbe_bios_drv_rel.lib" toolsToInvoke="com.ti.ccstudio.buildDefinitions.C6000_7.2.exe.linkerDebug.1132434498./TP_DSP/vpbe_bios_drv_rel.lib">
+<tool id="com.ti.ccstudio.buildDefinitions.C6000_7.2.exe.linkerDebug.1132434498./TP_DSP/vpbe_bios_drv_rel.lib" name="C6000 Linker" superClass="com.ti.ccstudio.buildDefinitions.C6000_7.2.exe.linkerDebug.1132434498"/>
+</resourceConfiguration>
+<resourceConfiguration exclude="false" id="com.ti.ccstudio.buildDefinitions.C6000.Debug.629924458./TP_DSP/vpfe_bios_drv_dbg.lib" name="vpfe_bios_drv_dbg.lib" rcbsApplicability="disable" resourcePath="/TP_DSP/vpfe_bios_drv_dbg.lib" toolsToInvoke="com.ti.ccstudio.buildDefinitions.C6000_7.2.exe.linkerDebug.1132434498./TP_DSP/vpfe_bios_drv_dbg.lib">
+<tool id="com.ti.ccstudio.buildDefinitions.C6000_7.2.exe.linkerDebug.1132434498./TP_DSP/vpfe_bios_drv_dbg.lib" name="C6000 Linker" superClass="com.ti.ccstudio.buildDefinitions.C6000_7.2.exe.linkerDebug.1132434498"/>
+</resourceConfiguration>
+<resourceConfiguration exclude="false" id="com.ti.ccstudio.buildDefinitions.C6000.Debug.629924458./TP_DSP/vpfe_bios_drv_rel.lib" name="vpfe_bios_drv_rel.lib" rcbsApplicability="disable" resourcePath="/TP_DSP/vpfe_bios_drv_rel.lib" toolsToInvoke="com.ti.ccstudio.buildDefinitions.C6000_7.2.exe.linkerDebug.1132434498./TP_DSP/vpfe_bios_drv_rel.lib">
+<tool id="com.ti.ccstudio.buildDefinitions.C6000_7.2.exe.linkerDebug.1132434498./TP_DSP/vpfe_bios_drv_rel.lib" name="C6000 Linker" superClass="com.ti.ccstudio.buildDefinitions.C6000_7.2.exe.linkerDebug.1132434498"/>
+</resourceConfiguration>
+<resourceConfiguration exclude="false" id="com.ti.ccstudio.buildDefinitions.C6000.Debug.629924458./TP_DSP/src/fonctions.c" name="fonctions.c" rcbsApplicability="disable" resourcePath="/TP_DSP/src/fonctions.c" toolsToInvoke="com.ti.ccstudio.buildDefinitions.C6000_7.2.exe.compilerDebug.358522621./TP_DSP/src/fonctions.c">
+<tool id="com.ti.ccstudio.buildDefinitions.C6000_7.2.exe.compilerDebug.358522621./TP_DSP/src/fonctions.c" name="C6000 Compiler" superClass="com.ti.ccstudio.buildDefinitions.C6000_7.2.exe.compilerDebug.358522621">
+<option id="com.ti.ccstudio.buildDefinitions.C6000_7.2.compilerID.INCLUDE_PATH.1698291943" superClass="com.ti.ccstudio.buildDefinitions.C6000_7.2.compilerID.INCLUDE_PATH" valueType="includePath">
+<listOptionValue builtIn="false" value="&quot;${CG_TOOL_ROOT}/include&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${PROJECT_BUILD_DIR}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${BIOS_INCLUDE_DIR}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${RTDX_INCLUDE_DIR}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${XDAIS_CG_ROOT}/packages/ti/xdais&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${C6000_CSL_CG_ROOT}/include&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${EXT_ROOT__TP_DSP}/pal_os/inc&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${EXT_ROOT__TP_DSP}/drivers/i2c/inc&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${EXT_ROOT__TP_DSP}/drivers/previewer/inc&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${EXT_ROOT__TP_DSP}/drivers/inc&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${EXT_ROOT__TP_DSP}/CSL_inc&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${EXT_ROOT__TP_DSP}/TP_DSP_exo1/src&quot;"/>
+</option>
+</tool>
+</resourceConfiguration>
+<resourceConfiguration exclude="false" id="com.ti.ccstudio.buildDefinitions.C6000.Debug.629924458./TP_DSP/src/i2cParams_evmdm6437.c" name="i2cParams_evmdm6437.c" rcbsApplicability="disable" resourcePath="/TP_DSP/src/i2cParams_evmdm6437.c" toolsToInvoke="com.ti.ccstudio.buildDefinitions.C6000_7.2.exe.compilerDebug.358522621./TP_DSP/src/i2cParams_evmdm6437.c">
+<tool id="com.ti.ccstudio.buildDefinitions.C6000_7.2.exe.compilerDebug.358522621./TP_DSP/src/i2cParams_evmdm6437.c" name="C6000 Compiler" superClass="com.ti.ccstudio.buildDefinitions.C6000_7.2.exe.compilerDebug.358522621">
+<option id="com.ti.ccstudio.buildDefinitions.C6000_7.2.compilerID.INCLUDE_PATH.758227694" superClass="com.ti.ccstudio.buildDefinitions.C6000_7.2.compilerID.INCLUDE_PATH" valueType="includePath">
+<listOptionValue builtIn="false" value="&quot;${CG_TOOL_ROOT}/include&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${PROJECT_BUILD_DIR}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${BIOS_INCLUDE_DIR}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${RTDX_INCLUDE_DIR}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${XDAIS_CG_ROOT}/packages/ti/xdais&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${C6000_CSL_CG_ROOT}/include&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${EXT_ROOT__TP_DSP}/pal_os/inc&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${EXT_ROOT__TP_DSP}/drivers/i2c/inc&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${EXT_ROOT__TP_DSP}/drivers/previewer/inc&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${EXT_ROOT__TP_DSP}/drivers/inc&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${EXT_ROOT__TP_DSP}/CSL_inc&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${EXT_ROOT__TP_DSP}/TP_DSP_exo1/src&quot;"/>
+</option>
+</tool>
+</resourceConfiguration>
+<resourceConfiguration exclude="false" id="com.ti.ccstudio.buildDefinitions.C6000.Debug.629924458./TP_DSP/src/main.c" name="main.c" rcbsApplicability="disable" resourcePath="/TP_DSP/src/main.c" toolsToInvoke="com.ti.ccstudio.buildDefinitions.C6000_7.2.exe.compilerDebug.358522621./TP_DSP/src/main.c">
+<tool id="com.ti.ccstudio.buildDefinitions.C6000_7.2.exe.compilerDebug.358522621./TP_DSP/src/main.c" name="C6000 Compiler" superClass="com.ti.ccstudio.buildDefinitions.C6000_7.2.exe.compilerDebug.358522621">
+<option id="com.ti.ccstudio.buildDefinitions.C6000_7.2.compilerID.INCLUDE_PATH.764175371" superClass="com.ti.ccstudio.buildDefinitions.C6000_7.2.compilerID.INCLUDE_PATH" valueType="includePath">
+<listOptionValue builtIn="false" value="&quot;${CG_TOOL_ROOT}/include&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${PROJECT_BUILD_DIR}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${BIOS_INCLUDE_DIR}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${RTDX_INCLUDE_DIR}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${XDAIS_CG_ROOT}/packages/ti/xdais&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${C6000_CSL_CG_ROOT}/include&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${EXT_ROOT__TP_DSP}/pal_os/inc&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${EXT_ROOT__TP_DSP}/drivers/i2c/inc&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${EXT_ROOT__TP_DSP}/drivers/previewer/inc&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${EXT_ROOT__TP_DSP}/drivers/inc&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${EXT_ROOT__TP_DSP}/CSL_inc&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${EXT_ROOT__TP_DSP}/TP_DSP_exo1/src&quot;"/>
+</option>
+</tool>
+</resourceConfiguration>
+<resourceConfiguration exclude="false" id="com.ti.ccstudio.buildDefinitions.C6000.Debug.629924458./TP_DSP/src/psp_i2c_interface.c" name="psp_i2c_interface.c" rcbsApplicability="disable" resourcePath="/TP_DSP/src/psp_i2c_interface.c" toolsToInvoke="com.ti.ccstudio.buildDefinitions.C6000_7.2.exe.compilerDebug.358522621./TP_DSP/src/psp_i2c_interface.c">
+<tool id="com.ti.ccstudio.buildDefinitions.C6000_7.2.exe.compilerDebug.358522621./TP_DSP/src/psp_i2c_interface.c" name="C6000 Compiler" superClass="com.ti.ccstudio.buildDefinitions.C6000_7.2.exe.compilerDebug.358522621">
+<option id="com.ti.ccstudio.buildDefinitions.C6000_7.2.compilerID.INCLUDE_PATH.1378706811" superClass="com.ti.ccstudio.buildDefinitions.C6000_7.2.compilerID.INCLUDE_PATH" valueType="includePath">
+<listOptionValue builtIn="false" value="&quot;${CG_TOOL_ROOT}/include&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${PROJECT_BUILD_DIR}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${BIOS_INCLUDE_DIR}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${RTDX_INCLUDE_DIR}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${XDAIS_CG_ROOT}/packages/ti/xdais&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${C6000_CSL_CG_ROOT}/include&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${EXT_ROOT__TP_DSP}/pal_os/inc&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${EXT_ROOT__TP_DSP}/drivers/i2c/inc&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${EXT_ROOT__TP_DSP}/drivers/previewer/inc&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${EXT_ROOT__TP_DSP}/drivers/inc&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${EXT_ROOT__TP_DSP}/CSL_inc&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${EXT_ROOT__TP_DSP}/TP_DSP_exo1/src&quot;"/>
+</option>
+</tool>
+</resourceConfiguration>
+<resourceConfiguration exclude="false" id="com.ti.ccstudio.buildDefinitions.C6000.Debug.629924458./TP_DSP/src/tvp5146_extDecoder.c" name="tvp5146_extDecoder.c" rcbsApplicability="disable" resourcePath="/TP_DSP/src/tvp5146_extDecoder.c" toolsToInvoke="com.ti.ccstudio.buildDefinitions.C6000_7.2.exe.compilerDebug.358522621./TP_DSP/src/tvp5146_extDecoder.c">
+<tool id="com.ti.ccstudio.buildDefinitions.C6000_7.2.exe.compilerDebug.358522621./TP_DSP/src/tvp5146_extDecoder.c" name="C6000 Compiler" superClass="com.ti.ccstudio.buildDefinitions.C6000_7.2.exe.compilerDebug.358522621">
+<option id="com.ti.ccstudio.buildDefinitions.C6000_7.2.compilerID.INCLUDE_PATH.1132431712" superClass="com.ti.ccstudio.buildDefinitions.C6000_7.2.compilerID.INCLUDE_PATH" valueType="includePath">
+<listOptionValue builtIn="false" value="&quot;${CG_TOOL_ROOT}/include&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${PROJECT_BUILD_DIR}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${BIOS_INCLUDE_DIR}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${RTDX_INCLUDE_DIR}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${XDAIS_CG_ROOT}/packages/ti/xdais&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${C6000_CSL_CG_ROOT}/include&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${EXT_ROOT__TP_DSP}/pal_os/inc&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${EXT_ROOT__TP_DSP}/drivers/i2c/inc&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${EXT_ROOT__TP_DSP}/drivers/previewer/inc&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${EXT_ROOT__TP_DSP}/drivers/inc&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${EXT_ROOT__TP_DSP}/CSL_inc&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${EXT_ROOT__TP_DSP}/TP_DSP_exo1/src&quot;"/>
+</option>
+</tool>
+</resourceConfiguration>
+<resourceConfiguration exclude="false" id="com.ti.ccstudio.buildDefinitions.C6000.Debug.629924458./TP_DSP/TP_DSP.tcf" name="TP_DSP.tcf" rcbsApplicability="disable" resourcePath="/TP_DSP/TP_DSP.tcf" toolsToInvoke="com.ti.rtsc.buildDefinitions.DSPBIOS_5.40.tool.291894094./TP_DSP/TP_DSP.tcf">
+<tool id="com.ti.rtsc.buildDefinitions.DSPBIOS_5.40.tool.291894094./TP_DSP/TP_DSP.tcf" name="TConf Script Compiler" superClass="com.ti.rtsc.buildDefinitions.DSPBIOS_5.40.tool.291894094">
+<option id="com.ti.rtsc.buildDefinitions.DSPBIOS_5.40.tool.CONFIG_IMPORT_PATH.393829271" superClass="com.ti.rtsc.buildDefinitions.DSPBIOS_5.40.tool.CONFIG_IMPORT_PATH" valueType="includePath">
+<listOptionValue builtIn="false" value="&quot;${BIOS_CG_ROOT}/packages&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${EXT_ROOT__TP_DSP}/TP_DSP_exo1&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${env_var:BIOS_INSTALL_DIR}/packages/ti/bios/examples/common&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${EXT_ROOT__TP_DSP}/TP_DSP_exo1;${env_var:BIOS_INSTALL_DIR}/packages/ti/bios/examples/common;&quot;"/>
+</option>
+</tool>
+</resourceConfiguration>
+<resourceConfiguration exclude="true" id="com.ti.ccstudio.buildDefinitions.C6000.Debug.629924458./TP_DSP/TP_DSP.cmd" name="TP_DSP.cmd" rcbsApplicability="disable" resourcePath="/TP_DSP/TP_DSP.cmd" toolsToInvoke="com.ti.ccstudio.buildDefinitions.C6000_7.2.exe.linkerDebug.1132434498./TP_DSP/TP_DSP.cmd">
+<tool id="com.ti.ccstudio.buildDefinitions.C6000_7.2.exe.linkerDebug.1132434498./TP_DSP/TP_DSP.cmd" name="C6000 Linker" superClass="com.ti.ccstudio.buildDefinitions.C6000_7.2.exe.linkerDebug.1132434498"/>
 </resourceConfiguration>
 </configuration>
 <macros/>

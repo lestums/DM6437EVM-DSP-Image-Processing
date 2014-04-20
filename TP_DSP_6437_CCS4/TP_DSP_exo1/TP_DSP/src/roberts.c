@@ -15,39 +15,33 @@
 */
 #include "projet_dsp.h"
 
-Uint32 valeur_absolue(double d) { 
-	Uint32 abs = (Uint32) d, mask = abs >> 31;  
-	return abs = (abs ^ mask) - mask; 
-}
-
 void roberts_nonopt(Uint8 *in, Uint8 *out, Uint32 largeur, Uint32 hauteur) {
 	Uint32 i,j; 
 	double Gx, Gy;
 	Uint32 totalG;
 	for (j=0; j<hauteur; j++) { 
 		for (i=0; i<largeur; i++) { 
-			Gx  = pow(-in[j*largeur+i] + in[j*largeur+i+1] - in[(j+1)*largeur+i] + in[(j+1)*largeur+i+1],2);
-			Gy = pow(-in[j*largeur+i] + in[(j+1)*largeur+i] - in[j*largeur+i+1] + in[(j+1)*largeur+(i+1)],2);
-			totalG = (Uint32)(valeur_absolue(Gx) + valeur_absolue(Gy));
+			Gx = pow(in[j*largeur+i] - in[(j+1)*largeur+i+1],2);
+			Gy = pow(in[(j+1)*largeur+i] - in[j*largeur+i+1],2);
+			totalG = valeur_absolue(Gx + Gy);
 			if(totalG > 255) totalG = 255;
 			out[j*largeur+i] = (Uint8)totalG;
 		} 
 	} 
 }
 
-void roberts_optimise(Uint8 *in, Uint8 *out, Uint32 largeur, Uint32 hauteur) { 
+void roberts_optimise(Uint8 *in, Uint8 *out, Uint32 largeur, Uint32 hauteur, Uint32 threshold, double* Gx, double* Gy) { 
 	const Uint32 NB_ELMT = largeur*hauteur; 
-	Uint32 i,G,Gx,Gy; 
+	Uint32 i,G; 
 	Uint8 *pi, *ps; 
 		 
 	pi = in; ps = pi + largeur; 
 	 
 	for (i=0; i<NB_ELMT; i++) { 
-		Gx = - pi[0] + pi[1] - ps[0] + ps[1]; 
-		Gy = - pi[0] - pi[1] + ps[0] + ps[1]; 
-		G = (Uint32)(valeur_absolue(Gx*Gx) + valeur_absolue(Gy*Gy)); 
-		if(G > 255) G = 255;
-		out[i] = (Uint8)G;
+		Gx[i] = pi[0] - ps[1]; 
+		Gy[i] = pi[1] - ps[0]; 
+		G = (Uint32)(valeur_absolue(Gx[i]*Gx[i]) + valeur_absolue(Gy[i]*Gy[i])); 
+		out[i] = (G > threshold) ? 255 : 0; 
 		++pi;++ps; 
 	} 
 }

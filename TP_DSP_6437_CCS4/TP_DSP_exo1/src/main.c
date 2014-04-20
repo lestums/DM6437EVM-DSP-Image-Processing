@@ -22,6 +22,7 @@ void I2C_INIT() {
 
 void main() {
   return;
+
 }
 
 void tachevideo() {

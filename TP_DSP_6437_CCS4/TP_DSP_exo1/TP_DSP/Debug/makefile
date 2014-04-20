@@ -16,8 +16,10 @@ $(GEN_CMDS_QUOTED) \
 "C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug/tvp5146_extDecoder.obj" \
 "C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug/roberts.obj" \
 "C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug/psp_i2c_interface.obj" \
+"C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug/projet_maths.obj" \
 "C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug/main.obj" \
 "C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug/i2cParams_evmdm6437.obj" \
+"C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug/hough.obj" \
 "C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug/fonctions.obj" \
 "C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug/deriche.obj" \
 "C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug/TP_DSPcfg_c.obj" \
@@ -140,11 +142,11 @@ endif
 all: C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug/TP-DSP.out
 
 # Tool invocations
-C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug/TP-DSP.out: $(OBJS) $(LIB_SRCS) $(GEN_CMDS)
+C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug/TP-DSP.out: $(OBJS) $(CMD_SRCS) $(LIB_SRCS) $(GEN_CMDS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: Linker'
-	@echo 'Flags: -mv6400+ -g --define="_DEBUG" --define="CHIP_DM6437" --define="DM643X_SOC_BUILD" --define="BIOS_BUILD" --diag_warning=225 --obj_directory="C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug" -z -m"C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug/TP-DSP.map" --warn_sections -i"C:/CCS/ccsv4/tools/compiler/c6000/lib" -i"C:/CCS/ccsv4/tools/compiler/c6000/include" -i"C:/CCS/bios_5_41_10_36/packages/ti/rtdx/lib/c6000" -i"C:/CCS/bios_5_41_10_36/packages/ti/bios/lib" -i"C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/TP_DSP" -i"C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1" -i"/lib" -i"C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/driver" --reread_libs --rom_model'
-	$(shell echo -mv6400+ -g --define="_DEBUG" --define="CHIP_DM6437" --define="DM643X_SOC_BUILD" --define="BIOS_BUILD" --diag_warning=225 --obj_directory="C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug" -z -m"C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug/TP-DSP.map" --warn_sections -i"C:/CCS/ccsv4/tools/compiler/c6000/lib" -i"C:/CCS/ccsv4/tools/compiler/c6000/include" -i"C:/CCS/bios_5_41_10_36/packages/ti/rtdx/lib/c6000" -i"C:/CCS/bios_5_41_10_36/packages/ti/bios/lib" -i"C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/TP_DSP" -i"C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1" -i"/lib" -i"C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/driver" --reread_libs --rom_model > "ccsLinker.opt")
+	@echo 'Flags: -mv6400+ -g -O2 -ms2 --define="_DEBUG" --define="CHIP_DM6437" --define="DM643X_SOC_BUILD" --define="BIOS_BUILD" --diag_warning=225 --obj_directory="C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug" -z -m"C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug/TP-DSP.map" --warn_sections -i"C:/CCS/ccsv4/tools/compiler/c6000/lib" -i"C:/CCS/ccsv4/tools/compiler/c6000/include" -i"C:/CCS/bios_5_41_10_36/packages/ti/rtdx/lib/c6000" -i"C:/CCS/bios_5_41_10_36/packages/ti/bios/lib" -i"C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/TP_DSP" -i"C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1" -i"/lib" -i"C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/driver" --reread_libs --rom_model'
+	$(shell echo -mv6400+ -g -O2 -ms2 --define="_DEBUG" --define="CHIP_DM6437" --define="DM643X_SOC_BUILD" --define="BIOS_BUILD" --diag_warning=225 --obj_directory="C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug" -z -m"C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug/TP-DSP.map" --warn_sections -i"C:/CCS/ccsv4/tools/compiler/c6000/lib" -i"C:/CCS/ccsv4/tools/compiler/c6000/include" -i"C:/CCS/bios_5_41_10_36/packages/ti/rtdx/lib/c6000" -i"C:/CCS/bios_5_41_10_36/packages/ti/bios/lib" -i"C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/TP_DSP" -i"C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1" -i"/lib" -i"C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/driver" --reread_libs --rom_model > "ccsLinker.opt")
 	$(shell type "ccsObjs.opt" >> "ccsLinker.opt")
 	"C:/CCS/ccsv4/tools/compiler/c6000/bin/cl6x" -@"ccsLinker.opt" -o "C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug/TP-DSP.out"
 	@echo 'Finished building target: $@'
@@ -153,9 +155,9 @@ C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug/TP-DSP.out: $(OBJS) $(LIB_SRCS) $(GEN
 # Other Targets
 clean:
 	-$(RM) $(GEN_CMDS__QTD)$(GEN_SRCS__QTD)$(C6000_EXECUTABLE_OUTPUTS__QTD)$(GEN_MISC_FILES__QTD) "C:\Temp\TP_DSP_6437_CCS4\TP_DSP_exo1\Debug\TP-DSP.out"
-	-$(RM) "C:\Temp\TP_DSP_6437_CCS4\TP_DSP_exo1\Debug\TP_DSPcfg.obj" "C:\Temp\TP_DSP_6437_CCS4\TP_DSP_exo1\Debug\TP_DSPcfg_c.obj" "C:\Temp\TP_DSP_6437_CCS4\TP_DSP_exo1\Debug\deriche.obj" "C:\Temp\TP_DSP_6437_CCS4\TP_DSP_exo1\Debug\fonctions.obj" "C:\Temp\TP_DSP_6437_CCS4\TP_DSP_exo1\Debug\i2cParams_evmdm6437.obj" "C:\Temp\TP_DSP_6437_CCS4\TP_DSP_exo1\Debug\main.obj" "C:\Temp\TP_DSP_6437_CCS4\TP_DSP_exo1\Debug\psp_i2c_interface.obj" "C:\Temp\TP_DSP_6437_CCS4\TP_DSP_exo1\Debug\roberts.obj" "C:\Temp\TP_DSP_6437_CCS4\TP_DSP_exo1\Debug\tvp5146_extDecoder.obj" "C:\Temp\TP_DSP_6437_CCS4\TP_DSP_exo1\Debug\bios_edma3_sample_cfg.obj" "C:\Temp\TP_DSP_6437_CCS4\TP_DSP_exo1\Debug\bios_edma3_sample_cs.obj" "C:\Temp\TP_DSP_6437_CCS4\TP_DSP_exo1\Debug\bios_edma3_sample_init.obj" 
+	-$(RM) "C:\Temp\TP_DSP_6437_CCS4\TP_DSP_exo1\Debug\TP_DSPcfg.obj" "C:\Temp\TP_DSP_6437_CCS4\TP_DSP_exo1\Debug\TP_DSPcfg_c.obj" "C:\Temp\TP_DSP_6437_CCS4\TP_DSP_exo1\Debug\deriche.obj" "C:\Temp\TP_DSP_6437_CCS4\TP_DSP_exo1\Debug\fonctions.obj" "C:\Temp\TP_DSP_6437_CCS4\TP_DSP_exo1\Debug\hough.obj" "C:\Temp\TP_DSP_6437_CCS4\TP_DSP_exo1\Debug\i2cParams_evmdm6437.obj" "C:\Temp\TP_DSP_6437_CCS4\TP_DSP_exo1\Debug\main.obj" "C:\Temp\TP_DSP_6437_CCS4\TP_DSP_exo1\Debug\projet_maths.obj" "C:\Temp\TP_DSP_6437_CCS4\TP_DSP_exo1\Debug\psp_i2c_interface.obj" "C:\Temp\TP_DSP_6437_CCS4\TP_DSP_exo1\Debug\roberts.obj" "C:\Temp\TP_DSP_6437_CCS4\TP_DSP_exo1\Debug\tvp5146_extDecoder.obj" "C:\Temp\TP_DSP_6437_CCS4\TP_DSP_exo1\Debug\bios_edma3_sample_cfg.obj" "C:\Temp\TP_DSP_6437_CCS4\TP_DSP_exo1\Debug\bios_edma3_sample_cs.obj" "C:\Temp\TP_DSP_6437_CCS4\TP_DSP_exo1\Debug\bios_edma3_sample_init.obj" 
 	-$(RM) ".\TP_DSPcfg.pp" 
-	-$(RM) ".\TP_DSPcfg_c.pp" ".\src\deriche.pp" ".\src\fonctions.pp" ".\src\i2cParams_evmdm6437.pp" ".\src\main.pp" ".\src\psp_i2c_interface.pp" ".\src\roberts.pp" ".\src\tvp5146_extDecoder.pp" ".\driver\bios_edma3_sample_cfg.pp" ".\driver\bios_edma3_sample_cs.pp" ".\driver\bios_edma3_sample_init.pp" 
+	-$(RM) ".\TP_DSPcfg_c.pp" ".\src\deriche.pp" ".\src\fonctions.pp" ".\src\hough.pp" ".\src\i2cParams_evmdm6437.pp" ".\src\main.pp" ".\src\projet_maths.pp" ".\src\psp_i2c_interface.pp" ".\src\roberts.pp" ".\src\tvp5146_extDecoder.pp" ".\driver\bios_edma3_sample_cfg.pp" ".\driver\bios_edma3_sample_cs.pp" ".\driver\bios_edma3_sample_init.pp" 
 	-@echo ' '
 
 .PHONY: all clean dependents
