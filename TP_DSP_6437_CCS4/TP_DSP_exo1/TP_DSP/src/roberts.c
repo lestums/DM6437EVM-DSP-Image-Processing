@@ -15,11 +15,6 @@
 */
 #include "projet_dsp.h"
 
-Uint32 valeur_absolue(double d) { 
-	Uint32 abs = (Uint32) d, mask = abs >> 31;  
-	return abs = (abs ^ mask) - mask; 
-}
-
 void roberts_nonopt(Uint8 *in, Uint8 *out, Uint32 largeur, Uint32 hauteur) {
 	Uint32 i,j; 
 	double Gx, Gy;
@@ -35,19 +30,22 @@ void roberts_nonopt(Uint8 *in, Uint8 *out, Uint32 largeur, Uint32 hauteur) {
 	} 
 }
 
-void roberts_optimise(Uint8 *in, Uint8 *out, Uint32 largeur, Uint32 hauteur) { 
+void roberts_optimise(Uint8 *in, Uint8 *out, Uint32 largeur, Uint32 hauteur, Uint32 threshold, double* Gx, double* Gy) { 
 	const Uint32 NB_ELMT = largeur*hauteur; 
-	Uint32 i,G,Gx,Gy; 
+	Uint32 i,G; 
 	Uint8 *pi, *ps; 
 		 
 	pi = in; ps = pi + largeur; 
 	 
 	for (i=0; i<NB_ELMT; i++) { 
-		Gx = - pi[0] + pi[1] - ps[0] + ps[1]; 
-		Gy = - pi[0] - pi[1] + ps[0] + ps[1]; 
-		G = (Uint32)(valeur_absolue(Gx*Gx) + valeur_absolue(Gy*Gy)); 
-		if(G > 255) G = 255;
-		out[i] = (Uint8)G;
+		Gx[i] = - pi[0] + pi[1] - ps[0] + ps[1]; 
+		Gy[i] = - pi[0] - pi[1] + ps[0] + ps[1]; 
+		G = (Uint32)(valeur_absolue(Gx[i]*Gx[i]) + valeur_absolue(Gy[i]*Gy[i])); 
+		if (G > threshold) { 
+			out[i] = 255; 
+		} else { 
+			out[i] = 0; 
+		} 
 		++pi;++ps; 
 	} 
 }
