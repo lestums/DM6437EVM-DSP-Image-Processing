@@ -15,10 +15,10 @@
 */
 #include "projet_dsp.h" 
 
-void hough_nonopt(Uint8 *in, Uint8 *out, Uint32 largeur, Uint32 hauteur, Uint32 votes) { 
+void hough_nonopt(Uint8 *in, Uint8 *out, int maxrho, Uint32 largeur, Uint32 hauteur, Uint32 votes) { 
 	//We assume here that the dimensions of in and the ones of the RGB image are the same 
-	Uint32 i,j,x,y,rho=0,angle=0,AccMax=0,rho_idx=0,maxrho = (Uint32)ceil(sqrt(largeur*largeur + hauteur*hauteur)); 
-	double angler=0; 
+	int i,j,x,y,rho=0,angle=0,AccMax=0,rho_idx=0;
+
 	// Accumulator initialization 
 	Uint32 *Acc = (Uint32*)malloc(MAXTHETA*maxrho*sizeof(Uint32)); 
 	for(j=0; j<maxrho*MAXTHETA;j++){ 
@@ -28,9 +28,10 @@ void hough_nonopt(Uint8 *in, Uint8 *out, Uint32 largeur, Uint32 hauteur, Uint32 
 	for (j=1; j<hauteur-2; j++) { 
 		for (i=1; i<largeur-2; i++) { 
 			if (in[j*largeur+i] == 255) { 
-				for (angle=0; angle<MAXTHETA; angle++) { 
-					angler = angle*PI/MAXTHETA; rho_idx = (Uint32)((double)j*sin(angler) + (double)i*cos(angler) + (double)maxrho)/2; 
-					if (rho_idx<maxrho && rho_idx>0) { Acc[rho_idx*MAXTHETA+angle]++; 
+				for (angle=0; angle<= MAXTHETA; angle++) { 
+					rho_idx = (int)((((double)j*sin(angle) + (double)i*cos(angle) + (double)maxrho)/2) + 0.9); 
+					if (rho_idx<maxrho && rho_idx>0) { 
+						Acc[rho_idx*MAXTHETA+angle]++; 
 						if (Acc[rho_idx*MAXTHETA+angle] > AccMax) { 
 							AccMax = Acc[rho_idx*MAXTHETA+angle]; 
 						} 
@@ -39,27 +40,36 @@ void hough_nonopt(Uint8 *in, Uint8 *out, Uint32 largeur, Uint32 hauteur, Uint32 
 			} 
 		}
 	}
+	AccMax -= votes;
 	// Draw Hough lines 
-	for (rho_idx=0; rho_idx<maxrho; rho_idx++) { 
-		for (angle=1; angle<MAXTHETA; angle++) { 
-			if (Acc[rho_idx*MAXTHETA+angle] > AccMax-30) { 
-				angler = angle*PI/MAXTHETA; rho = rho_idx*2 - maxrho; 
-				for(x=0;x<largeur;x++) { 
-					y = (Uint32)((double)rho - (double)x*cos(angler))/sin(angler); 
-					if(y<hauteur && y>0) { 
-						out[y*largeur+x]=0; 
-					} 
-				} 
+	for (rho_idx=0; rho_idx< maxrho; rho_idx++) { 
+		// Quand Theta = 0 
+ 		if (Acc[rho_idx*180] > AccMax){ 
+ 			rho = rho_idx*2 - maxrho; 
+			for(x = 0;x < WIDTH;x++){ 
+ 				out[x]=255; 
+ 			} 
+ 		} 
+		// Sinon
+ 		for (angle = 1; angle < 180; angle++){ 
+ 			if (Acc[rho_idx*180+angle] > AccMax){ 
+				rho = rho_idx*2 - maxrho; 
+ 				for(x = 0;x < WIDTH;x++){ 
+ 					y = (int)((((double)rho - (double)x*cos(angle))/sin(angle))+0.9);  
+ 					if(y < HEIGHT && y > 0){ 
+ 						out[y*HEIGHT+x] = 255; 
+ 					} 
+ 				} 
 			} 
-		} 
+ 		} 
 	} 
 	free(Acc); 
 }
 
-void hough_optimise(Uint8 *in, Uint8 *out, Uint32 largeur, Uint32 hauteur, Int32 vote, double *Gx, double *Gy, double *tSin, double *tCos) { 
+void hough_optimise(Uint8 *in, Uint8 *out, int maxrho, Uint32 largeur, Uint32 hauteur, Int32 vote, double *Gx, double *Gy, double *tSin, double *tCos) { 
 	
 	//We assume here that the dimensions of in and the ones of the RGB image are the same 
-	int rho=0,angle=0,rho_idx=0,maxrho = (Int32)(fastSqrtD(hauteur*hauteur+largeur*largeur) + 0.9); 
+	int rho=0,angle=0,rho_idx=0;
 	Uint32 i,j,x,y,ctr=largeur; 
 	const Uint32 NB_ELMT = maxrho*MAXTHETA; 
 	const Uint32 TAILLE = hauteur*largeur; 
@@ -113,54 +123,3 @@ void hough_optimise(Uint8 *in, Uint8 *out, Uint32 largeur, Uint32 hauteur, Int32
 	} 
 	free(Acc); 
 }
-
-void TracerLine(Uint8 *out,float coeff, float ori){
-	int i,j;
-	coeff=-coeff;
-	ori=HEIGHT-ori;
-	for(i=0;i<WIDTH;i++){
-		j=(int)(coeff*i+ori);
-		if(j>=HEIGHT ||j<0) continue;
-		out[j*WIDTH+i]=255;
-	}
-	for(i=0;i<HEIGHT;i++){
-		j=(int)((i-ori)/coeff);
-		if(j>=WIDTH || j<0) continue;
-		out[i*WIDTH+j]=255;
-	}
-}
-
-
-void hough_test(Uint8 *in, Uint8 *out, Uint32 largeur, Uint32 hauteur, Uint32 vote, Uint32 seuil, double *tSin, double *tCos) { 
-	
-	int rho=0;
-  	int maxrho=(int)sqrt(WIDTH*WIDTH + HEIGHT*HEIGHT);
-  	int angle=0, i,j;
-  	
-  	int* Accu = (int*) calloc(sizeof(int)*180*865,0);
-	// Accumulator calc
-	for(i=1;i<hauteur-1;i++){
-		for(j=1;j<largeur-1;j++){
-			if(in[i*largeur+j]>0){
-				for(angle=1;angle<=180;angle++){
-					rho=(int)((j*tCos[angle]+i*tSin[angle])/2+maxrho/2);
-					if(rho>0 &&	*(Accu+rho*180+angle-1)<255){
-						Accu[rho*180+angle-1] += 1;
-					} else {
-						break;
-					}
-				}	
-			}	
-		}	
-	}
- 
- 	// Drawing lines
-	for(i=0;i<180;i++){
-		for(j=0;j<maxrho;j++){
-			if(*(Accu+i+j*180)>seuil){
-				TracerLine(out,tCos[i+1]/tSin[i+1],HEIGHT-((j+1)*2-maxrho)/tSin[angle]);
-			}	
-		}
-	}
-}
-

@@ -16,18 +16,16 @@
 #include <soc.h>
 #include <cslr_ccdc.h>
 
-//Implémentées
+// FONCTIONS PRINCIPALES
 
-//FONCTIONNE
 void deriche_nonopt(Uint8* in, Uint8* out, Uint32 largeur, Uint32 hauteur, float gamma);
 void deriche_optimise(Uint8* in, Uint8* out, Uint32 largeur, Uint32 hauteur, float gamma);
 
 void roberts_nonopt(Uint8 *in, Uint8 *out, Uint32 largeur, Uint32 hauteur);
 void roberts_optimise(Uint8 *in, Uint8 *out, Uint32 largeur, Uint32 hauteur, Uint32 threshold, double* Gx, double* Gy);
 
-void hough_nonopt(Uint8 *in, Uint8 *out, Uint32 largeur, Uint32 hauteur, Uint32 votes);
-void hough_optimise(Uint8 *in, Uint8 *out, Uint32 largeur, Uint32 hauteur, Int32 vote, double *Gx, double *Gy, double *tSin, double *tCos);
-void hough_test(Uint8 *in, Uint8 *out, Uint32 largeur, Uint32 hauteur, Uint32 vote, Uint32 seuil, double *tSin, double *tCos);
+void hough_nonopt(Uint8 *in, Uint8 *out, int maxrho, Uint32 largeur, Uint32 hauteur, Uint32 votes);
+void hough_optimise(Uint8 *in, Uint8 *out, int maxrho, Uint32 largeur, Uint32 hauteur, Int32 vote, double *Gx, double *Gy, double *tSin, double *tCos);
 
 void binarisation(Uint8 *in, Uint8 *out, Uint32 largeur, Uint32 hauteur, Uint32 threshold);
 
