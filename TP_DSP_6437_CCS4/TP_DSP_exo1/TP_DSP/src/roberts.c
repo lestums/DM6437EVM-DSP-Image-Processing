@@ -41,11 +41,7 @@ void roberts_optimise(Uint8 *in, Uint8 *out, Uint32 largeur, Uint32 hauteur, Uin
 		Gx[i] = pi[0] - ps[1]; 
 		Gy[i] = pi[1] - ps[0]; 
 		G = (Uint32)(valeur_absolue(Gx[i]*Gx[i]) + valeur_absolue(Gy[i]*Gy[i])); 
-		if (G > threshold) { 
-			out[i] = 255; 
-		} else { 
-			out[i] = 0; 
-		} 
+		out[i] = (G > threshold) ? 255 : 0; 
 		++pi;++ps; 
 	} 
 }
