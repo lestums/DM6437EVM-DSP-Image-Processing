@@ -162,14 +162,15 @@ void start_boucle() {
     	ts = C64P_getltime();
 		#if OPTIMISE == 1
 		  		deriche_optimise(imageIn, imageOut, WIDTH, HEIGHT, GAMMA);
-		  		roberts_optimise(imageOut, imageEnd, WIDTH, HEIGHT, SEUIL, Gx, Gy);
+		  		roberts_optimise(imageOut, imageEnd, WIDTH, HEIGHT, SEUIL, Gx, Gy);.
+		  		hough_test(imageIn, imageEnd, WIDTH, HEIGHT, MAX_VOTES, SEUIL, tSin, tCos);
 		  		//hough_optimise(imageIn, imageEnd, WIDTH, HEIGHT, MAX_VOTES, Gx, Gy, tSin, tCos);
 		  		//hough_nonopt(imageIn, imageEnd, WIDTH, HEIGHT, MAX_VOTES);
 		#else
 		  		deriche_nonopt(imageIn, imageOut, WIDTH, HEIGHT, GAMMA);
 		  		roberts_nonopt(imageOut, imageIn, WIDTH, HEIGHT);
-		  		binarisation(imageIn, imageOut, WIDTH, HEIGHT, SEUIL);
-		  		hough_nonopt(imageOut, imageEnd, WIDTH, HEIGHT, MAX_VOTES);
+		  		binarisation(imageIn, imageEnd, WIDTH, HEIGHT, SEUIL);
+		  		//hough_nonopt(imageOut, imageEnd, WIDTH, HEIGHT, MAX_VOTES);
 		#endif
 		te = C64P_getltime(); 		
   		
@@ -178,7 +179,7 @@ void start_boucle() {
   	    //Conversion en Uint16 pour affichage et mise à 0x80 (mise à zéro) de la chrominance 
   	    for( j = 0; j < HEIGHT; j++ ) { 
   	    	for( k = 0; k < WIDTH ; k++ ) { 
-  	    		((Uint16*)FBAddrOut->frameBufferPtr)[j*WIDTH + k] = ((((Uint16)imageEnd[j*WIDTH + k])<<8) | 0x0080); 
+  	    			((Uint16*)FBAddrOut->frameBufferPtr)[j*WIDTH + k] = ((((Uint16)imageEnd[j*WIDTH + k])<<8) | 0x0080); 
   	    	}
   	    }
   // 2)Affichage :
