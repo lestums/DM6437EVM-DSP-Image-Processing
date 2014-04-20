@@ -79,26 +79,24 @@ void start_boucle() {
   
   double *Gx = (double*)malloc(NB_PIXELS*sizeof(double)); 
   double *Gy = (double*)malloc(NB_PIXELS*sizeof(double));
+  int maxrho = ceil(fastSqrtD(HEIGHT*HEIGHT+ WIDTH*WIDTH));
   
   //Initialisation des LUT du sinus et du cosinus 
   for( i = 0; i <= MAXTHETA; i++ ){ 
-  	tSin[i] = sin((double)i*PI/MAXTHETA); 
-  	tCos[i] = cos((double)i*PI/MAXTHETA); 
+  	tCos[i] = cos((double)i*PI/MAXTHETA);
+  	tSin[i] = ((i == MAXTHETA) ? 0 : sin((double)i*PI/MAXTHETA));  
   }
 
   // Create ccdc channel
   feinitParams.id = PSP_VPFE_CCDC;
   feinitParams.params = (PSP_VPFECcdcConfigParams*)&ccdcParams;
-  ccdcHandle = FVID_create( "/VPFE0", IOM_INOUT, NULL, &feinitParams, 
-                            &gioAttrs);
+  ccdcHandle = FVID_create( "/VPFE0", IOM_INOUT, NULL, &feinitParams, &gioAttrs);
   if ( NULL == ccdcHandle) {
     return;
   }
 
   // Configure the TVP5146 video decoder
-  if( FVID_control( ccdcHandle, 
-                    VPFE_ExtVD_BASE + PSP_VPSS_EXT_VIDEO_DECODER_CONFIG,
-                    &tvp5146Params) != IOM_COMPLETED ) {
+  if( FVID_control( ccdcHandle, VPFE_ExtVD_BASE + PSP_VPSS_EXT_VIDEO_DECODER_CONFIG, &tvp5146Params) != IOM_COMPLETED ) {
 	return;
   } else {
     for ( i=0; i < NO_OF_BUFFERS; i++ ) {
@@ -113,8 +111,8 @@ void start_boucle() {
   // Create video channel
   beinitParams.id = PSP_VPBE_VIDEO_0;
   beinitParams.params = (PSP_VPBEOsdConfigParams*)&vid0Params;
-  vid0Handle = FVID_create( "/VPBE0", IOM_INOUT,NULL, &beinitParams, 
-                            &gioAttrs );
+  vid0Handle = FVID_create( "/VPBE0", IOM_INOUT,NULL, &beinitParams, &gioAttrs );
+  
   if ( NULL == vid0Handle ) {
     return;
   } else {
@@ -130,8 +128,7 @@ void start_boucle() {
   // Create venc channel
   beinitParams.id = PSP_VPBE_VENC;
   beinitParams.params = (PSP_VPBEVencConfigParams *)&vencParams;
-  vencHandle = FVID_create( "/VPBE0", IOM_INOUT, NULL, &beinitParams, 
-                            &gioAttrs);
+  vencHandle = FVID_create( "/VPBE0", IOM_INOUT, NULL, &beinitParams, &gioAttrs);
   if ( NULL == vencHandle ) {
     return;
   }
@@ -143,6 +140,7 @@ void start_boucle() {
   imageIn = (Uint8*) malloc(WIDTH*HEIGHT*sizeof(Uint8));
   imageOut = (Uint8*) malloc(WIDTH*HEIGHT*sizeof(Uint8));
   imageEnd = (Uint8*) malloc(WIDTH*HEIGHT*sizeof(Uint8));
+  
   //================BOUCLE ACQUISITION & COPIE & AFFICHAGE DES IMAGES========================
   //1)Acquisition
   	for( i = 0; i < ITERNUM; i++ ) {
@@ -162,10 +160,9 @@ void start_boucle() {
     	ts = C64P_getltime();
 		#if OPTIMISE == 1
 		  		deriche_optimise(imageIn, imageOut, WIDTH, HEIGHT, GAMMA);
-		  		roberts_optimise(imageOut, imageEnd, WIDTH, HEIGHT, SEUIL, Gx, Gy);.
-		  		hough_test(imageIn, imageEnd, WIDTH, HEIGHT, MAX_VOTES, SEUIL, tSin, tCos);
-		  		//hough_optimise(imageIn, imageEnd, WIDTH, HEIGHT, MAX_VOTES, Gx, Gy, tSin, tCos);
-		  		//hough_nonopt(imageIn, imageEnd, WIDTH, HEIGHT, MAX_VOTES);
+		  		roberts_optimise(imageOut, imageEnd, WIDTH, HEIGHT, SEUIL, Gx, Gy);
+		  		//hough_optimise(imageIn, imageEnd, maxrho, WIDTH, HEIGHT, MAX_VOTES, Gx, Gy, tSin, tCos);
+		  		//hough_nonopt(imageIn, imageEnd, maxrho, WIDTH, HEIGHT, MAX_VOTES);
 		#else
 		  		deriche_nonopt(imageIn, imageOut, WIDTH, HEIGHT, GAMMA);
 		  		roberts_nonopt(imageOut, imageIn, WIDTH, HEIGHT);
