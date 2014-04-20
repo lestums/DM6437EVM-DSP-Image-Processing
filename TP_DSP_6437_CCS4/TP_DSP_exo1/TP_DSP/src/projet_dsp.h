@@ -11,7 +11,8 @@
 #include "fvid.h"
 #include "psp_tvp5146_extVidDecoder.h"
 
-#include "../TP_DSP/src/vars.h"
+#include "vars.h"
+#include "fixed.h"
 
 #include <soc.h>
 #include <cslr_ccdc.h>
