@@ -19,6 +19,7 @@ $(GEN_CMDS_QUOTED) \
 "C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug/projet_maths.obj" \
 "C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug/main.obj" \
 "C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug/i2cParams_evmdm6437.obj" \
+"C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug/hough.obj" \
 "C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug/fonctions.obj" \
 "C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug/deriche.obj" \
 "C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug/TP_DSPcfg_c.obj" \
@@ -155,9 +156,9 @@ C:/Temp/TP_DSP_6437_CCS4/TP_DSP_exo1/Debug/TP-DSP.out: $(OBJS) $(CMD_SRCS) $(LIB
 # Other Targets
 clean:
 	-$(RM) $(GEN_CMDS__QTD)$(GEN_SRCS__QTD)$(C6000_EXECUTABLE_OUTPUTS__QTD)$(GEN_MISC_FILES__QTD) "C:\Temp\TP_DSP_6437_CCS4\TP_DSP_exo1\Debug\TP-DSP.out"
-	-$(RM) "C:\Temp\TP_DSP_6437_CCS4\TP_DSP_exo1\Debug\TP_DSPcfg.obj" "C:\Temp\TP_DSP_6437_CCS4\TP_DSP_exo1\Debug\TP_DSPcfg_c.obj" "C:\Temp\TP_DSP_6437_CCS4\TP_DSP_exo1\Debug\deriche.obj" "C:\Temp\TP_DSP_6437_CCS4\TP_DSP_exo1\Debug\fonctions.obj" "C:\Temp\TP_DSP_6437_CCS4\TP_DSP_exo1\Debug\i2cParams_evmdm6437.obj" "C:\Temp\TP_DSP_6437_CCS4\TP_DSP_exo1\Debug\main.obj" "C:\Temp\TP_DSP_6437_CCS4\TP_DSP_exo1\Debug\projet_maths.obj" "C:\Temp\TP_DSP_6437_CCS4\TP_DSP_exo1\Debug\psp_i2c_interface.obj" "C:\Temp\TP_DSP_6437_CCS4\TP_DSP_exo1\Debug\roberts.obj" "C:\Temp\TP_DSP_6437_CCS4\TP_DSP_exo1\Debug\tvp5146_extDecoder.obj" "C:\Temp\TP_DSP_6437_CCS4\TP_DSP_exo1\Debug\bios_edma3_sample_cfg.obj" "C:\Temp\TP_DSP_6437_CCS4\TP_DSP_exo1\Debug\bios_edma3_sample_cs.obj" "C:\Temp\TP_DSP_6437_CCS4\TP_DSP_exo1\Debug\bios_edma3_sample_init.obj" 
+	-$(RM) "C:\Temp\TP_DSP_6437_CCS4\TP_DSP_exo1\Debug\TP_DSPcfg.obj" "C:\Temp\TP_DSP_6437_CCS4\TP_DSP_exo1\Debug\TP_DSPcfg_c.obj" "C:\Temp\TP_DSP_6437_CCS4\TP_DSP_exo1\Debug\deriche.obj" "C:\Temp\TP_DSP_6437_CCS4\TP_DSP_exo1\Debug\fonctions.obj" "C:\Temp\TP_DSP_6437_CCS4\TP_DSP_exo1\Debug\hough.obj" "C:\Temp\TP_DSP_6437_CCS4\TP_DSP_exo1\Debug\i2cParams_evmdm6437.obj" "C:\Temp\TP_DSP_6437_CCS4\TP_DSP_exo1\Debug\main.obj" "C:\Temp\TP_DSP_6437_CCS4\TP_DSP_exo1\Debug\projet_maths.obj" "C:\Temp\TP_DSP_6437_CCS4\TP_DSP_exo1\Debug\psp_i2c_interface.obj" "C:\Temp\TP_DSP_6437_CCS4\TP_DSP_exo1\Debug\roberts.obj" "C:\Temp\TP_DSP_6437_CCS4\TP_DSP_exo1\Debug\tvp5146_extDecoder.obj" "C:\Temp\TP_DSP_6437_CCS4\TP_DSP_exo1\Debug\bios_edma3_sample_cfg.obj" "C:\Temp\TP_DSP_6437_CCS4\TP_DSP_exo1\Debug\bios_edma3_sample_cs.obj" "C:\Temp\TP_DSP_6437_CCS4\TP_DSP_exo1\Debug\bios_edma3_sample_init.obj" 
 	-$(RM) ".\TP_DSPcfg.pp" 
-	-$(RM) ".\TP_DSPcfg_c.pp" ".\src\deriche.pp" ".\src\fonctions.pp" ".\src\i2cParams_evmdm6437.pp" ".\src\main.pp" ".\src\projet_maths.pp" ".\src\psp_i2c_interface.pp" ".\src\roberts.pp" ".\src\tvp5146_extDecoder.pp" ".\driver\bios_edma3_sample_cfg.pp" ".\driver\bios_edma3_sample_cs.pp" ".\driver\bios_edma3_sample_init.pp" 
+	-$(RM) ".\TP_DSPcfg_c.pp" ".\src\deriche.pp" ".\src\fonctions.pp" ".\src\hough.pp" ".\src\i2cParams_evmdm6437.pp" ".\src\main.pp" ".\src\projet_maths.pp" ".\src\psp_i2c_interface.pp" ".\src\roberts.pp" ".\src\tvp5146_extDecoder.pp" ".\driver\bios_edma3_sample_cfg.pp" ".\driver\bios_edma3_sample_cs.pp" ".\driver\bios_edma3_sample_init.pp" 
 	-@echo ' '
 
 .PHONY: all clean dependents
